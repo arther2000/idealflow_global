@@ -10,9 +10,9 @@ export const Route = createFileRoute("/tw/crm")({
     pageHead({
       breadcrumb: "CRM 客戶管理",
       path: "/tw/crm",
-      title: "CRM 客戶管理｜匯成交 iDealFlow.ai",
+      title: "CRM 客戶管理系統推薦｜中小企業名單管理與銷售管道｜匯成交 iDealFlow.ai",
       description:
-        "每一個名單，都不再被浪費。無限聯絡人、集中對話中心、視覺化銷售管道，把銷售、行銷與客服整合在同一個平台，一次取代 Salesforce、HubSpot、Zoho 等工具。",
+        "中小企業 CRM 客戶管理系統：無限聯絡人、LINE／FB／Email 對話集中收件匣、視覺化銷售管道，名單不再躺在 Excel。一套取代 Salesforce、HubSpot、Zoho，含中文化與導入支持。",
     }),
   component: CrmPage,
 });
@@ -410,7 +410,7 @@ function CrmPage() {
               {"免費報名講座 "}
               <span className="arr">→</span>
             </Link>
-            <Link to="/tw" hash="pricing" className="btn btn-ghost">
+            <Link to="/tw/pricing" className="btn btn-ghost">
               查看方案內容
             </Link>
           </div>

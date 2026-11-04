@@ -10,7 +10,7 @@ export const Route = createFileRoute("/funnel")({
     pageHead({
       breadcrumb: "Funnels & Websites",
       path: "/funnel",
-      title: "Funnels & Websites | iDealFlow.ai",
+      title: "Sales Funnel Builder & Landing Page Templates | iDealFlow.ai",
       description:
         "Build pages that sell, no code required. 300+ funnel templates, a drag-and-drop builder, A/B testing and funnel analytics — replacing ClickFunnels, Wix and more.",
     }),
@@ -440,7 +440,7 @@ function FunnelPage() {
               {"Book a Demo "}
               <span className="arr">→</span>
             </Link>
-            <Link to="/" hash="pricing" className="btn btn-ghost">
+            <Link to="/pricing" className="btn btn-ghost">
               See Pricing
             </Link>
           </div>

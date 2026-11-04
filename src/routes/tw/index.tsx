@@ -40,7 +40,7 @@ export const Route = createFileRoute("/tw/")({
     pageHead({
       faq: FAQ,
       path: "/tw",
-      title: "匯成交 iDealFlow.ai｜AI 自動化成交系統 — 讓成交自動發生",
+      title: "匯成交 iDealFlow.ai｜GoHighLevel 中文版・AI 自動化成交系統（CRM＋LINE 行銷）",
       description:
         "別再為了做行銷養一堆工具。匯成交 iDealFlow.ai 把 CRM、LINE／Email 行銷、銷售漏斗、AI 客服、預約與課程系統整合成一套，名單一進來，系統就幫你跟到成交。台灣在地中文化與導入支持。",
     }),

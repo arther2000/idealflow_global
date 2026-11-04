@@ -10,7 +10,7 @@ export const Route = createFileRoute("/reputation")({
     pageHead({
       breadcrumb: "Reputation Management",
       path: "/reputation",
-      title: "Reputation Management | iDealFlow.ai",
+      title: "Google Review Management Software | iDealFlow.ai",
       description:
         "Turn happy customers into five-star reviews—automatically. Google review requests, one inbox for replies, and review widgets that win new business.",
     }),
@@ -428,7 +428,7 @@ function ReputationPage() {
               {"Book a Demo "}
               <span className="arr">→</span>
             </Link>
-            <Link to="/" hash="pricing" className="btn btn-ghost">
+            <Link to="/pricing" className="btn btn-ghost">
               See Pricing
             </Link>
           </div>

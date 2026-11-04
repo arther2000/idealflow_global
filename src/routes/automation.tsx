@@ -10,7 +10,7 @@ export const Route = createFileRoute("/automation")({
     pageHead({
       breadcrumb: "Workflow Automation",
       path: "/automation",
-      title: "Workflow Automation | iDealFlow.ai",
+      title: "Workflow Automation for Sales Follow-Up | iDealFlow.ai",
       description:
         "Follow up with every lead while you sleep. Visual workflows, if/else branching, AI decisions and a mobile app—replacing Zapier, Make and HubSpot in one place.",
     }),
@@ -415,7 +415,7 @@ function AutomationPage() {
               {"Book a Demo "}
               <span className="arr">→</span>
             </Link>
-            <Link to="/" hash="pricing" className="btn btn-ghost">
+            <Link to="/pricing" className="btn btn-ghost">
               See Pricing
             </Link>
           </div>

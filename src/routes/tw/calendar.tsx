@@ -10,7 +10,7 @@ export const Route = createFileRoute("/tw/calendar")({
     pageHead({
       breadcrumb: "智能預約系統",
       path: "/tw/calendar",
-      title: "智能預約系統｜匯成交 iDealFlow.ai",
+      title: "線上預約系統推薦｜自動提醒降低爽約、一對一與團體課程｜匯成交 iDealFlow.ai",
       description:
         "讓客戶自己約、系統自己提醒。無限量行事曆、團隊輪流分配、課程預約與自動提醒跟進，一次取代 Calendly、Acuity 等預約工具。",
     }),
@@ -416,7 +416,7 @@ function CalendarPage() {
               {"免費報名講座 "}
               <span className="arr">→</span>
             </Link>
-            <Link to="/tw" hash="pricing" className="btn btn-ghost">
+            <Link to="/tw/pricing" className="btn btn-ghost">
               查看方案內容
             </Link>
           </div>

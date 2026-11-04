@@ -18,6 +18,8 @@ import { Route as ContactRouteImport } from './routes/contact'
 import { Route as CrmRouteImport } from './routes/crm'
 import { Route as EmailRouteImport } from './routes/email'
 import { Route as FunnelRouteImport } from './routes/funnel'
+import { Route as GohighlevelRouteImport } from './routes/gohighlevel'
+import { Route as PricingRouteImport } from './routes/pricing'
 import { Route as ReputationRouteImport } from './routes/reputation'
 import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
 import { Route as StartRouteImport } from './routes/start'
@@ -29,6 +31,8 @@ import { Route as TwCalendarRouteImport } from './routes/tw/calendar'
 import { Route as TwCrmRouteImport } from './routes/tw/crm'
 import { Route as TwEmailRouteImport } from './routes/tw/email'
 import { Route as TwFunnelRouteImport } from './routes/tw/funnel'
+import { Route as TwGohighlevelRouteImport } from './routes/tw/gohighlevel'
+import { Route as TwPricingRouteImport } from './routes/tw/pricing'
 import { Route as TwReputationRouteImport } from './routes/tw/reputation'
 import { Route as TwStartRouteImport } from './routes/tw/start'
 import { Route as TwThanksRouteImport } from './routes/tw/thanks'
@@ -76,6 +80,16 @@ const EmailRoute = EmailRouteImport.update({
 const FunnelRoute = FunnelRouteImport.update({
   id: '/funnel',
   path: '/funnel',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const GohighlevelRoute = GohighlevelRouteImport.update({
+  id: '/gohighlevel',
+  path: '/gohighlevel',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PricingRoute = PricingRouteImport.update({
+  id: '/pricing',
+  path: '/pricing',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ReputationRoute = ReputationRouteImport.update({
@@ -133,6 +147,16 @@ const TwFunnelRoute = TwFunnelRouteImport.update({
   path: '/tw/funnel',
   getParentRoute: () => rootRouteImport,
 } as any)
+const TwGohighlevelRoute = TwGohighlevelRouteImport.update({
+  id: '/tw/gohighlevel',
+  path: '/tw/gohighlevel',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const TwPricingRoute = TwPricingRouteImport.update({
+  id: '/tw/pricing',
+  path: '/tw/pricing',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const TwReputationRoute = TwReputationRouteImport.update({
   id: '/tw/reputation',
   path: '/tw/reputation',
@@ -159,6 +183,8 @@ export interface FileRoutesByFullPath {
   '/crm': typeof CrmRoute
   '/email': typeof EmailRoute
   '/funnel': typeof FunnelRoute
+  '/gohighlevel': typeof GohighlevelRoute
+  '/pricing': typeof PricingRoute
   '/reputation': typeof ReputationRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/start': typeof StartRoute
@@ -169,6 +195,8 @@ export interface FileRoutesByFullPath {
   '/tw/crm': typeof TwCrmRoute
   '/tw/email': typeof TwEmailRoute
   '/tw/funnel': typeof TwFunnelRoute
+  '/tw/gohighlevel': typeof TwGohighlevelRoute
+  '/tw/pricing': typeof TwPricingRoute
   '/tw/reputation': typeof TwReputationRoute
   '/tw/start': typeof TwStartRoute
   '/tw/thanks': typeof TwThanksRoute
@@ -184,6 +212,8 @@ export interface FileRoutesByTo {
   '/crm': typeof CrmRoute
   '/email': typeof EmailRoute
   '/funnel': typeof FunnelRoute
+  '/gohighlevel': typeof GohighlevelRoute
+  '/pricing': typeof PricingRoute
   '/reputation': typeof ReputationRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/start': typeof StartRoute
@@ -194,6 +224,8 @@ export interface FileRoutesByTo {
   '/tw/crm': typeof TwCrmRoute
   '/tw/email': typeof TwEmailRoute
   '/tw/funnel': typeof TwFunnelRoute
+  '/tw/gohighlevel': typeof TwGohighlevelRoute
+  '/tw/pricing': typeof TwPricingRoute
   '/tw/reputation': typeof TwReputationRoute
   '/tw/start': typeof TwStartRoute
   '/tw/thanks': typeof TwThanksRoute
@@ -210,6 +242,8 @@ export interface FileRoutesById {
   '/crm': typeof CrmRoute
   '/email': typeof EmailRoute
   '/funnel': typeof FunnelRoute
+  '/gohighlevel': typeof GohighlevelRoute
+  '/pricing': typeof PricingRoute
   '/reputation': typeof ReputationRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/start': typeof StartRoute
@@ -220,6 +254,8 @@ export interface FileRoutesById {
   '/tw/crm': typeof TwCrmRoute
   '/tw/email': typeof TwEmailRoute
   '/tw/funnel': typeof TwFunnelRoute
+  '/tw/gohighlevel': typeof TwGohighlevelRoute
+  '/tw/pricing': typeof TwPricingRoute
   '/tw/reputation': typeof TwReputationRoute
   '/tw/start': typeof TwStartRoute
   '/tw/thanks': typeof TwThanksRoute
@@ -237,6 +273,8 @@ export interface FileRouteTypes {
     | '/crm'
     | '/email'
     | '/funnel'
+    | '/gohighlevel'
+    | '/pricing'
     | '/reputation'
     | '/sitemap.xml'
     | '/start'
@@ -247,6 +285,8 @@ export interface FileRouteTypes {
     | '/tw/crm'
     | '/tw/email'
     | '/tw/funnel'
+    | '/tw/gohighlevel'
+    | '/tw/pricing'
     | '/tw/reputation'
     | '/tw/start'
     | '/tw/thanks'
@@ -262,6 +302,8 @@ export interface FileRouteTypes {
     | '/crm'
     | '/email'
     | '/funnel'
+    | '/gohighlevel'
+    | '/pricing'
     | '/reputation'
     | '/sitemap.xml'
     | '/start'
@@ -272,6 +314,8 @@ export interface FileRouteTypes {
     | '/tw/crm'
     | '/tw/email'
     | '/tw/funnel'
+    | '/tw/gohighlevel'
+    | '/tw/pricing'
     | '/tw/reputation'
     | '/tw/start'
     | '/tw/thanks'
@@ -287,6 +331,8 @@ export interface FileRouteTypes {
     | '/crm'
     | '/email'
     | '/funnel'
+    | '/gohighlevel'
+    | '/pricing'
     | '/reputation'
     | '/sitemap.xml'
     | '/start'
@@ -297,6 +343,8 @@ export interface FileRouteTypes {
     | '/tw/crm'
     | '/tw/email'
     | '/tw/funnel'
+    | '/tw/gohighlevel'
+    | '/tw/pricing'
     | '/tw/reputation'
     | '/tw/start'
     | '/tw/thanks'
@@ -313,6 +361,8 @@ export interface RootRouteChildren {
   CrmRoute: typeof CrmRoute
   EmailRoute: typeof EmailRoute
   FunnelRoute: typeof FunnelRoute
+  GohighlevelRoute: typeof GohighlevelRoute
+  PricingRoute: typeof PricingRoute
   ReputationRoute: typeof ReputationRoute
   SitemapDotxmlRoute: typeof SitemapDotxmlRoute
   StartRoute: typeof StartRoute
@@ -323,6 +373,8 @@ export interface RootRouteChildren {
   TwCrmRoute: typeof TwCrmRoute
   TwEmailRoute: typeof TwEmailRoute
   TwFunnelRoute: typeof TwFunnelRoute
+  TwGohighlevelRoute: typeof TwGohighlevelRoute
+  TwPricingRoute: typeof TwPricingRoute
   TwReputationRoute: typeof TwReputationRoute
   TwStartRoute: typeof TwStartRoute
   TwThanksRoute: typeof TwThanksRoute
@@ -392,6 +444,20 @@ declare module '@tanstack/react-router' {
       path: '/funnel'
       fullPath: '/funnel'
       preLoaderRoute: typeof FunnelRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/gohighlevel': {
+      id: '/gohighlevel'
+      path: '/gohighlevel'
+      fullPath: '/gohighlevel'
+      preLoaderRoute: typeof GohighlevelRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/pricing': {
+      id: '/pricing'
+      path: '/pricing'
+      fullPath: '/pricing'
+      preLoaderRoute: typeof PricingRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/reputation': {
@@ -471,6 +537,20 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof TwFunnelRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/tw/gohighlevel': {
+      id: '/tw/gohighlevel'
+      path: '/tw/gohighlevel'
+      fullPath: '/tw/gohighlevel'
+      preLoaderRoute: typeof TwGohighlevelRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/tw/pricing': {
+      id: '/tw/pricing'
+      path: '/tw/pricing'
+      fullPath: '/tw/pricing'
+      preLoaderRoute: typeof TwPricingRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/tw/reputation': {
       id: '/tw/reputation'
       path: '/tw/reputation'
@@ -505,6 +585,8 @@ const rootRouteChildren: RootRouteChildren = {
   CrmRoute: CrmRoute,
   EmailRoute: EmailRoute,
   FunnelRoute: FunnelRoute,
+  GohighlevelRoute: GohighlevelRoute,
+  PricingRoute: PricingRoute,
   ReputationRoute: ReputationRoute,
   SitemapDotxmlRoute: SitemapDotxmlRoute,
   StartRoute: StartRoute,
@@ -515,6 +597,8 @@ const rootRouteChildren: RootRouteChildren = {
   TwCrmRoute: TwCrmRoute,
   TwEmailRoute: TwEmailRoute,
   TwFunnelRoute: TwFunnelRoute,
+  TwGohighlevelRoute: TwGohighlevelRoute,
+  TwPricingRoute: TwPricingRoute,
   TwReputationRoute: TwReputationRoute,
   TwStartRoute: TwStartRoute,
   TwThanksRoute: TwThanksRoute,

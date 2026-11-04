@@ -10,7 +10,7 @@ export const Route = createFileRoute("/tw/funnel")({
     pageHead({
       breadcrumb: "銷售漏斗與網站建置",
       path: "/tw/funnel",
-      title: "銷售漏斗與網站建置｜匯成交 iDealFlow.ai",
+      title: "銷售漏斗工具與一頁式銷售頁製作｜300+ 模板拖拉建站｜匯成交 iDealFlow.ai",
       description:
         "不會寫程式也能做出會成交的頁面。300+ 銷售漏斗模板、拖拉式編輯器、A/B 測試與漏斗分析，一次取代 ClickFunnels、Wix 等多套工具。",
     }),
@@ -426,7 +426,7 @@ function FunnelPage() {
               {"免費報名講座 "}
               <span className="arr">→</span>
             </Link>
-            <Link to="/tw" hash="pricing" className="btn btn-ghost">
+            <Link to="/tw/pricing" className="btn btn-ghost">
               查看方案內容
             </Link>
           </div>

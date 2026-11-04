@@ -47,7 +47,7 @@ export const Route = createFileRoute("/tw/start")({
       product: true,
       faq: FAQ,
       path: "/tw/start",
-      title: "14 天啟動計畫｜匯成交 iDealFlow.ai — 讓生意自動運轉",
+      title: "GoHighLevel 中文導入方案｜14 天啟動計畫 US$1,197／年｜匯成交 iDealFlow.ai",
       description:
         "14 天內打造自動化成交系統：全功能系統＋已配置模組＋實操課程＋中文技術支援。不用再學一堆課程、不用養十套工具、不用高薪請技術團隊。",
     }),

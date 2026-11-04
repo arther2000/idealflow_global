@@ -10,7 +10,7 @@ export const Route = createFileRoute("/ai-content")({
     pageHead({
       breadcrumb: "AI Content & Social Planner",
       path: "/ai-content",
-      title: "AI Content & Social Planner | iDealFlow.ai",
+      title: "AI Content Generator & Social Media Planner | iDealFlow.ai",
       description:
         "Create once, publish everywhere. AI writes posts; the planner keeps Facebook, Instagram, TikTok, LinkedIn and YouTube fresh—replacing Hootsuite and Buffer.",
     }),
@@ -405,7 +405,7 @@ function AiContentPage() {
               {"Book a Demo "}
               <span className="arr">→</span>
             </Link>
-            <Link to="/" hash="pricing" className="btn btn-ghost">
+            <Link to="/pricing" className="btn btn-ghost">
               See Pricing
             </Link>
           </div>

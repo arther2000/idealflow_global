@@ -45,6 +45,8 @@ const PAIRED = [
   "/automation",
   "/ai-content",
   "/reputation",
+  "/pricing",
+  "/gohighlevel",
 ];
 
 /** hreflang alternates for a path, if it has a counterpart in the other locale. */

@@ -75,8 +75,13 @@ export function SiteFooter({ locale, variant = "full" }: SiteFooterProps) {
           <div className="foot-col">
             <h6>{t.colAbout}</h6>
             <Link to={p.start}>{t.startLink}</Link>
+            <Link to={p.gohighlevel}>{t.ghlLink}</Link>
             {HOME_ANCHORS[locale].map((a) => (
-              <Link key={a.hash} to={p.home} hash={a.hash}>
+              <Link
+                key={a.hash}
+                to={a.page ? p[a.page] : p.home}
+                {...(a.page ? {} : { hash: a.hash })}
+              >
                 {a.footer}
               </Link>
             ))}

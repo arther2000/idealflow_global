@@ -10,7 +10,7 @@ export const Route = createFileRoute("/tw/automation")({
     pageHead({
       breadcrumb: "自動化工作流程",
       path: "/tw/automation",
-      title: "自動化工作流程｜匯成交 iDealFlow.ai",
+      title: "行銷自動化工作流程｜不寫程式自動跟進客戶｜匯成交 iDealFlow.ai",
       description:
         "你睡覺時，系統還在幫你跟進客戶。視覺化工作流、if/else 智能分支、AI 判斷與行動 App，一次取代 Zapier、Make、HubSpot 等自動化工具。",
     }),
@@ -407,7 +407,7 @@ function AutomationPage() {
               {"免費報名講座 "}
               <span className="arr">→</span>
             </Link>
-            <Link to="/tw" hash="pricing" className="btn btn-ghost">
+            <Link to="/tw/pricing" className="btn btn-ghost">
               查看方案內容
             </Link>
           </div>

@@ -71,7 +71,12 @@ export function SiteNav({ locale, variant = "main" }: SiteNavProps) {
                 </div>
               </div>
               {HOME_ANCHORS[locale].map((a) => (
-                <Link key={a.hash} to={p.home} hash={a.hash} onClick={close}>
+                <Link
+                  key={a.hash}
+                  to={a.page ? p[a.page] : p.home}
+                  {...(a.page ? {} : { hash: a.hash })}
+                  onClick={close}
+                >
                   {a.nav}
                 </Link>
               ))}

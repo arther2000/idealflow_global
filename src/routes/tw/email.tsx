@@ -10,7 +10,7 @@ export const Route = createFileRoute("/tw/email")({
     pageHead({
       breadcrumb: "Email／LINE 行銷自動化",
       path: "/tw/email",
-      title: "Email／LINE 行銷自動化｜匯成交 iDealFlow.ai",
+      title: "LINE／Email 行銷自動化工具｜名單自動跟進到成交｜匯成交 iDealFlow.ai",
       description:
         "寫一次，系統幫你寄到成交為止。拖拉式 Email 編輯器、精美範本、AI 自動化旅程與 LINE 雙軌推進，一次取代 Mailchimp、ActiveCampaign 等工具。",
     }),
@@ -413,7 +413,7 @@ function EmailPage() {
               {"免費報名講座 "}
               <span className="arr">→</span>
             </Link>
-            <Link to="/tw" hash="pricing" className="btn btn-ghost">
+            <Link to="/tw/pricing" className="btn btn-ghost">
               查看方案內容
             </Link>
           </div>

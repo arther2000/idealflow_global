@@ -11,6 +11,8 @@ export const PATHS = {
     home: "/",
     start: "/start",
     cta: "/contact",
+    pricing: "/pricing",
+    gohighlevel: "/gohighlevel",
     funnel: "/funnel",
     email: "/email",
     calendar: "/calendar",
@@ -23,6 +25,8 @@ export const PATHS = {
     home: "/tw",
     start: "/tw/start",
     cta: "/tw/booking",
+    pricing: "/tw/pricing",
+    gohighlevel: "/tw/gohighlevel",
     funnel: "/tw/funnel",
     email: "/tw/email",
     calendar: "/tw/calendar",
@@ -109,19 +113,22 @@ export function featureLinks(locale: Locale): FeatureLink[] {
 }
 
 /** 首頁錨點（導覽列與頁尾共用）。 */
-export const HOME_ANCHORS: Record<Locale, { hash: string; nav: string; footer: string }[]> = {
+/** Nav/footer entries: a home-page anchor (`hash`) or a standalone page (`page`). */
+export type NavEntry = { hash: string; nav: string; footer: string; page?: "pricing" };
+
+export const HOME_ANCHORS: Record<Locale, NavEntry[]> = {
   zh: [
     { hash: "audience", nav: "適用對象", footer: "適用對象" },
     { hash: "three", nav: "三大特色", footer: "三大在地優勢" },
     { hash: "cases", nav: "成功案例", footer: "成功案例" },
-    { hash: "pricing", nav: "方案價格", footer: "方案價格" },
+    { hash: "pricing", nav: "方案價格", footer: "方案價格", page: "pricing" },
     { hash: "faq", nav: "常見問題", footer: "常見問題" },
   ],
   en: [
     { hash: "audience", nav: "Who It's For", footer: "Who It's For" },
     { hash: "three", nav: "Why iDealFlow", footer: "Why iDealFlow" },
     { hash: "cases", nav: "Customers", footer: "Success Stories" },
-    { hash: "pricing", nav: "Pricing", footer: "Pricing" },
+    { hash: "pricing", nav: "Pricing", footer: "Pricing", page: "pricing" },
     { hash: "faq", nav: "FAQ", footer: "FAQ" },
   ],
 };
@@ -144,6 +151,7 @@ export const UI = {
     colAbout: "了解匯成交",
     colContact: "聯絡我們",
     startLink: "14 天啟動計畫",
+    ghlLink: "GoHighLevel 中文版",
     copyright: "© 2026 匯鼎科技股份有限公司 iDealFlow.ai — 版權所有",
     region: "台灣（繁體中文）",
   },
@@ -163,6 +171,7 @@ export const UI = {
     colAbout: "Company",
     colContact: "Contact",
     startLink: "14-Day Launch Program",
+    ghlLink: "GoHighLevel + LINE",
     copyright: "© 2026 iDealFlow.ai. All rights reserved.",
     region: "United States (English)",
   },

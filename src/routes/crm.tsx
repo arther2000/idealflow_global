@@ -10,7 +10,7 @@ export const Route = createFileRoute("/crm")({
     pageHead({
       breadcrumb: "CRM",
       path: "/crm",
-      title: "CRM | iDealFlow.ai",
+      title: "CRM with LINE Integration for Small Businesses | iDealFlow.ai",
       description:
         "Never waste another lead. Unlimited contacts, one unified inbox and a visual sales pipeline bring sales, marketing and support together on a single platform.",
     }),
@@ -428,7 +428,7 @@ function CrmPage() {
               {"Book a Demo "}
               <span className="arr">→</span>
             </Link>
-            <Link to="/" hash="pricing" className="btn btn-ghost">
+            <Link to="/pricing" className="btn btn-ghost">
               See Pricing
             </Link>
           </div>

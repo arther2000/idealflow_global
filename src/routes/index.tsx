@@ -40,7 +40,7 @@ export const Route = createFileRoute("/")({
     pageHead({
       faq: FAQ,
       path: "/",
-      title: "iDealFlow.ai | AI Sales Automation Platform — Let Deals Close Themselves",
+      title: "iDealFlow.ai | GoHighLevel with LINE & Chinese Localization — AI Sales Automation",
       description:
         "CRM, LINE & email marketing, funnels, AI chat, booking and courses in one platform. Every lead gets followed up automatically, all the way to a closed deal.",
     }),

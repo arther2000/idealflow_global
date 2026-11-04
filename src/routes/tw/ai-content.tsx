@@ -10,7 +10,7 @@ export const Route = createFileRoute("/tw/ai-content")({
     pageHead({
       breadcrumb: "AI 內容生成與社群排程",
       path: "/tw/ai-content",
-      title: "AI 內容生成與社群排程｜匯成交 iDealFlow.ai",
+      title: "AI 文案生成與社群排程工具｜一次發佈 FB、IG 多平台｜匯成交 iDealFlow.ai",
       description:
         "一次生成、多平台同步發佈。AI 幫你寫貼文與文案，排程系統讓 Facebook、Instagram、TikTok、LinkedIn、YouTube 天天有內容，一次取代 Hootsuite、Buffer 等工具。",
     }),
@@ -397,7 +397,7 @@ function AiContentPage() {
               {"免費報名講座 "}
               <span className="arr">→</span>
             </Link>
-            <Link to="/tw" hash="pricing" className="btn btn-ghost">
+            <Link to="/tw/pricing" className="btn btn-ghost">
               查看方案內容
             </Link>
           </div>

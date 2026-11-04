@@ -10,7 +10,7 @@ export const Route = createFileRoute("/email")({
     pageHead({
       breadcrumb: "Email & LINE Marketing",
       path: "/email",
-      title: "Email & LINE Marketing | iDealFlow.ai",
+      title: "LINE & Email Marketing Automation Software | iDealFlow.ai",
       description:
         "Write it once and let it work until the deal closes. Drag-and-drop email builder, beautiful templates, AI-powered journeys and LINE messaging in one platform.",
     }),
@@ -425,7 +425,7 @@ function EmailPage() {
               {"Book a Demo "}
               <span className="arr">→</span>
             </Link>
-            <Link to="/" hash="pricing" className="btn btn-ghost">
+            <Link to="/pricing" className="btn btn-ghost">
               See Pricing
             </Link>
           </div>

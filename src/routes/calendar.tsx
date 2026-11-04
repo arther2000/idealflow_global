@@ -10,7 +10,7 @@ export const Route = createFileRoute("/calendar")({
     pageHead({
       breadcrumb: "Smart Booking",
       path: "/calendar",
-      title: "Smart Booking | iDealFlow.ai",
+      title: "Online Booking System with Automated Reminders | iDealFlow.ai",
       description:
         "Let customers book themselves and let reminders run on autopilot. Unlimited calendars, round-robin routing, class bookings and automated no-show follow-ups.",
     }),
@@ -430,7 +430,7 @@ function CalendarPage() {
               {"Book a Demo "}
               <span className="arr">→</span>
             </Link>
-            <Link to="/" hash="pricing" className="btn btn-ghost">
+            <Link to="/pricing" className="btn btn-ghost">
               See Pricing
             </Link>
           </div>

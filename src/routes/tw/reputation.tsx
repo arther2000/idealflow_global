@@ -10,7 +10,7 @@ export const Route = createFileRoute("/tw/reputation")({
     pageHead({
       breadcrumb: "評價管理系統",
       path: "/tw/reputation",
-      title: "評價管理系統｜匯成交 iDealFlow.ai",
+      title: "Google 評論管理系統｜自動邀請顧客評論、集中回覆｜匯成交 iDealFlow.ai",
       description:
         "讓滿意的客人，自動變成你的五星好評。自動邀請 Google 評論、集中回覆管理、網站評價展示小工具，把口碑變成最強的獲客管道。",
     }),
@@ -419,7 +419,7 @@ function ReputationPage() {
               {"免費報名講座 "}
               <span className="arr">→</span>
             </Link>
-            <Link to="/tw" hash="pricing" className="btn btn-ghost">
+            <Link to="/tw/pricing" className="btn btn-ghost">
               查看方案內容
             </Link>
           </div>

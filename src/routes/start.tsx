@@ -47,7 +47,7 @@ export const Route = createFileRoute("/start")({
       product: true,
       faq: FAQ,
       path: "/start",
-      title: "14-Day Launch Program | iDealFlow.ai — Put Your Business on Autopilot",
+      title: "GoHighLevel Onboarding: 14-Day Launch Program (US$1,197/yr) | iDealFlow.ai",
       description:
         "Launch an automated sales system in 14 days: the full platform, pre-built modules, hands-on training and live support. No more courses, tool sprawl or pricey tech hires.",
     }),
