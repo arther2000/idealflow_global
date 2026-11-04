@@ -1,0 +1,102 @@
+@import "tailwindcss" source(none);
+@source "../src";
+@import "tw-animate-css";
+/* 匯成交 iDealFlow.ai 原站樣式：放在 base layer（在 preflight 之後），
+   讓 Tailwind utilities 仍可覆寫。 */
+@import "./site.css" layer(base);
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --radius-sm: calc(var(--radius-ui) - 4px);
+  --radius-md: calc(var(--radius-ui) - 2px);
+  --radius-lg: var(--radius-ui);
+  --radius-xl: calc(var(--radius-ui) + 4px);
+
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+
+  /* 品牌色：Deep Navy / Flow Orange */
+  --color-brand-navy: #001b44;
+  --color-brand-navy-2: #00204f;
+  --color-brand-navy-deep: #00122e;
+  --color-brand-orange: #ff7900;
+  --color-brand-orange-2: #ff9a3d;
+
+  --font-sans:
+    "Noto Sans TC", -apple-system, BlinkMacSystemFont, "PingFang TC", "Microsoft JhengHei",
+    sans-serif;
+  --font-en: "Sora", "Noto Sans TC", sans-serif;
+}
+
+/* shadcn/ui tokens mapped to the iDealFlow brand.
+   Note: site.css already defines --radius (20px) for the marketing pages,
+   so the UI kit uses --radius-ui. */
+:root {
+  --radius-ui: 0.75rem;
+  --background: #ffffff;
+  --foreground: #0e1b33;
+  --card: #ffffff;
+  --card-foreground: #0e1b33;
+  --popover: #ffffff;
+  --popover-foreground: #0e1b33;
+  --primary: #ff7900;
+  --primary-foreground: #ffffff;
+  --secondary: #f6f8fc;
+  --secondary-foreground: #001b44;
+  --muted: #f6f8fc;
+  --muted-foreground: #4a5a75;
+  --accent: rgba(255, 121, 0, 0.12);
+  --accent-foreground: #001b44;
+  --destructive: #dc2626;
+  --border: rgba(0, 27, 68, 0.1);
+  --input: rgba(0, 27, 68, 0.15);
+  --ring: #ff7900;
+}
+
+.dark {
+  --background: #00122e;
+  --foreground: #ffffff;
+  --card: #001b44;
+  --card-foreground: #ffffff;
+  --popover: #001b44;
+  --popover-foreground: #ffffff;
+  --primary: #ff7900;
+  --primary-foreground: #ffffff;
+  --secondary: #00204f;
+  --secondary-foreground: #ffffff;
+  --muted: #00204f;
+  --muted-foreground: rgba(255, 255, 255, 0.65);
+  --accent: rgba(255, 121, 0, 0.18);
+  --accent-foreground: #ffffff;
+  --destructive: #f87171;
+  --border: rgba(255, 255, 255, 0.12);
+  --input: rgba(255, 255, 255, 0.15);
+  --ring: #ff7900;
+}
+
+/* 原站沒有 Tailwind preflight：表單元件維持瀏覽器預設行高，避免按鈕/輸入框變高。 */
+@layer base {
+  button,
+  input,
+  select,
+  textarea {
+    line-height: normal;
+  }
+}
