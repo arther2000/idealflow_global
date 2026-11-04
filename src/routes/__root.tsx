@@ -4,6 +4,7 @@ import {
   Link,
   createRootRouteWithContext,
   useRouter,
+  useRouterState,
   HeadContent,
   Scripts,
 } from "@tanstack/react-router";
@@ -25,9 +26,11 @@ function ErrorComponent({ error, reset }: { error: Error; reset: () => void }) {
     <section className="ty">
       <div className="wrap">
         <h1>
-          頁面<span>載入失敗</span>
+          This page <span>didn’t load</span>
         </h1>
-        <p className="ty-sub">系統發生問題，請重新整理或回到首頁。</p>
+        <p className="ty-sub">
+          Something went wrong. Please refresh, or head back home.｜頁面載入失敗，請重新整理。
+        </p>
         <div className="hero-ctas">
           <button
             className="btn btn-primary"
@@ -36,10 +39,10 @@ function ErrorComponent({ error, reset }: { error: Error; reset: () => void }) {
               reset();
             }}
           >
-            再試一次
+            Try again
           </button>
           <a className="btn btn-ghost" href="/">
-            回首頁
+            Home
           </a>
         </div>
       </div>
@@ -47,9 +50,9 @@ function ErrorComponent({ error, reset }: { error: Error; reset: () => void }) {
   );
 }
 
-const DEFAULT_TITLE = "匯成交 iDealFlow.ai｜AI 自動化成交系統 — 讓成交自動發生";
+const DEFAULT_TITLE = "iDealFlow.ai | AI Sales Automation Platform — Let Deals Close Themselves";
 const DEFAULT_DESC =
-  "別再為了做行銷養一堆工具。匯成交 iDealFlow.ai 把 CRM、LINE／Email 行銷、銷售漏斗、AI 客服、預約與課程系統整合成一套，名單一進來，系統就幫你跟到成交。台灣在地中文化與導入支持。";
+  "Stop paying for a stack of disconnected tools. iDealFlow.ai unifies CRM, email & LINE marketing, funnels, AI chat, booking and courses in one platform that follows up every lead until it closes.";
 
 export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()({
   head: () => ({
@@ -58,12 +61,12 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { name: "viewport", content: "width=device-width, initial-scale=1" },
       { title: DEFAULT_TITLE },
       { name: "description", content: DEFAULT_DESC },
-      { name: "author", content: "匯鼎科技股份有限公司" },
+      { name: "author", content: "iDealFlow.ai" },
       { property: "og:title", content: DEFAULT_TITLE },
       { property: "og:description", content: DEFAULT_DESC },
       { property: "og:url", content: canonical("/") },
       { property: "og:image", content: DEFAULT_OG_IMAGE },
-      { property: "og:locale", content: "zh_TW" },
+      { property: "og:locale", content: "en_US" },
       { property: "og:site_name", content: SITE_NAME },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
@@ -76,7 +79,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
       {
         rel: "stylesheet",
-        href: "https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700;900&family=Sora:wght@400;600;700;800&display=swap",
+        href: "https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Noto+Sans+TC:wght@400;500;700;900&family=Sora:wght@400;600;700;800&display=swap",
       },
       { rel: "stylesheet", href: appCss },
     ],
@@ -88,8 +91,10 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
 });
 
 function RootShell({ children }: { children: ReactNode }) {
+  const pathname = useRouterState({ select: (st) => st.location.pathname });
+  const lang = pathname === "/tw" || pathname.startsWith("/tw/") ? "zh-Hant-TW" : "en";
   return (
-    <html lang="zh-Hant">
+    <html lang={lang}>
       <head>
         <HeadContent />
       </head>

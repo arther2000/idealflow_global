@@ -1,12 +1,13 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { BackToFormButton, BookingForm } from "@/components/site/BookingForm";
 import { LOGO_SRC, CONTACT_EMAIL } from "@/components/site/feature-links";
+import { RegionBanner } from "@/components/site/RegionBanner";
 import { pageHead } from "@/lib/seo";
 
-export const Route = createFileRoute("/booking")({
+export const Route = createFileRoute("/tw/booking")({
   head: () =>
     pageHead({
-      path: "/booking",
+      path: "/tw/booking",
       title: "免費實體講座報名｜匯成交 iDealFlow.ai",
       description:
         "10/3（六）14:00－19:00 免費實體講座，地點：台北市南京東路四段51-2號3樓。把官網、內容、獲客、自動回覆、客戶培育到成交串成一條自動化流程。填寫姓名、電話、Email 即可完成報名。",
@@ -17,13 +18,14 @@ export const Route = createFileRoute("/booking")({
 function BookingPage() {
   return (
     <div className="bk2">
+      <RegionBanner current="zh" />
       {/* 精簡頂列：只留回官網，避免分心 */}
       <header className="bk2-top">
         <div className="wrap">
-          <Link className="brand" to="/" aria-label="匯成交 iDealFlow.ai">
+          <Link className="brand" to="/tw" aria-label="匯成交 iDealFlow.ai">
             <img className="logo-img" src={LOGO_SRC} alt="iDealFlow.ai" />
           </Link>
-          <Link className="back" to="/">
+          <Link className="back" to="/tw">
             ← 回官網
           </Link>
         </div>
@@ -236,7 +238,7 @@ function BookingPage() {
           >
             <span>© 2026 匯鼎科技股份有限公司 iDealFlow.ai — 版權所有</span>
             <span>
-              <Link to="/" style={{ color: "var(--orange)" }}>
+              <Link to="/tw" style={{ color: "var(--orange)" }}>
                 回官網
               </Link>
               {" · 報名問題請洽 "}

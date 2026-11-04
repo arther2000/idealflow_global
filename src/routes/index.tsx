@@ -1,6 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { SiteNav } from "@/components/site/SiteNav";
 import { SiteFooter } from "@/components/site/SiteFooter";
+import { RegionBanner } from "@/components/site/RegionBanner";
 import { FaqList, Qa } from "@/components/site/Faq";
 import { useReveal } from "@/hooks/use-reveal";
 import { pageHead } from "@/lib/seo";
@@ -9,9 +10,9 @@ export const Route = createFileRoute("/")({
   head: () =>
     pageHead({
       path: "/",
-      title: "匯成交 iDealFlow.ai｜AI 自動化成交系統 — 讓成交自動發生",
+      title: "iDealFlow.ai | AI Sales Automation Platform — Let Deals Close Themselves",
       description:
-        "別再為了做行銷養一堆工具。匯成交 iDealFlow.ai 把 CRM、LINE／Email 行銷、銷售漏斗、AI 客服、預約與課程系統整合成一套，名單一進來，系統就幫你跟到成交。台灣在地中文化與導入支持。",
+        "CRM, LINE & email marketing, funnels, AI chat, booking and courses in one platform. Every lead gets followed up automatically, all the way to a closed deal.",
     }),
   component: IndexPage,
 });
@@ -21,7 +22,8 @@ function IndexPage() {
 
   return (
     <>
-      <SiteNav />
+      <RegionBanner current="en" />
+      <SiteNav locale="en" />
       {/* ===== Hero ===== */}
       <section className="hero" id="top">
         <div className="hero-glow"></div>
@@ -29,26 +31,28 @@ function IndexPage() {
         <div className="wrap hero-inner">
           <div className="hero-badge reveal">
             <span className="dot"></span>
-            更多流量 × 更多成交 × 更低成本
+            More traffic × More deals × Lower costs
           </div>
           <h1 className="reveal d1">
-            讓成交
-            <span className="grad">自動發生</span>
+            Let deals
+            <span className="grad"> close themselves.</span>
             <br />
-            讓系統成為你最強的數位員工
+            Meet your hardest-working digital employee.
           </h1>
           <p className="hero-sub reveal d2">
-            {"別再為了做行銷，同時養一堆工具。匯成交把 "}
-            <strong>CRM、LINE／Email 跟進、銷售頁、預約、AI 客服與課程系統</strong>
-            整合成一套——名單一進來，系統就開始幫你跟，一路跟到成交。
+            {"Stop paying for a stack of tools just to do marketing. iDealFlow.ai brings "}
+            <strong>CRM, LINE & email follow-up, sales pages, booking, AI chat and courses</strong>
+            {
+              " together in one system. The moment a lead comes in, it starts following up — and keeps going until the deal is done."
+            }
           </p>
           <div className="hero-ctas reveal d3">
-            <Link to="/booking" className="btn btn-primary">
-              {"免費報名講座 "}
+            <Link to="/contact" className="btn btn-primary">
+              {"Book a Demo "}
               <span className="arr">→</span>
             </Link>
             <a className="btn btn-ghost" href="#features">
-              看看系統能幫我做什麼
+              See what it can do
             </a>
           </div>
           <div className="hero-stats reveal d4">
@@ -56,28 +60,28 @@ function IndexPage() {
               <b>
                 8<i>+</i>
               </b>
-              <span>核心功能模組</span>
+              <span>Core modules</span>
             </div>
             <div className="hstat">
               <b>
                 500
                 <i>+</i>
               </b>
-              <span>SaaS 工具整合</span>
+              <span>SaaS integrations</span>
             </div>
             <div className="hstat">
               <b>
                 1M
                 <i>+</i>
               </b>
-              <span>企業採用底層引擎</span>
+              <span>Businesses on the core engine</span>
             </div>
             <div className="hstat">
               <b>
                 24
                 <i>/7</i>
               </b>
-              <span>全天候支援</span>
+              <span>Around-the-clock support</span>
             </div>
           </div>
           <div className="dash reveal">
@@ -89,24 +93,24 @@ function IndexPage() {
             </div>
             <div className="dash-body">
               <div className="kpi">
-                <label>新客戶</label>
+                <label>New customers</label>
                 <b>2,543</b> <span className="up">▲ 18%</span>
               </div>
               <div className="kpi">
-                <label>預約數</label>
+                <label>Bookings</label>
                 <b>1,268</b> <span className="up">▲ 24%</span>
               </div>
               <div className="kpi">
-                <label>成交金額</label>
+                <label>Revenue closed</label>
                 <b>$286,842</b> <span className="up">▲ 32%</span>
               </div>
               <div className="kpi">
-                <label>成交轉換率</label>
+                <label>Close rate</label>
                 <b>27.4%</b> <span className="up">▲ 15.6%</span>
               </div>
               <div className="dash-lower">
                 <div className="panel">
-                  <h5>營收趨勢（近 12 週）</h5>
+                  <h5>Revenue trend (last 12 weeks)</h5>
                   <div className="bars">
                     <i style={{ height: "32%" }}></i>
                     <i style={{ height: "44%" }}></i>
@@ -123,21 +127,21 @@ function IndexPage() {
                   </div>
                 </div>
                 <div className="panel">
-                  <h5>銷售漏斗 Pipeline</h5>
+                  <h5>Sales pipeline</h5>
                   <div className="funnel-row">
-                    <span>潛在客戶 Leads</span>
+                    <span>Leads</span>
                     <b>658</b>
                   </div>
                   <div className="funnel-row">
-                    <span>需求確認 Qualified</span>
+                    <span>Qualified</span>
                     <b>182</b>
                   </div>
                   <div className="funnel-row">
-                    <span>報價中 Proposal</span>
+                    <span>Proposal</span>
                     <b>95</b>
                   </div>
                   <div className="funnel-row">
-                    <span>已成交 Won</span>
+                    <span>Won</span>
                     <b className="tag">32 ✓</b>
                   </div>
                 </div>
@@ -146,36 +150,37 @@ function IndexPage() {
           </div>
         </div>
       </section>
-      {/* ===== 底層引擎 ===== */}
+      {/* ===== Core engine ===== */}
       <div className="engine">
         <div className="wrap engine-inner">
           <div className="engine-txt reveal">
             <h3>
-              {"以世界級底層平台，打造你的自動化成交系統 "}
+              {"Your sales automation, built on a world-class platform "}
               <span>· powered by GoHighLevel</span>
             </h3>
             <p>
-              底層核心引擎採用 AI 驅動的商業成長作業系統 GoHighLevel（2018
-              年創立於美國德州達拉斯），目前正在賦能全球超過百萬家企業，功能完整、持續更新、生態系遍佈全球。
+              At its core is GoHighLevel, the AI-powered business growth operating system founded in
+              Dallas, Texas in 2018. It already powers more than a million businesses worldwide —
+              feature-rich, constantly updated, with a truly global ecosystem.
             </p>
           </div>
           <div className="engine-badges reveal d1">
             <div className="ebadge">
               <b>2018</b>
-              <span>創立年份</span>
+              <span>Founded</span>
             </div>
             <div className="ebadge">
               <b>1M+</b>
-              <span>賦能企業</span>
+              <span>Businesses powered</span>
             </div>
             <div className="ebadge">
               <b>24/7</b>
-              <span>客服支援</span>
+              <span>Support</span>
             </div>
           </div>
         </div>
       </div>
-      {/* ===== 八大核心功能 ===== */}
+      {/* ===== Core features ===== */}
       <section className="features" id="features">
         <div className="wrap">
           <div className="center reveal">
@@ -183,13 +188,14 @@ function IndexPage() {
               CORE FEATURES
             </div>
             <h2 className="h2">
-              工具太多、月費太貴、資料四散？
+              Too many tools. Too many bills. Data everywhere.
               <br />
-              <em>一套系統</em>
-              通通搞定
+              <em>One system</em>
+              {" fixes all of it."}
             </h2>
             <p className="lead">
-              你需要的行銷工具，這裡通通有——而且彼此串在一起。從名單進來到成交入帳，每個環節系統都幫你顧好。
+              Every marketing tool you need, all in one place — and all connected. From the first
+              lead to the final payment, every step is covered.
             </p>
           </div>
           <div className="fgrid">
@@ -203,13 +209,13 @@ function IndexPage() {
                   <path d="M16 3.13a4 4 0 0 1 0 7.75" />
                 </svg>
               </div>
-              <h4>CRM 客戶管理</h4>
+              <h4>CRM</h4>
               <p>
-                每一個名單從哪來、聊過什麼、進行到哪一步，全部一目了然。不再有名單躺在 Excel
-                裡被遺忘。
+                See where every lead came from, what you talked about and where they stand — at a
+                glance. No more leads forgotten in a spreadsheet.
               </p>
               <span className="more">
-                {"了解更多 "}
+                {"Learn more "}
                 <span className="arr">→</span>
               </span>
             </Link>
@@ -221,12 +227,13 @@ function IndexPage() {
                   <path d="M22 2 15 22l-4-9-9-4 20-7z" />
                 </svg>
               </div>
-              <h4>LINE／Email 行銷自動化</h4>
+              <h4>LINE & Email Automation</h4>
               <p>
-                寫一次，系統幫你寄到成交為止。依標籤與行為自動追蹤、提醒、培養客戶，雙軌推進不漏接。
+                Write it once and it keeps sending until the deal closes. Follow up, remind and
+                nurture automatically based on tags and behavior — across both channels.
               </p>
               <span className="more">
-                {"了解更多 "}
+                {"Learn more "}
                 <span className="arr">→</span>
               </span>
             </Link>
@@ -237,10 +244,13 @@ function IndexPage() {
                   <path d="M3 4h18l-7 8v6l-4 2v-8L3 4z" />
                 </svg>
               </div>
-              <h4>銷售漏斗＋網站</h4>
-              <p>不會寫程式也能做出會成交的頁面。300+ 模板拖拉即用，內建 A/B 測試與漏斗分析。</p>
+              <h4>Funnels & Websites</h4>
+              <p>
+                Build pages that convert — no code required. 300+ drag-and-drop templates, with
+                built-in A/B testing and funnel analytics.
+              </p>
               <span className="more">
-                {"了解更多 "}
+                {"Learn more "}
                 <span className="arr">→</span>
               </span>
             </Link>
@@ -256,10 +266,10 @@ function IndexPage() {
                   <path d="M9 13v2" />
                 </svg>
               </div>
-              <h4>AI 自動回覆與分流</h4>
+              <h4>AI Replies & Routing</h4>
               <p>
-                半夜的訊息也有人接。AI 智能應答、意圖分類、自動分派，LINE、Messenger、IG
-                多通路都能聊。
+                Even 2 a.m. messages get answered. AI responds, detects intent and routes
+                conversations automatically across LINE, Messenger and Instagram.
               </p>
             </div>
             <Link to="/calendar" className="fcard reveal">
@@ -273,12 +283,13 @@ function IndexPage() {
                   <path d="m9 16 2 2 4-4" />
                 </svg>
               </div>
-              <h4>智能預約系統</h4>
+              <h4>Smart Booking</h4>
               <p>
-                讓客戶自己約、系統自己提醒。一對一諮詢、多人課程、團隊輪流分配通通支援，大幅降低放鳥率。
+                Customers book themselves. The system sends the reminders. One-on-one sessions,
+                group classes and round-robin team scheduling — with far fewer no-shows.
               </p>
               <span className="more">
-                {"了解更多 "}
+                {"Learn more "}
                 <span className="arr">→</span>
               </span>
             </Link>
@@ -290,8 +301,11 @@ function IndexPage() {
                   <path d="m7 15 4-6 4 3 5-7" />
                 </svg>
               </div>
-              <h4>數據追蹤與成效分析</h4>
-              <p>錢花在哪、客人從哪來、卡在哪一關，儀表板一眼看懂。讓數據說話，讓成長有據可循。</p>
+              <h4>Analytics & Reporting</h4>
+              <p>
+                Where your money goes, where customers come from, where they drop off — all on one
+                dashboard. Let the data guide your growth.
+              </p>
             </div>
             <div className="fcard reveal d2">
               <span className="num">07</span>
@@ -301,9 +315,10 @@ function IndexPage() {
                   <path d="m10 8 6 4-6 4V8z" />
                 </svg>
               </div>
-              <h4>線上課程系統</h4>
+              <h4>Online Courses</h4>
               <p>
-                打造自己的課程平台、會員專區與學員社群，付款後自動開通、自動發證書——不用再被平台抽成。
+                Launch your own course platform, member area and student community. Instant access
+                and certificates after payment — and no platform taking a cut.
               </p>
             </div>
             <Link to="/automation" className="fcard reveal d3">
@@ -313,20 +328,20 @@ function IndexPage() {
                   <path d="M13 2 3 14h9l-1 8 10-12h-9l1-8z" />
                 </svg>
               </div>
-              <h4>自動化工作流程</h4>
+              <h4>Workflow Automation</h4>
               <p>
-                你睡覺時，系統還在幫你跟進客戶。表單、預約、付款皆可觸發，串接 CRM、通知、API 與 AI
-                判斷。
+                While you sleep, it keeps following up. Trigger workflows from forms, bookings or
+                payments, and connect your CRM, notifications, APIs and AI decisions.
               </p>
               <span className="more">
-                {"了解更多 "}
+                {"Learn more "}
                 <span className="arr">→</span>
               </span>
             </Link>
           </div>
         </div>
       </section>
-      {/* ===== 適用對象 ===== */}
+      {/* ===== Who it's for ===== */}
       <section className="audience" id="audience">
         <div className="wrap">
           <div className="center reveal">
@@ -334,14 +349,14 @@ function IndexPage() {
               WHO IS IT FOR
             </div>
             <h2 className="h2">
-              不管你做哪一行，
+              Whatever your business,
               <br />
-              都有一條
-              <em>自動成交</em>
-              的路
+              {"there’s a path to "}
+              <em>automated sales.</em>
             </h2>
             <p className="lead">
-              四種生意型態，四套現成的自動化打法。找到你的那一條，剩下的交給系統。
+              Four business models. Four ready-made automation playbooks. Find yours, and let the
+              system handle the rest.
             </p>
           </div>
           <div className="agrid">
@@ -354,18 +369,21 @@ function IndexPage() {
                     <path d="M9 21v-6h6v6" />
                   </svg>
                 </div>
-                <h4>在地服務業</h4>
+                <h4>Local Services</h4>
               </div>
-              <p className="aq">美容美髮、健身瑜伽、診所、餐飲——想不加人手，也接得住每一筆詢問？</p>
+              <p className="aq">
+                Salons, gyms, yoga studios, clinics, restaurants — want to catch every inquiry
+                without adding staff?
+              </p>
               <span className="loop">
-                {"成交閉環：引流 → 進店 → 消費 → "}
-                <b>回購 → 推薦</b>
+                {"The loop: Attract → Visit → Purchase → "}
+                <b>Return → Refer</b>
               </span>
               <ul className="alist">
-                <li>Google 評價自動邀請，好評數穩定累積</li>
-                <li>預約自動提醒，客人放鳥率大幅下降</li>
-                <li>AI 客服 24/7 接住每一則深夜訊息</li>
-                <li>LINE／Email 自動回訪，喚醒沉睡客戶</li>
+                <li>Automatic Google review requests that keep 5-star reviews coming</li>
+                <li>Automated booking reminders that cut no-shows dramatically</li>
+                <li>A 24/7 AI assistant that answers every late-night message</li>
+                <li>LINE & email check-ins that win back lapsed customers</li>
               </ul>
             </div>
             <div className="acard reveal d1">
@@ -376,18 +394,20 @@ function IndexPage() {
                     <path d="M6 12v5c3 3 9 3 12 0v-5" />
                   </svg>
                 </div>
-                <h4>講師・顧問・知識變現</h4>
+                <h4>Coaches, Consultants & Educators</h4>
               </div>
-              <p className="aq">想讓課程和諮詢服務，24 小時都有人報名買單？</p>
+              <p className="aq">
+                Want people signing up for your courses and sessions around the clock?
+              </p>
               <span className="loop">
-                {"成交閉環：引流 → 報名 → 上課 → "}
-                <b>復購 → 推薦</b>
+                {"The loop: Attract → Register → Attend → "}
+                <b>Rebuy → Refer</b>
               </span>
               <ul className="alist">
-                <li>講座報名頁快速上線，模板直接套用</li>
-                <li>報名後 LINE＋Email 自動提醒，出席率有感提升</li>
-                <li>線上課程、會員專區與學員社群一站搞定</li>
-                <li>付款後自動開通權限，半夜也能成交</li>
+                <li>Event registration pages live in minutes with ready-made templates</li>
+                <li>Automatic LINE + email reminders that noticeably boost attendance</li>
+                <li>Online courses, member areas and communities in one place</li>
+                <li>Instant access after payment — so you close sales even at midnight</li>
               </ul>
             </div>
             <div className="acard reveal d2">
@@ -398,18 +418,20 @@ function IndexPage() {
                     <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16" />
                   </svg>
                 </div>
-                <h4>B2B 與代理商</h4>
+                <h4>B2B & Agencies</h4>
               </div>
-              <p className="aq">想讓詢盤量穩定成長，業務團隊不再漏單？</p>
+              <p className="aq">
+                Want a steady stream of inquiries — and a sales team that never drops a lead?
+              </p>
               <span className="loop">
-                {"成交閉環：引流 → 詢盤 → 跟進 → "}
-                <b>成交</b>
+                {"The loop: Attract → Inquire → Follow up → "}
+                <b>Close</b>
               </span>
               <ul className="alist">
-                <li>表單詢盤自動進 CRM，即時分派給業務</li>
-                <li>培育信自動寄送，客戶熱度不冷場</li>
-                <li>銷售管道視覺化，每一案進度一眼掌握</li>
-                <li>來源數據即時統計，預算花在刀口上</li>
+                <li>Form inquiries flow straight into the CRM and get assigned instantly</li>
+                <li>Automated nurture emails keep prospects warm</li>
+                <li>A visual pipeline shows every deal’s status at a glance</li>
+                <li>Real-time source tracking puts your budget where it counts</li>
               </ul>
             </div>
             <div className="acard reveal d3">
@@ -421,24 +443,26 @@ function IndexPage() {
                     <path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12" />
                   </svg>
                 </div>
-                <h4>電商品牌</h4>
+                <h4>E-commerce Brands</h4>
               </div>
-              <p className="aq">想把流量變訂單，再把訂單變成回頭客？</p>
+              <p className="aq">
+                Want to turn traffic into orders — and orders into repeat customers?
+              </p>
               <span className="loop">
-                {"成交閉環：引流 → 進站 → 下單 → "}
-                <b>回購</b>
+                {"The loop: Attract → Visit → Order → "}
+                <b>Reorder</b>
               </span>
               <ul className="alist">
-                <li>棄單自動挽回，把差一步的訂單追回來</li>
-                <li>會員分眾再行銷，回購訊息剛好打中需求</li>
-                <li>AI 客服全通路即時回覆、引導下單</li>
-                <li>訂單、發票、出貨通知全自動寄送</li>
+                <li>Abandoned-cart recovery that wins back almost-sales</li>
+                <li>Segmented remarketing that lands the right offer at the right time</li>
+                <li>AI chat that answers instantly on every channel and guides the sale</li>
+                <li>Order, invoice and shipping notifications, fully automated</li>
               </ul>
             </div>
           </div>
         </div>
       </section>
-      {/* ===== 三大特點 ===== */}
+      {/* ===== Three advantages ===== */}
       <section className="three" id="three">
         <div className="wrap">
           <div className="center reveal">
@@ -446,13 +470,15 @@ function IndexPage() {
               WHY iDealFlow.ai
             </div>
             <h2 className="h2">
-              為什麼選擇匯成交？
+              Why iDealFlow.ai?
               <br />
-              因為我們有
-              <em>三大在地優勢</em>
+              {"Three advantages "}
+              <em>built for Asia-Pacific.</em>
             </h2>
             <p className="lead">
-              買系統不難，難的是用起來。我們給你的不只是一套系統，而是一整套中文化、培訓與導入方案——確保你的團隊真的會用、真的有效。
+              Buying software is easy. Getting your team to use it is the hard part. That’s why you
+              get more than a platform — you get localization, training and hands-on onboarding, so
+              your team actually uses it and sees results.
             </p>
           </div>
           <div className="tgrid">
@@ -466,15 +492,18 @@ function IndexPage() {
                 </svg>
               </div>
               <h3>
-                全球唯一
+                The only multilingual
                 <br />
-                多語中文化套件
+                localization suite
               </h3>
-              <p>由匯鼎科技自行開發的完整中文化方案，讓世界級系統真正說你的語言。</p>
+              <p>
+                A complete localization layer built in-house by our team, so a world-class platform
+                truly speaks your customers’ language.
+              </p>
               <ul className="tlist">
-                <li>支援繁體中文、簡體中文、日文</li>
-                <li>介面在地化，大幅降低導入門檻</li>
-                <li>提升團隊使用率與上手速度</li>
+                <li>Traditional Chinese, Simplified Chinese and Japanese</li>
+                <li>Fully localized interface for a faster rollout</li>
+                <li>Higher team adoption and a shorter learning curve</li>
               </ul>
             </div>
             <div className="tcard reveal d1">
@@ -485,15 +514,18 @@ function IndexPage() {
                 </svg>
               </div>
               <h3>
-                LINE 套件＋
+                Native LINE suite +
                 <br />
-                台灣金流原生支援
+                Taiwan payment gateways
               </h3>
-              <p>台灣人的生意在 LINE 上談。我們的訊息與金流整合，就是為這裡的習慣而生。</p>
+              <p>
+                Across Asia, business happens on LINE. Our messaging and payment integrations are
+                built for the way these markets actually work.
+              </p>
               <ul className="tlist">
-                <li>唯一支援 Flex Message 的在地化應用</li>
-                <li>逐步開放原生支援台灣主流金流系統</li>
-                <li>符合台灣文化與客戶溝通習慣</li>
+                <li>The only localized solution with Flex Message support</li>
+                <li>Native support for Taiwan’s leading payment gateways, rolling out now</li>
+                <li>Designed around local culture and customer communication</li>
               </ul>
             </div>
             <div className="tcard reveal d2">
@@ -505,21 +537,24 @@ function IndexPage() {
                 </svg>
               </div>
               <h3>
-                完整教育訓練
+                Complete training
                 <br />
-                與導入支持
+                and onboarding
               </h3>
-              <p>整合線上課程與線下實體教室，陪你的團隊真正學會、真正落地使用。</p>
+              <p>
+                Online courses plus in-person classroom training, so your team truly learns the
+                system and puts it to work.
+              </p>
               <ul className="tlist">
-                <li>系統操作、流程教學、導入基礎訓練</li>
-                <li>線上教育系統＋實體教室雙軌學習</li>
-                <li>依需求協助完成基礎導入與啟動</li>
+                <li>Platform basics, workflow tutorials and onboarding training</li>
+                <li>Learn online or in the classroom — your choice</li>
+                <li>Hands-on help with setup and launch, tailored to your needs</li>
               </ul>
             </div>
           </div>
         </div>
       </section>
-      {/* ===== 整合生態 ===== */}
+      {/* ===== Integrations ===== */}
       <section className="integrations" id="integrations">
         <div className="wrap">
           <div className="center reveal">
@@ -527,12 +562,14 @@ function IndexPage() {
               ECOSYSTEM
             </div>
             <h2 className="h2">
-              {"對接全球 "}
+              {"Connects to "}
               <em>500+</em>
-              {" SaaS 生態鏈"}
+              {" SaaS tools worldwide"}
             </h2>
             <p className="lead">
-              你現在用的工具，大概率都能接。把分散工具整合成一套自動化成交系統，資料再也不用複製貼上。
+              {
+                "Chances are, the tools you use today plug right in. Bring them together into one automated sales system — and never copy-paste data again."
+              }
             </p>
           </div>
           <div className="chips reveal">
@@ -546,7 +583,7 @@ function IndexPage() {
             </span>
             <span className="chip">
               <span className="cdot"></span>
-              LINE 官方帳號
+              LINE Official Account
             </span>
             <span className="chip">
               <span className="cdot"></span>
@@ -574,17 +611,20 @@ function IndexPage() {
             </span>
             <span className="chip">
               <span className="cdot"></span>
-              API / Webhook 自建整合
+              Custom API / Webhook integrations
             </span>
           </div>
           <p className="int-note reveal d1">
-            涵蓋
-            <b>社群與廣告、團隊協作、電商與金流、會議與預約、內容與行銷</b>
-            五大類別，還能透過 API 與 Webhook 串接你的自建系統。
+            {"Covering five categories — "}
+            <b>
+              social & ads, team collaboration, e-commerce & payments, meetings & booking, and
+              content & marketing
+            </b>
+            {" — plus API and webhook connections to your own systems."}
           </p>
         </div>
       </section>
-      {/* ===== 成功案例 ===== */}
+      {/* ===== Success stories ===== */}
       <section className="cases" id="cases">
         <div className="wrap">
           <div className="center reveal">
@@ -592,36 +632,41 @@ function IndexPage() {
               SUCCESS STORIES
             </div>
             <h2 className="h2">
-              成功案例：
-              <em>把流量變成出席，把出席變成成交</em>
+              {"Success stories: "}
+              <em>traffic into attendees, attendees into customers.</em>
             </h2>
             <p className="lead">
-              用 iDealFlow.ai 放大報名、出席、成交與課程經營——這些是真實發生的數字。
+              {
+                "Real numbers from businesses using iDealFlow.ai to grow sign-ups, attendance, sales and course revenue."
+              }
             </p>
           </div>
           <div className="cgrid">
             <div className="ccard reveal">
               <div className="chead">
-                <div className="avatar">亞</div>
+                <div className="avatar">A</div>
                 <div>
-                  <h4>亞瑟教練</h4>
-                  <span>AI 政府補助案講師｜月入百萬級</span>
+                  <h4>Coach Arthur Wu</h4>
+                  <span>AI & government grants instructor | Seven-figure monthly revenue</span>
                 </div>
               </div>
               <ul className="cpoints">
-                <li>以 iDealFlow.ai 承接政府補助案教學流程</li>
-                <li>整合報名頁、LINE／Email 提醒、名單追蹤與後續成交</li>
-                <li>以自動化提升講座出席與成交效率</li>
-                <li>獲中時新聞網等媒體專訪報導</li>
+                <li>Runs his entire grant-training business on iDealFlow.ai</li>
+                <li>
+                  Registration pages, LINE & email reminders, lead tracking and sales — all
+                  connected
+                </li>
+                <li>Automation that lifts seminar attendance and close rates</li>
+                <li>Featured in China Times and other media</li>
               </ul>
               <div className="cmetrics">
                 <div className="metric">
                   <b>45%</b>
-                  <span>講座出席率</span>
+                  <span>Seminar attendance</span>
                 </div>
                 <div className="metric">
-                  <b>百萬級</b>
-                  <span>月收入等級</span>
+                  <b>NT$1M+</b>
+                  <span>Monthly revenue</span>
                 </div>
               </div>
             </div>
@@ -629,34 +674,34 @@ function IndexPage() {
               <div className="chead">
                 <div className="avatar">E</div>
                 <div>
-                  <h4>Emma 老師</h4>
-                  <span>親子教養導師｜知識變現導師品牌</span>
+                  <h4>Emma</h4>
+                  <span>Parenting coach | Knowledge-business brand</span>
                 </div>
               </div>
               <ul className="cpoints">
-                <li>導入 iDealFlow.ai 後快速完成 onboarding</li>
-                <li>運用自動化完成報名承接、訊息追蹤、講座出席與課程經營</li>
-                <li>系統化經營名單，穩定成長中</li>
-                <li>學員口碑轉介紹，持續帶進新名單</li>
+                <li>Fully onboarded on iDealFlow.ai in no time</li>
+                <li>Automated registrations, follow-ups, seminar attendance and course delivery</li>
+                <li>A systematic approach to leads, with steady growth</li>
+                <li>Student word-of-mouth keeps bringing in new leads</li>
               </ul>
               <div className="cmetrics">
                 <div className="metric">
-                  <b>10萬+</b>
-                  <span>20 天月收入突破</span>
+                  <b>NT$100K+</b>
+                  <span>Monthly revenue in 20 days</span>
                 </div>
                 <div className="metric">
                   <b>56%+</b>
-                  <span>講座出席率</span>
+                  <span>Seminar attendance</span>
                 </div>
               </div>
             </div>
           </div>
           <p className="cases-note reveal">
-            從講師、顧問到教育品牌，iDealFlow.ai 都能幫你把名單變成營收。
+            From coaches and consultants to education brands, iDealFlow.ai turns leads into revenue.
           </p>
         </div>
       </section>
-      {/* ===== 方案價格 ===== */}
+      {/* ===== Pricing ===== */}
       <section className="pricing" id="pricing">
         <div className="wrap">
           <div className="center reveal">
@@ -664,81 +709,82 @@ function IndexPage() {
               {"PRICING & ONBOARDING"}
             </div>
             <h2 className="h2">
-              {"購買方案與 "}
+              {"Pricing & "}
               <em>Onboarding</em>
-              {" 流程"}
             </h2>
             <p className="lead">
-              從註冊到啟用，我們一路陪跑。報名後依你的需求協助完成基礎導入，快速開始。
+              {
+                "From sign-up to launch, we’re with you every step. We’ll help you complete your initial setup based on your needs, so you can get started fast."
+              }
             </p>
           </div>
           <div className="pwrap">
             <div className="pcard reveal">
-              <span className="ribbon">★ 超值導入方案</span>
+              <span className="ribbon">★ Best-value starter plan</span>
               <div className="price">
                 <span className="cur">US$</span>
                 1,197
-                <small>{" / 年"}</small>
+                <small>{" / year"}</small>
               </div>
-              <p className="psub">取得以 GoHighLevel 為基底引擎的全功能系統</p>
+              <p className="psub">The full-featured platform, powered by GoHighLevel</p>
               <ul className="plist">
                 <li>
-                  {"全功能系統（價值超過 "}
-                  <b>NT$100,000</b>）
+                  {"Full-featured platform (worth over "}
+                  <b>NT$100,000</b>)
                 </li>
-                <li>教育培訓與線上學習資源</li>
-                <li>線上教育系統使用權</li>
-                <li>基礎導入與啟動協助</li>
-                <li>全球唯一多語中文化套件</li>
+                <li>Training and online learning resources</li>
+                <li>Access to our online learning platform</li>
+                <li>Initial setup and launch support</li>
+                <li>The only multilingual localization suite</li>
               </ul>
               <Link to="/start" className="btn btn-primary">
-                {"了解 14 天啟動計畫 "}
+                {"Explore the 14-Day Launch Plan "}
                 <span className="arr">→</span>
               </Link>
             </div>
             <div className="steps reveal d1">
-              <h3>六步驟完成導入</h3>
-              <p>由團隊全程陪跑，從點擊連結到正式啟用。</p>
+              <h3>Up and running in six steps</h3>
+              <p>Our team guides you all the way, from your first click to go-live.</p>
               <div className="step">
                 <div className="sn">1</div>
                 <div>
-                  <h5>點擊連結</h5>
-                  <p>完成註冊與購買</p>
+                  <h5>Sign up</h5>
+                  <p>Register and complete your purchase</p>
                 </div>
               </div>
               <div className="step">
                 <div className="sn">2</div>
                 <div>
-                  <h5>填寫表單</h5>
-                  <p>提交報名與需求資料</p>
+                  <h5>Tell us about you</h5>
+                  <p>Share your details and goals</p>
                 </div>
               </div>
               <div className="step">
                 <div className="sn">3</div>
                 <div>
-                  <h5>選擇導入方向</h5>
-                  <p>例如：自動化、流程規劃、系統應用</p>
+                  <h5>Choose your focus</h5>
+                  <p>Automation, process design, platform setup and more</p>
                 </div>
               </div>
               <div className="step">
                 <div className="sn">4</div>
                 <div>
-                  <h5>安排訓練</h5>
-                  <p>由團隊安排啟動與教學</p>
+                  <h5>Schedule training</h5>
+                  <p>Our team sets up your kickoff and lessons</p>
                 </div>
               </div>
               <div className="step">
                 <div className="sn">5</div>
                 <div>
-                  <h5>開始學習</h5>
-                  <p>到教室上課或線上學習</p>
+                  <h5>Start learning</h5>
+                  <p>In the classroom or online</p>
                 </div>
               </div>
               <div className="step">
                 <div className="sn">6</div>
                 <div>
-                  <h5>正式啟用</h5>
-                  <p>開始導入並啟動系統</p>
+                  <h5>Go live</h5>
+                  <p>Launch your system and start growing</p>
                 </div>
               </div>
             </div>
@@ -752,72 +798,82 @@ function IndexPage() {
             <div className="eyebrow" style={{ justifyContent: "center" }}>
               FAQ
             </div>
-            <h2 className="h2">常見問題</h2>
+            <h2 className="h2">Frequently asked questions</h2>
           </div>
           <FaqList className="faq-list reveal">
-            <Qa question="匯成交 iDealFlow.ai 和其他 CRM 工具有什麼不同？">
+            <Qa question="How is iDealFlow.ai different from other CRMs?">
               <p>
-                一般 CRM 只做客戶管理，iDealFlow.ai
-                是一套完整的「自動化成交系統」：從名單蒐集、LINE／Email 自動追蹤、銷售漏斗、AI
-                對話回覆、預約排程到課程變現，全部在同一套系統完成。更重要的是，我們提供全球唯一的多語中文化套件與台灣在地導入支持。
+                A typical CRM just manages contacts. iDealFlow.ai is a complete sales automation
+                system: lead capture, LINE & email follow-up, sales funnels, AI chat, booking and
+                course sales — all in one platform. On top of that, you get the only multilingual
+                localization suite of its kind, plus hands-on onboarding support for Asia-Pacific
+                markets.
               </p>
             </Qa>
-            <Qa question="我不懂技術，導入會不會很困難？">
+            <Qa question="I’m not technical. Will it be hard to get started?">
               <p>
-                不會。方案內含完整教育訓練與導入支持：整合線上課程與線下實體教室，涵蓋系統操作、流程教學與導入基礎訓練，由團隊協助你依需求完成基礎導入，直到系統正式啟用。
+                Not at all. Every plan includes full training and onboarding — online courses plus
+                in-person classroom sessions covering platform basics, workflows and setup. Our team
+                helps you complete your initial setup based on your needs, right through to go-live.
               </p>
             </Qa>
-            <Qa question="系統支援 LINE 嗎？符合台灣的使用習慣嗎？">
+            <Qa question="Does it support LINE?">
               <p>
-                支援，而且是我們的核心優勢之一。LINE 套件由匯鼎科技團隊自行開發，是唯一支援 Flex
-                Message
-                在地化應用的方案，完全符合台灣文化使用習慣，同時逐步開放原生支援台灣主流金流系統。
+                Yes — it’s one of our biggest strengths. Our LINE suite is built in-house by the
+                iDealFlow team and is the only localized solution with Flex Message support. It’s
+                designed around how businesses in LINE-first markets communicate, and native support
+                for Taiwan’s leading payment gateways is rolling out now.
               </p>
             </Qa>
-            <Qa question="底層引擎 GoHighLevel 可靠嗎？">
+            <Qa question="Is GoHighLevel a reliable foundation?">
               <p>
-                GoHighLevel 是 2018 年創立於美國德州達拉斯的 AI
-                驅動商業成長作業系統，目前賦能全球超過百萬家企業，提供 24/7 客服支援，每年舉辦
-                LevelUp／HighLevel Summit 年度峰會，功能持續更新、全球生態系完整。
+                GoHighLevel is an AI-powered business growth operating system founded in Dallas,
+                Texas in 2018. It powers more than a million businesses worldwide, offers 24/7
+                support, hosts its annual LevelUp / HighLevel Summit, and ships updates constantly —
+                backed by a mature global ecosystem.
               </p>
             </Qa>
-            <Qa question="方案費用包含哪些內容？">
+            <Qa question="What’s included in the plan?">
               <p>
-                年費方案 US$1,197／年，包含以 GoHighLevel 為基底引擎的全功能系統（價值超過
-                NT$100,000）、教育培訓與線上學習資源、線上教育系統使用權，以及基礎導入與啟動協助。
+                The annual plan is US$1,197/year and includes the full-featured platform powered by
+                GoHighLevel (worth over NT$100,000), training and online learning resources, access
+                to our online learning platform, and initial setup and launch support.
               </p>
             </Qa>
-            <Qa question="什麼樣的人適合使用 iDealFlow.ai？">
+            <Qa question="Who is iDealFlow.ai for?">
               <p>
-                特別適合講師、顧問、教練、知識型創作者與中小企業，在地服務業、B2B
-                與電商品牌也都有現成打法。只要你的生意需要「把名單變成成交」，iDealFlow.ai
-                都能幫你自動化整個流程。
+                {
+                  "It’s especially well suited to coaches, consultants, trainers, knowledge creators and small businesses — with ready-made playbooks for local services, B2B and e-commerce, too. If your business depends on turning leads into sales, iDealFlow.ai can automate the entire journey."
+                }
               </p>
             </Qa>
           </FaqList>
         </div>
       </section>
-      {/* ===== 尾段 CTA ===== */}
+      {/* ===== Final CTA ===== */}
       <section className="final">
         <div className="wrap">
           <h2 className="reveal">
-            讓每一個名單，
-            <br />都<span>不再被浪費</span>
+            Every lead.
+            <br />
+            <span>Never wasted again.</span>
           </h2>
-          <p className="reveal d1">現在就開始，讓匯成交 iDealFlow.ai 成為你最強的數位員工。</p>
+          <p className="reveal d1">
+            Get started today, and make iDealFlow.ai your hardest-working digital employee.
+          </p>
           <div className="hero-ctas reveal d2">
-            <Link to="/booking" className="btn btn-primary">
-              {"免費報名講座 "}
+            <Link to="/contact" className="btn btn-primary">
+              {"Book a Demo "}
               <span className="arr">→</span>
             </Link>
             <a className="btn btn-ghost" href="#pricing">
-              查看方案內容
+              See Pricing
             </a>
           </div>
         </div>
       </section>
       {/* ===== Footer ===== */}
-      <SiteFooter />
+      <SiteFooter locale="en" />
     </>
   );
 }

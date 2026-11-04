@@ -15,6 +15,31 @@ export function canonical(path: string): string {
   return `${SITE_URL}${normalized}`;
 }
 
+/** Pages that exist in both locales (English at root, 繁體中文 under /tw). */
+const PAIRED = [
+  "/",
+  "/start",
+  "/crm",
+  "/email",
+  "/funnel",
+  "/calendar",
+  "/automation",
+  "/ai-content",
+  "/reputation",
+];
+
+/** hreflang alternates for a path, if it has a counterpart in the other locale. */
+function alternates(path: string): { rel: string; hrefLang: string; href: string }[] {
+  const en = path === "/tw" ? "/" : path.startsWith("/tw/") ? path.slice(3) : path;
+  if (!PAIRED.includes(en)) return [];
+  const zh = en === "/" ? "/tw" : `/tw${en}`;
+  return [
+    { rel: "alternate", hrefLang: "en", href: canonical(en) },
+    { rel: "alternate", hrefLang: "zh-Hant-TW", href: canonical(zh) },
+    { rel: "alternate", hrefLang: "x-default", href: canonical(en) },
+  ];
+}
+
 type PageHeadInput = {
   path: string;
   title: string;
@@ -36,25 +61,22 @@ export function pageHead({ path, title, description, noindex }: PageHeadInput) {
     ...(description ? [{ property: "og:description", content: description }] : []),
     { property: "og:url", content: url },
     { property: "og:image", content: DEFAULT_OG_IMAGE },
-    { property: "og:locale", content: "zh_TW" },
+    {
+      property: "og:locale",
+      content: path === "/tw" || path.startsWith("/tw/") ? "zh_TW" : "en_US",
+    },
     { property: "og:site_name", content: SITE_NAME },
     { property: "og:type", content: "website" },
     { name: "twitter:card", content: "summary_large_image" },
     { name: "twitter:image", content: DEFAULT_OG_IMAGE },
   );
-  return { meta, links: [{ rel: "canonical", href: url }] };
+  return { meta, links: [{ rel: "canonical", href: url }, ...alternates(path)] };
 }
 
 /** Public pages included in the sitemap. */
 export const STATIC_PAGES: { path: string; lastmod: string }[] = [
-  { path: "/", lastmod: "2026-11-04" },
-  { path: "/start", lastmod: "2026-11-04" },
-  { path: "/booking", lastmod: "2026-11-04" },
-  { path: "/crm", lastmod: "2026-11-04" },
-  { path: "/email", lastmod: "2026-11-04" },
-  { path: "/funnel", lastmod: "2026-11-04" },
-  { path: "/calendar", lastmod: "2026-11-04" },
-  { path: "/automation", lastmod: "2026-11-04" },
-  { path: "/ai-content", lastmod: "2026-11-04" },
-  { path: "/reputation", lastmod: "2026-11-04" },
+  ...PAIRED.map((path) => ({ path, lastmod: "2026-11-04" })),
+  { path: "/contact", lastmod: "2026-11-04" },
+  ...PAIRED.map((path) => ({ path: path === "/" ? "/tw" : `/tw${path}`, lastmod: "2026-11-04" })),
+  { path: "/tw/booking", lastmod: "2026-11-04" },
 ];

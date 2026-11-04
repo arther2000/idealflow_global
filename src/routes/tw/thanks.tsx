@@ -5,7 +5,7 @@ import { pageHead } from "@/lib/seo";
 
 type ThanksSearch = { s?: string; n?: string };
 
-export const Route = createFileRoute("/thanks")({
+export const Route = createFileRoute("/tw/thanks")({
   validateSearch: (search: Record<string, unknown>): ThanksSearch => {
     const out: ThanksSearch = {};
     if (typeof search["s"] === "string") out.s = search["s"].slice(0, 40);
@@ -14,7 +14,7 @@ export const Route = createFileRoute("/thanks")({
   },
   head: () =>
     pageHead({
-      path: "/thanks",
+      path: "/tw/thanks",
       title: "報名完成｜匯成交 iDealFlow.ai 免費實體講座",
       noindex: true,
     }),
@@ -88,10 +88,10 @@ function ThanksPage() {
         </div>
 
         <div className="hero-ctas">
-          <Link className="btn btn-primary" to="/start">
+          <Link className="btn btn-primary" to="/tw/start">
             先看看 14 天啟動計畫 <span className="arr">→</span>
           </Link>
-          <Link className="btn btn-ghost" to="/">
+          <Link className="btn btn-ghost" to="/tw">
             回官網
           </Link>
         </div>

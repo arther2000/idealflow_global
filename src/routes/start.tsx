@@ -1,6 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { SiteNav } from "@/components/site/SiteNav";
 import { SiteFooter } from "@/components/site/SiteFooter";
+import { RegionBanner } from "@/components/site/RegionBanner";
 import { FaqList, Qa } from "@/components/site/Faq";
 import { useReveal } from "@/hooks/use-reveal";
 import { pageHead } from "@/lib/seo";
@@ -10,9 +11,9 @@ export const Route = createFileRoute("/start")({
   head: () =>
     pageHead({
       path: "/start",
-      title: "14 天啟動計畫｜匯成交 iDealFlow.ai — 讓生意自動運轉",
+      title: "14-Day Launch Program | iDealFlow.ai — Put Your Business on Autopilot",
       description:
-        "14 天內打造自動化成交系統：全功能系統＋已配置模組＋實操課程＋中文技術支援。不用再學一堆課程、不用養十套工具、不用高薪請技術團隊。",
+        "Launch an automated sales system in 14 days: the full platform, pre-built modules, hands-on training and live support. No more courses, tool sprawl or pricey tech hires.",
     }),
   component: StartPage,
 });
@@ -23,58 +24,63 @@ function StartPage() {
 
   return (
     <>
-      <SiteNav variant="start" />
+      <RegionBanner current="en" />
+      <SiteNav locale="en" variant="start" />
       {/* Hero */}
       <section className="hero" style={{ paddingBottom: "110px" }}>
         <div className="hero-glow"></div>
         <div className="hero-glow g2"></div>
         <div className="wrap hero-inner">
           <div className="fp-badgeline reveal">
-            <span className="fp-chip">🏪 在地店家老闆</span>
-            <span className="fp-chip">🎓 講師・顧問・教練</span>
-            <span className="fp-chip">💼 中小企業主</span>
+            <span className="fp-chip">🏪 Local business owners</span>
+            <span className="fp-chip">🎓 Coaches, consultants & educators</span>
+            <span className="fp-chip">💼 Small business owners</span>
           </div>
           <h1 className="reveal d1">
-            <span className="grad">14 天</span>
-            ，讓你的生意
+            <span className="grad">14 days</span>
+            {" to a business that"}
             <br />
-            自動運轉起來
+            runs itself.
           </h1>
           <p className="hero-sub reveal d2">
-            系統、模組、課程、支援
-            <strong>一次到位</strong>
-            ——不是又一套要自己摸索的工具，而是一條已經鋪好的自動化成交流水線。
+            {"System, modules, training and support — "}
+            <strong>all in one.</strong>
+            {
+              " Not another tool you have to figure out on your own, but an automated sales pipeline that’s already built for you."
+            }
           </p>
           <div className="fp-nos reveal d3">
             <div className="fp-no">
               <span className="x">✗</span>
-              不用再學一堆課程
+              No more endless courses
             </div>
             <div className="fp-no">
               <span className="x">✗</span>
-              不用再養十套行銷工具
+              No more paying for ten marketing tools
             </div>
             <div className="fp-no">
               <span className="x">✗</span>
-              不用高薪請技術團隊
+              No expensive tech team
             </div>
           </div>
           <div className="hero-ctas reveal d3">
             <a className="btn btn-primary" href="#offer">
-              {"查看計畫內容 "}
+              {"See What’s Included "}
               <span className="arr">→</span>
             </a>
             <a className="btn btn-ghost" href="#story">
-              先聽聽我們的故事
+              Hear Our Story First
             </a>
           </div>
           <p className="fp-risk reveal d4">
-            <b>✓ 零風險</b>
-            ：報名前免費諮詢評估，確認適合再開始，由團隊陪跑到系統正式啟用。
+            <b>✓ Zero risk</b>
+            {
+              ": Start with a free consultation. We only begin once we know it’s a fit — and our team stays with you until your system goes live."
+            }
           </p>
         </div>
       </section>
-      {/* 痛點 */}
+      {/* Pain points */}
       <section className="pain">
         <div className="wrap">
           <div className="center reveal">
@@ -82,39 +88,45 @@ function StartPage() {
               SOUND FAMILIAR?
             </div>
             <h2 className="h2">
-              創業路上，
+              Building a business is hard.
               <br />
-              你是不是也卡在這幾件事？
+              Are you stuck here, too?
             </h2>
           </div>
           <div className="pain-grid">
             <div className="pain-card reveal">
-              <div className="pq">不懂技術，生意很難放大？</div>
+              <div className="pq">Not technical — so growth stalls?</div>
               <p>
-                行銷工具一套接一套，設定卡關、串接失敗，白白錯過市場機會和潛在客戶——想啟動，卻一直停在「研究工具」這一步。
+                One marketing tool after another. Settings that won’t cooperate, integrations that
+                break, and missed opportunities and leads along the way. You want to launch, but
+                you’re stuck “researching tools.”
               </p>
             </div>
             <div className="pain-card reveal d1">
-              <div className="pq">又要服務客戶，又要開發新客？</div>
+              <div className="pq">Serving clients and chasing new ones?</div>
               <p>
-                一個人當三個人用：回訊息、追名單、排預約、做行銷。瑣事吃掉所有精力，真正能長出營收的核心業務反而沒時間做。
+                You’re doing the work of three people: answering messages, following up on leads,
+                booking appointments, running marketing. The busywork eats all your energy, leaving
+                no time for the work that actually grows revenue.
               </p>
             </div>
             <div className="pain-card reveal d2">
-              <div className="pq">人手有限，客戶一直漏接？</div>
+              <div className="pq">Short-staffed, and leads slip through?</div>
               <p>
-                請一般員工解決不了問題，請高手成本又太高。半夜的詢問沒人回、報名的名單沒人追，商機就這樣一筆一筆流掉。
+                Entry-level hires can’t fix it, and experts cost too much. Late-night inquiries go
+                unanswered, new sign-ups never get a follow-up, and deals quietly slip away, one by
+                one.
               </p>
             </div>
           </div>
           <p className="pain-note reveal">
-            如果你點頭了——放心，
-            <em>不是只有你</em>
-            。這是我們輔導過的每一位老闆都走過的路。
+            {"If you’re nodding along — relax, "}
+            <em>you’re not alone</em>
+            {". Every business owner we’ve worked with has been right where you are."}
           </p>
         </div>
       </section>
-      {/* 創辦人故事 */}
+      {/* Founder story */}
       <section className="founder" id="story">
         <div className="wrap">
           <div className="center reveal">
@@ -122,67 +134,84 @@ function StartPage() {
               MEET THE FOUNDER
             </div>
             <h2 className="h2">
-              嗨，我是
-              <em>亞瑟教練</em>
-              {" Arthur Wu"}
+              {"Hi, I’m "}
+              <em>Coach Arthur</em>
+              {" Wu"}
             </h2>
           </div>
           <div className="founder-grid">
             <div className="founder-card reveal">
-              <div className="favatar">亞</div>
-              <h4>Arthur Wu 亞瑟教練</h4>
-              <p className="ftitle">匯鼎科技股份有限公司 CEO</p>
+              <div className="favatar">A</div>
+              <h4>Coach Arthur Wu</h4>
+              <p className="ftitle">CEO, iDealFlow</p>
               <ul>
-                <li>AI 政府補助案講師・月入百萬級</li>
-                <li>iDealFlow.ai 匯成交 創辦人</li>
-                <li>講座出席率 45% 的自動化實戰者</li>
-                <li>中時新聞網等媒體專訪報導</li>
-                <li>輔導講師、顧問與中小企業導入自動化</li>
+                <li>AI & government-grant instructor with a seven-figure monthly income (NT$)</li>
+                <li>Founder of iDealFlow.ai</li>
+                <li>Automation practitioner with 45% seminar attendance</li>
+                <li>Featured by China Times News and other media</li>
+                <li>Helps coaches, consultants and SMBs adopt automation</li>
               </ul>
             </div>
             <div className="founder-txt reveal d1">
               <h3>
-                我不是工程師出身，
+                I’m not an engineer.
                 <br />
-                我跟你一樣，是被瑣事淹沒過的經營者。
+                Like you, I’m a business owner who was drowning in busywork.
               </h3>
               <p>
-                我的本業是講師。每開一場講座，就要處理報名表單、提醒出席、追蹤名單、邀約諮詢、跟進成交——
-                <b>名單越多，我越忙；越忙，漏掉的商機越多。</b>
-                最諷刺的是：講座愈成功，我的生活品質愈差。
-              </p>
-              <p>
-                我試過市面上的做法：報名用一套表單工具、提醒用另一套、名單記在試算表、行銷信再開一個帳號……
-                <span className="fhl">光是讓五套工具互相溝通，就花掉我比做內容更多的時間。</span>
-                而且每套都要月費，加起來比請一個工讀生還貴。
+                {
+                  "I’m an instructor by trade. Every seminar meant handling sign-up forms, attendance reminders, lead tracking, consultation invites and sales follow-ups. "
+                }
+                <b>The more leads I had, the busier I got — and the more deals I missed.</b>
+                {" The irony? The more successful my seminars were, the worse my life got."}
               </p>
               <p>
                 {
-                  "後來我找到了答案：把所有環節整合在一套系統裡，讓流程自動接力。我用它把講座出席率做到 "
+                  "I tried what everyone tries: one tool for sign-ups, another for reminders, leads in a spreadsheet, yet another account for email marketing… "
+                }
+                <span className="fhl">
+                  Just getting five tools to talk to each other took more time than creating my
+                  content.
+                </span>
+                {
+                  " And every one had a monthly fee. Together, they cost more than a part-time hire."
+                }
+              </p>
+              <p>
+                {
+                  "Then I found the answer: bring every step into one system and let the workflow hand off automatically. With it, I pushed seminar attendance to "
                 }
                 <b>45%</b>
-                ，讓報名、提醒、跟進、成交全部自動發生——
-                <b>我終於可以只專注在講好每一場課。</b>
+                {
+                  ", and sign-ups, reminders, follow-ups and sales all started happening on their own. "
+                }
+                <b>Finally, I could focus on simply teaching great classes.</b>
               </p>
               <p>
-                {"這套方法幫了我，也幫了跟我一起導入的夥伴：一位親子教養導師 Emma 老師導入後 "}
-                <b>20 天月收突破 10 萬、講座出席率 56%+</b>
-                。所以我創立了匯成交 iDealFlow.ai——以世界級引擎 GoHighLevel 為底層，加上我們自研的
+                {
+                  "It worked for me — and for the partners who adopted it alongside me. Emma, a parenting coach, hit "
+                }
+                <b>NT$100K+ in monthly revenue within 20 days and 56%+ seminar attendance</b>
+                {
+                  ". That’s why I founded iDealFlow.ai: built on GoHighLevel, a world-class engine, plus our own "
+                }
                 <span className="fhl">
-                  全球唯一多語中文化套件、LINE 深度整合，和真人陪跑的導入訓練
+                  one-of-a-kind multilingual localization suite, deep LINE integration and hands-on,
+                  human-led onboarding
                 </span>
-                ，讓台灣的老闆們不用再走我走過的冤枉路。
+                {", so other business owners never have to take the long way I did."}
               </p>
               <p>
-                <b>工具再好，用不起來就是零。</b>
-                所以這個計畫給你的不只是系統，而是「系統＋已配置模組＋實操課程＋中文支援」的完整方案——14
-                天，我們陪你把生意自動化。
+                <b>The best tool is worthless if you never use it.</b>
+                {
+                  " That’s why this program gives you more than software. It’s the complete package — system, pre-built modules, hands-on training and live support. In 14 days, we’ll help you put your business on autopilot."
+                }
               </p>
             </div>
           </div>
         </div>
       </section>
-      {/* 方案內容 offer */}
+      {/* Offer */}
       <section className="offer" id="offer">
         <div className="wrap">
           <div className="center reveal">
@@ -190,81 +219,85 @@ function StartPage() {
               INTRODUCING
             </div>
             <h2 className="h2">
-              匯成交
-              <em>「14 天啟動計畫」</em>
+              {"iDealFlow.ai "}
+              <em>14-Day Launch Program</em>
             </h2>
             <p className="lead" style={{ color: "rgba(255,255,255,.7)" }}>
-              一次拿到系統、模組、課程與支援——今天加入，14 天內開始自動化運營。
+              The system, modules, training and support — all at once. Join today and start
+              automating within 14 days.
             </p>
           </div>
           <div className="offer-box reveal">
-            <span className="obadge">★ 你將獲得的完整內容</span>
+            <span className="obadge">★ Everything you get</span>
             <div className="offer-row">
-              <span className="oname">iDealFlow.ai 全功能系統（GoHighLevel 引擎）</span>
+              <span className="oname">iDealFlow.ai full platform (GoHighLevel engine)</span>
               <span className="odots"></span>
-              <span className="oval">價值 NT$100,000+</span>
+              <span className="oval">NT$100,000+ value</span>
             </div>
             <div className="offer-row">
-              <span className="oname">五天快速起步實操課程</span>
+              <span className="oname">5-Day Quick Start hands-on course</span>
               <span className="odots"></span>
-              <span className="oval">價值 NT$24,000</span>
+              <span className="oval">NT$24,000 value</span>
             </div>
             <div className="offer-row">
-              <span className="oname">智能預約系統・已配置模組</span>
+              <span className="oname">Smart Booking System · pre-built module</span>
               <span className="odots"></span>
-              <span className="oval">價值 NT$15,000</span>
+              <span className="oval">NT$15,000 value</span>
             </div>
             <div className="offer-row">
-              <span className="oname">獲客金流系統・已配置模組</span>
+              <span className="oname">Lead-to-Payment System · pre-built module</span>
               <span className="odots"></span>
-              <span className="oval">價值 NT$12,000</span>
+              <span className="oval">NT$12,000 value</span>
             </div>
             <div className="offer-row">
-              <span className="oname">評價管理系統・已配置模組</span>
+              <span className="oname">Reputation Management · pre-built module</span>
               <span className="odots"></span>
-              <span className="oval">價值 NT$15,000</span>
+              <span className="oval">NT$15,000 value</span>
             </div>
             <div className="offer-row">
-              <span className="oname">全球唯一多語中文化＋LINE 套件</span>
+              <span className="oname">One-of-a-kind multilingual localization + LINE suite</span>
               <span className="odots"></span>
-              <span className="oval">價值 NT$30,000</span>
+              <span className="oval">NT$30,000 value</span>
             </div>
             <div className="offer-row">
-              <span className="oname">每週線上技術答疑（中文）</span>
+              <span className="oname">Weekly live tech Q&A</span>
               <span className="odots"></span>
-              <span className="oval">價值 NT$18,000</span>
+              <span className="oval">NT$18,000 value</span>
             </div>
             <div className="offer-row">
-              <span className="oname">線上行銷課程＋學員社群</span>
+              <span className="oname">Online marketing courses + member community</span>
               <span className="odots"></span>
-              <span className="oval">價值 NT$60,000</span>
+              <span className="oval">NT$60,000 value</span>
             </div>
             <div className="offer-total">
-              <span>總價值</span>
+              <span>Total value</span>
               <span className="tval">NT$274,000+</span>
             </div>
             <div className="offer-price">
-              <div className="strike">總價值 NT$274,000+</div>
+              <div className="strike">Total value NT$274,000+</div>
               <div className="now">
                 US$1,197
-                <small>{" / 年"}</small>
+                <small>{" / year"}</small>
               </div>
               <div className="percoffee">
-                ☕ 平均每天約 NT$108——一杯拿鐵的價格，換一個全年無休的數位員工
+                ☕ About NT$108 a day — the price of a latte for a digital employee that never
+                clocks out
               </div>
-              <Link to="/booking" className="btn btn-primary">
-                {"YES！我要加入 14 天啟動計畫 "}
+              <Link to="/contact" className="btn btn-primary">
+                {"Yes! I’m In — Join the Program "}
                 <span className="arr">→</span>
               </Link>
               <p className="fp-risk" style={{ marginTop: "16px" }}>
                 <b>✓</b>
-                {" 報名前免費諮詢評估，適合再開始・團隊陪跑至系統正式啟用"}
+                {
+                  " Free consultation first — start only if it’s a fit · Guided by our team until your system goes live"
+                }
               </p>
             </div>
           </div>
         </div>
       </section>
-      {/* 對比表 */}
+      {/* Comparison */}
       <section className="compare">
         <div className="wrap">
           <div className="center reveal">
@@ -272,156 +305,163 @@ function StartPage() {
               DO THE MATH
             </div>
             <h2 className="h2">
-              {"自己拼裝工具 vs "}
-              <em>匯成交一套搞定</em>
+              {"DIY tool stack vs. "}
+              <em>iDealFlow.ai, all in one</em>
             </h2>
             <p className="lead">
-              同樣的功能，如果一套一套分開訂閱，每個月要付多少？我們幫你算過了。
+              What would the same features cost if you subscribed to each one separately? We did the
+              math for you.
             </p>
           </div>
           <div className="cmp-table reveal">
             <div className="cmp-head">
-              <div>功能需求</div>
-              <div>分開訂閱（月費）</div>
-              <div className="hi-col">匯成交</div>
+              <div>What you need</div>
+              <div>Separate subscriptions (monthly)</div>
+              <div className="hi-col">iDealFlow.ai</div>
             </div>
             <div className="cmp-row">
-              <div className="cl">CRM 客戶管理</div>
-              <div className="cm">約 NT$6,000</div>
-              <div className="cr">✓ 內含</div>
+              <div className="cl">CRM</div>
+              <div className="cm">~NT$6,000</div>
+              <div className="cr">✓ Included</div>
             </div>
             <div className="cmp-row">
-              <div className="cl">Email 行銷平台</div>
-              <div className="cm">約 NT$4,000</div>
-              <div className="cr">✓ 內含</div>
+              <div className="cl">Email marketing platform</div>
+              <div className="cm">~NT$4,000</div>
+              <div className="cr">✓ Included</div>
             </div>
             <div className="cmp-row">
-              <div className="cl">銷售漏斗＋建站工具</div>
-              <div className="cm">約 NT$6,000</div>
-              <div className="cr">✓ 內含</div>
+              <div className="cl">Sales funnels + website builder</div>
+              <div className="cm">~NT$6,000</div>
+              <div className="cr">✓ Included</div>
             </div>
             <div className="cmp-row">
-              <div className="cl">預約排程系統</div>
-              <div className="cm">約 NT$3,000</div>
-              <div className="cr">✓ 內含</div>
+              <div className="cl">Appointment scheduling</div>
+              <div className="cm">~NT$3,000</div>
+              <div className="cr">✓ Included</div>
             </div>
             <div className="cmp-row">
-              <div className="cl">社群排程管理</div>
-              <div className="cm">約 NT$4,000</div>
-              <div className="cr">✓ 內含</div>
+              <div className="cl">Social media scheduling</div>
+              <div className="cm">~NT$4,000</div>
+              <div className="cr">✓ Included</div>
             </div>
             <div className="cmp-row">
-              <div className="cl">AI 文案工具</div>
-              <div className="cm">約 NT$3,000</div>
-              <div className="cr">✓ 內含</div>
+              <div className="cl">AI copywriting</div>
+              <div className="cm">~NT$3,000</div>
+              <div className="cr">✓ Included</div>
             </div>
             <div className="cmp-row">
-              <div className="cl">自動化串接（Zapier 類）</div>
-              <div className="cm">約 NT$4,500</div>
-              <div className="cr">✓ 內含</div>
+              <div className="cl">Automation (Zapier-style)</div>
+              <div className="cm">~NT$4,500</div>
+              <div className="cr">✓ Included</div>
             </div>
             <div className="cmp-row">
-              <div className="cl">線上課程平台</div>
-              <div className="cm">約 NT$3,500</div>
-              <div className="cr">✓ 內含</div>
+              <div className="cl">Online course platform</div>
+              <div className="cm">~NT$3,500</div>
+              <div className="cr">✓ Included</div>
             </div>
             <div className="cmp-row total">
-              <div className="cl">每月支出</div>
+              <div className="cl">Monthly spend</div>
               <div className="cm">NT$34,000+</div>
-              <div className="cr">約 NT$3,300</div>
+              <div className="cr">~NT$3,300</div>
             </div>
           </div>
           <p className="cmp-note reveal">
-            而且分開訂閱還要自己串接、資料不互通、出問題各家客服踢皮球——
-            <b>整合本身，就是最大的價值。</b>
+            {
+              "And with separate subscriptions, you’re wiring them together yourself, your data doesn’t sync, and when something breaks, every vendor points at someone else. "
+            }
+            <b>Integration itself is the biggest value.</b>
           </p>
           <div className="guarantee reveal">
             <div className="gseal">
               <b>100%</b>
-              <span>安心導入</span>
+              <span>Peace of mind</span>
             </div>
             <div>
-              <h5>安心導入承諾</h5>
+              <h5>Our Peace-of-Mind Promise</h5>
               <p>
-                報名前先免費諮詢，由團隊評估你的生意型態是否適合；加入後由專人陪跑導入訓練，直到系統正式啟用為止。我們要的是你真的用起來，不是只賣你一套系統。
+                Start with a free consultation, where our team assesses whether your business is a
+                good fit. Once you join, a dedicated specialist guides your onboarding until your
+                system is live. We want you to actually use it — not just sell you software.
               </p>
             </div>
           </div>
         </div>
       </section>
-      {/* 功能總覽 */}
+      {/* Features */}
       <section className="usecases">
         <div className="wrap">
           <div className="center reveal">
             <div className="eyebrow" style={{ justifyContent: "center" }}>
               ALL-IN-ONE
             </div>
-            <h2 className="h2">一套系統，八大整合功能</h2>
-            <p className="lead">從引流到成交，每一個環節都在同一套系統裡自動接力。</p>
+            <h2 className="h2">One system. Eight integrated tools.</h2>
+            <p className="lead">
+              From first click to closed deal, every step hands off automatically — in one place.
+            </p>
           </div>
           <div className="ugrid" style={{ gridTemplateColumns: "repeat(4,1fr)" }}>
             <div className="ucard reveal">
               <span className="utag">01</span>
-              <h4>七渠道自動跟進</h4>
+              <h4>7-Channel Follow-Up</h4>
               <p>
-                Email、簡訊、LINE、Messenger、IG 等對話與名單，
-                <b>自動引導到成交</b>。
+                {"Email, SMS, LINE, Messenger, Instagram and more — conversations and leads, "}
+                <b>guided automatically to the sale</b>.
               </p>
             </div>
             <div className="ucard reveal d1">
               <span className="utag">02</span>
-              <h4>AI 預約系統</h4>
+              <h4>AI Booking</h4>
               <p>
-                自動分配、自動提醒、自動跟進，
-                <b>了解客戶像了解老朋友</b>。
+                {"Auto-assign, auto-remind, auto-follow-up — "}
+                <b>know every client like an old friend</b>.
               </p>
             </div>
             <div className="ucard reveal d2">
               <span className="utag">03</span>
-              <h4>AI 自動回覆</h4>
+              <h4>AI Auto-Reply</h4>
               <p>
-                不再漏接任何訊息，自動回覆並引導客戶
-                <b>預約、到店、下單</b>。
+                {"Never miss a message. Replies go out instantly, guiding customers to "}
+                <b>book, visit and buy</b>.
               </p>
             </div>
             <div className="ucard reveal d3">
               <span className="utag">04</span>
-              <h4>CRM 客戶管理</h4>
+              <h4>CRM</h4>
               <p>
-                對話、消費、發票、預約，
-                <b>所有客戶資訊集中一處</b>。
+                {"Conversations, purchases, invoices, appointments — "}
+                <b>every customer detail in one place</b>.
               </p>
             </div>
             <div className="ucard reveal">
               <span className="utag">05</span>
-              <h4>評價自動管理</h4>
+              <h4>Automated Reviews</h4>
               <p>
-                自動邀請 Google／FB 評論並集中回覆，
-                <b>更多好評、更多新客</b>。
+                {"Request Google and Facebook reviews automatically and reply from one inbox. "}
+                <b>More five-stars, more new customers</b>.
               </p>
             </div>
             <div className="ucard reveal d1">
               <span className="utag">06</span>
-              <h4>終極報表系統</h4>
+              <h4>Powerful Reporting</h4>
               <p>
-                銷售、獲客、各渠道流量一覽無遺，
-                <b>下一步不再靠猜</b>。
+                {"Sales, acquisition and traffic by channel, all at a glance — "}
+                <b>no more guessing your next move</b>.
               </p>
             </div>
             <div className="ucard reveal d2">
               <span className="utag">07</span>
-              <h4>團隊任務系統</h4>
+              <h4>Team Tasks</h4>
               <p>
-                依客戶狀況自動分派任務與預約，
-                <b>團隊有序朝目標前進</b>。
+                {"Tasks and appointments assigned automatically based on each client — "}
+                <b>your whole team, moving toward the goal</b>.
               </p>
             </div>
             <div className="ucard reveal d3">
               <span className="utag">08</span>
-              <h4>無限漏斗與網站</h4>
+              <h4>Unlimited Funnels & Sites</h4>
               <p>
-                數百個專業模板、拖拉式編輯，
-                <b>頁面活動一鍵建立</b>。
+                {"Hundreds of pro templates and drag-and-drop editing — "}
+                <b>launch pages and campaigns in one click</b>.
               </p>
             </div>
           </div>
@@ -430,63 +470,65 @@ function StartPage() {
             style={{ color: "rgba(255,255,255,.65)", marginTop: "40px" }}
           >
             {
-              "一套取代：WordPress・Wix・ClickFunnels・Salesforce・HubSpot・Mailchimp・Calendly・Hootsuite・Zapier 等 "
+              "Replaces WordPress · Wix · ClickFunnels · Salesforce · HubSpot · Mailchimp · Calendly · Hootsuite · Zapier and "
             }
-            <b style={{ color: "#fff" }}>50+ 工具</b>
+            <b style={{ color: "#fff" }}>50+ more tools</b>
           </p>
         </div>
       </section>
-      {/* 專業護航 */}
+      {/* Expert support */}
       <section className="fit" style={{ background: "var(--bg-soft)" }}>
         <div className="wrap">
           <div className="center reveal">
             <div className="eyebrow" style={{ justifyContent: "center" }}>
-              WE'VE GOT YOU
+              WE’VE GOT YOU
             </div>
             <h2 className="h2">
-              再好的工具也要會用——
+              Great tools only work if you use them —
               <br />
-              所以
-              <em>專業團隊為你護航</em>
+              {"so "}
+              <em>our experts have your back</em>
             </h2>
           </div>
           <div className="pain-grid">
             <div className="pain-card reveal" style={{ textAlign: "center" }}>
               <div style={{ fontSize: "36px", marginBottom: "12px" }}>🧩</div>
               <div className="pq" style={{ color: "var(--navy)" }}>
-                一鍵嵌入自動化模組
+                Plug-and-play automation modules
               </div>
               <p>
-                預約、金流、評價模組都已配置好，不用懂自動化——選模板、填資料、按啟用，
-                <b>30 分鐘完成設定，一次設置永久有效</b>。
+                {
+                  "Booking, payments and reviews come pre-built. No automation know-how needed — pick a template, fill in your details, hit activate. "
+                }
+                <b>Set up in 30 minutes, once and done</b>.
               </p>
             </div>
             <div className="pain-card reveal d1" style={{ textAlign: "center" }}>
               <div style={{ fontSize: "36px", marginBottom: "12px" }}>🎬</div>
               <div className="pq" style={{ color: "var(--navy)" }}>
-                手把手實操教學
+                Step-by-step, hands-on training
               </div>
               <p>
-                五天快速起步課程＋逐步驟設定影片，跟著做就完成。
-                <b>整合線上課程與線下實體教室</b>
-                ，小白也能無痛上手。
+                {"A 5-Day Quick Start course plus step-by-step setup videos — just follow along. "}
+                <b>Online courses and in-person classes, combined</b>
+                {", so even total beginners get up to speed with ease."}
               </p>
             </div>
             <div className="pain-card reveal d2" style={{ textAlign: "center" }}>
               <div style={{ fontSize: "36px", marginBottom: "12px" }}>🎧</div>
               <div className="pq" style={{ color: "var(--navy)" }}>
-                中文技術支援
+                Real tech support
               </div>
               <p>
-                每週線上答疑直播、AI 助教 24/7 回覆操作問題，
-                <b>全繁體中文介面與支援</b>
-                ——卡關不過夜。
+                {"Weekly live Q&A sessions and a 24/7 AI assistant for how-to questions, with "}
+                <b>multilingual interface and support</b>
+                {" — so you’re never stuck overnight."}
               </p>
             </div>
           </div>
         </div>
       </section>
-      {/* 三步驟 */}
+      {/* 3 steps */}
       <section className="integrations">
         <div className="wrap">
           <div className="center reveal">
@@ -494,9 +536,9 @@ function StartPage() {
               3 SIMPLE STEPS
             </div>
             <h2 className="h2">
-              {"只需 "}
-              <em>3 個步驟</em>
-              ，開始自動運營
+              {"Just "}
+              <em>3 steps</em>
+              {" to run on autopilot"}
             </h2>
           </div>
           <div className="pain-grid" style={{ marginTop: "52px" }}>
@@ -516,9 +558,9 @@ function StartPage() {
                 1
               </div>
               <div className="pq" style={{ color: "var(--navy)" }}>
-                預約諮詢
+                Book a consultation
               </div>
-              <p>點擊報名，由團隊免費評估你的生意型態與導入方向。</p>
+              <p>Sign up, and our team will assess your business and map your rollout — free.</p>
             </div>
             <div
               className="pain-card reveal d1"
@@ -536,9 +578,9 @@ function StartPage() {
                 2
               </div>
               <div className="pq" style={{ color: "var(--navy)" }}>
-                完成設置
+                Get set up
               </div>
-              <p>用已配置模組＋實操課程，快速完成系統設定與啟用。</p>
+              <p>Use pre-built modules and hands-on training to configure and launch fast.</p>
             </div>
             <div
               className="pain-card reveal d2"
@@ -556,20 +598,23 @@ function StartPage() {
                 3
               </div>
               <div className="pq" style={{ color: "var(--navy)" }}>
-                自動運營
+                Run on autopilot
               </div>
-              <p>14 天內開始自動化運營——名單進來，系統自動跟到成交。</p>
+              <p>
+                Be fully automated within 14 days — leads come in, and the system follows up all the
+                way to the sale.
+              </p>
             </div>
           </div>
           <div className="center reveal" style={{ marginTop: "44px" }}>
             <a className="btn btn-primary" href="#offer">
-              {"現在就開始第 1 步 "}
+              {"Start Step 1 Now "}
               <span className="arr">→</span>
             </a>
           </div>
         </div>
       </section>
-      {/* 成功案例 */}
+      {/* Case studies */}
       <section className="cases">
         <div className="wrap">
           <div className="center reveal">
@@ -577,33 +622,34 @@ function StartPage() {
               PROOF
             </div>
             <h2 className="h2">
-              他們已經
-              <em>自動運轉</em>
-              起來了
+              {"They’re already "}
+              <em>on autopilot</em>
             </h2>
           </div>
           <div className="cgrid">
             <div className="ccard reveal">
               <div className="chead">
-                <div className="avatar">亞</div>
+                <div className="avatar">A</div>
                 <div>
-                  <h4>亞瑟教練</h4>
-                  <span>AI 政府補助案講師｜月入百萬級</span>
+                  <h4>Coach Arthur Wu</h4>
+                  <span>AI & government-grant instructor | Seven-figure monthly income (NT$)</span>
                 </div>
               </div>
               <ul className="cpoints">
-                <li>報名頁、LINE／Email 提醒、名單追蹤全自動</li>
-                <li>用自動化承接政府補助案教學流程</li>
-                <li>獲中時新聞網等媒體專訪報導</li>
+                <li>
+                  Sign-up pages, LINE and email reminders, and lead tracking — fully automated
+                </li>
+                <li>Runs his government-grant training business on automation</li>
+                <li>Featured by China Times News and other media</li>
               </ul>
               <div className="cmetrics">
                 <div className="metric">
                   <b>45%</b>
-                  <span>講座出席率</span>
+                  <span>Seminar attendance</span>
                 </div>
                 <div className="metric">
-                  <b>百萬級</b>
-                  <span>月收入等級</span>
+                  <b>7-figure</b>
+                  <span>Monthly income (NT$)</span>
                 </div>
               </div>
             </div>
@@ -611,107 +657,112 @@ function StartPage() {
               <div className="chead">
                 <div className="avatar">E</div>
                 <div>
-                  <h4>Emma 老師</h4>
-                  <span>親子教養導師｜知識變現導師品牌</span>
+                  <h4>Emma</h4>
+                  <span>Parenting coach | Knowledge-business brand</span>
                 </div>
               </div>
               <ul className="cpoints">
-                <li>導入後快速完成 onboarding，系統化經營名單</li>
-                <li>報名承接、訊息追蹤、講座出席、課程經營一條龍</li>
-                <li>學員口碑轉介紹，持續帶進新名單</li>
+                <li>Onboarded quickly and now manages leads systematically</li>
+                <li>Sign-ups, follow-ups, seminar attendance and courses — all in one flow</li>
+                <li>Word-of-mouth referrals keep bringing in new leads</li>
               </ul>
               <div className="cmetrics">
                 <div className="metric">
-                  <b>10萬+</b>
-                  <span>20 天月收入突破</span>
+                  <b>NT$100K+</b>
+                  <span>Monthly revenue in 20 days</span>
                 </div>
                 <div className="metric">
                   <b>56%+</b>
-                  <span>講座出席率</span>
+                  <span>Seminar attendance</span>
                 </div>
               </div>
             </div>
           </div>
         </div>
       </section>
-      {/* 用戶回饋 */}
+      {/* Testimonials */}
       <section className="quotes">
         <div className="wrap">
           <div className="center reveal">
             <div className="eyebrow" style={{ justifyContent: "center" }}>
               WHAT USERS SAY
             </div>
-            <h2 className="h2">導入夥伴的真實心聲</h2>
+            <h2 className="h2">In our partners’ own words</h2>
           </div>
           <div className="q-grid">
             <div className="q-card reveal">
               <div className="qstars">★★★★★</div>
               <p>
-                「以前講座報名要人工核對、一個一個提醒，現在報名完系統自己跑。最有感的是出席率——同樣的名單，到場的人變多了，成交自然跟著變多。」
+                “I used to check every seminar sign-up by hand and remind people one by one. Now the
+                system runs itself. The biggest difference is attendance — same list, more people
+                show up, and sales follow.”
               </p>
               <div className="qwho">
-                <div className="qav">講</div>
+                <div className="qav">I</div>
                 <div>
-                  <b>講師・課程經營者</b>
-                  <span>知識變現型</span>
+                  <b>Instructor & course creator</b>
+                  <span>Knowledge business</span>
                 </div>
               </div>
             </div>
             <div className="q-card reveal d1">
               <div className="qstars">★★★★★</div>
               <p>
-                「我最怕系統是英文的，結果整套繁體中文介面，連 LINE 都能串。客人半夜傳訊息 AI
-                先接住，隔天我一打開就是整理好的名單。」
+                “I was worried the system would be English-only, but the whole interface is in
+                Traditional Chinese, and it even connects to LINE. When customers message me late at
+                night, the AI picks up — and the next morning I open a neatly organized lead list.”
               </p>
               <div className="qwho">
-                <div className="qav">店</div>
+                <div className="qav">L</div>
                 <div>
-                  <b>在地店家老闆</b>
-                  <span>美業服務型</span>
+                  <b>Local business owner</b>
+                  <span>Beauty services</span>
                 </div>
               </div>
             </div>
             <div className="q-card reveal d2">
               <div className="qstars">★★★★★</div>
               <p>
-                「原本要三個人做的跟進工作，現在流程自動跑，我把人力改去做更值錢的事。工具月費也從好幾套變成一套，算下來省很多。」
+                “Follow-up that used to take three people now runs automatically, so I’ve moved my
+                team to higher-value work. And instead of paying for a pile of tools, I pay for one.
+                The savings add up fast.”
               </p>
               <div className="qwho">
-                <div className="qav">企</div>
+                <div className="qav">S</div>
                 <div>
-                  <b>中小企業主</b>
-                  <span>B2B 服務型</span>
+                  <b>Small business owner</b>
+                  <span>B2B services</span>
                 </div>
               </div>
             </div>
           </div>
         </div>
       </section>
-      {/* 適合誰 */}
+      {/* Is it for you */}
       <section className="fit">
         <div className="wrap">
           <div className="center reveal">
             <div className="eyebrow" style={{ justifyContent: "center" }}>
               IS IT FOR YOU?
             </div>
-            <h2 className="h2">不確定這個計畫適不適合你？</h2>
+            <h2 className="h2">Not sure this program is right for you?</h2>
           </div>
           <div className="fit-grid">
             <div className="fit-col yes reveal">
-              <h4>✓ 這個計畫適合——</h4>
+              <h4>✓ It’s a great fit for —</h4>
               <ul>
-                <li>想用最新工具放大生意的創業者與老闆</li>
-                <li>清楚知道自己卡在哪、願意改變做法的經營者</li>
-                <li>想把重複性工作自動化、專注核心業務的人</li>
-                <li>講師、顧問、教練、在地店家、中小企業</li>
+                <li>Founders and owners ready to grow with the latest tools</li>
+                <li>Owners who know where they’re stuck and are ready to change</li>
+                <li>Anyone who wants to automate repetitive work and focus on what matters</li>
+                <li>Coaches, consultants, educators, local businesses and SMBs</li>
               </ul>
             </div>
             <div className="fit-col no reveal d1">
-              <h4>✗ 可能不適合——</h4>
+              <h4>✗ It may not be for —</h4>
               <ul>
-                <li>不願意花任何時間學習新工具的人</li>
-                <li>期待完全不動手、保姆式代營運的人</li>
-                <li>不想在困境中做出改變的經營者</li>
+                <li>Anyone unwilling to spend any time learning a new tool</li>
+                <li>Those expecting a fully hands-off, done-for-you service</li>
+                <li>Owners who aren’t ready to change what isn’t working</li>
               </ul>
             </div>
           </div>
@@ -724,90 +775,112 @@ function StartPage() {
             <div className="eyebrow" style={{ justifyContent: "center" }}>
               STILL NOT SURE?
             </div>
-            <h2 className="h2">常見問題</h2>
+            <h2 className="h2">Frequently Asked Questions</h2>
           </div>
           <FaqList className="faq-list reveal">
-            <Qa question="計畫的費用是多少？包含哪些內容？">
+            <Qa question="How much does the program cost, and what’s included?">
               <p>
-                年費 US$1,197／年（平均每天約 NT$108）。內容包含：iDealFlow.ai
-                全功能系統（無限漏斗、網站、CRM、預約、Email／LINE 行銷、課程系統、AI
-                工具）、預約／金流／評價三大已配置模組、五天實操課程、全球唯一多語中文化＋LINE
-                套件、每週線上答疑與學員社群。
+                US$1,197 per year (about NT$108 a day). It includes the full iDealFlow.ai platform
+                (unlimited funnels, websites, CRM, booking, email and LINE marketing, course
+                platform and AI tools); three pre-built modules for booking, payments and reviews;
+                the 5-Day hands-on course; our one-of-a-kind multilingual localization + LINE suite;
+                and weekly live Q&A plus our member community.
               </p>
             </Qa>
-            <Qa question="價格不能再優惠嗎？">
+            <Qa question="Is there any room on price?">
               <p>
-                換個角度算：同樣的功能分開訂閱，每月至少 NT$34,000
-                起，還不含串接與學習成本；請顧問做一套自動化流程，報價從十幾萬起跳。這個計畫把「工具＋培訓＋方案」整合成每天一杯拿鐵的價格，省下的時間成本遠超過這筆投資。而且隨著導入服務名額增加，價格只會往上調——現在加入就是鎖住最低價。
+                Look at it this way: subscribing to the same features separately costs at least
+                NT$34,000 a month — before integration and learning time. Hiring a consultant to
+                build a single automated workflow starts in the low six figures (NT$). This program
+                bundles tools, training and a ready-made plan for the price of a daily latte, and
+                the time you save far outweighs the investment. As onboarding spots fill, the price
+                will only go up — joining now locks in the lowest rate.
               </p>
             </Qa>
-            <Qa question="功能這麼多，我學得會嗎？">
+            <Qa question="There are so many features. Can I really learn this?">
               <p>
-                學得會，因為你不需要「組裝」。傳統自動化要學會五、六套工具再用 Zapier
-                串起來，一個環節錯就整條失敗；我們把所有功能整合在同一套系統，並預先配置好自動化模組——選模板、填資料、按啟用，就像發
-                LINE 訊息一樣簡單。搭配實操影片、每週答疑和 AI 助教，只要會用智慧型手機，就能上手。
+                Yes — because you don’t have to assemble anything. Traditional automation means
+                learning five or six tools and stitching them together with Zapier, where one broken
+                link brings the whole chain down. We bring every feature into one system and
+                pre-configure the automation modules for you: pick a template, fill in your details,
+                hit activate. It’s as easy as sending a text. With hands-on videos, weekly Q&A and
+                an AI assistant, if you can use a smartphone, you can do this.
               </p>
             </Qa>
-            <Qa question="我是完全的新手小白，也可以嗎？">
+            <Qa question="I’m a complete beginner. Will this work for me?">
               <p>
-                可以，我們的學員裡不乏從零開始的老闆。你需要具備的只有「基本的學習意願」——我們提供最好的車（系統）、教你開車（培訓）、給你導航（方案），而你只要願意坐上駕駛座。如果想更快啟動，也可以在諮詢時討論由團隊協助完成基礎設定，讓你直接開始使用。
+                Absolutely. Plenty of our members started from zero. All you need is a willingness
+                to learn. We give you the best car (the system), teach you to drive (the training)
+                and hand you the GPS (the plan) — you just have to get behind the wheel. Want to
+                move even faster? Ask during your consultation about having our team handle the
+                basic setup so you can start using it right away.
               </p>
             </Qa>
-            <Qa question="為什麼要現在加入？">
+            <Qa question="Why join now?">
               <p>
-                因為市場不等人。傳統銷售流程每一個環節都在流失客戶，而 AI 自動化已經是未來 3–5
-                年的必然方向——現在佈局的人賺到先行者優勢，晚佈局的人只能追趕。加上目前是計畫價格最優惠的階段，隨著導入名額增加、服務量能吃緊，價格將逐步調升。
+                Because the market won’t wait. Traditional sales processes leak customers at every
+                step, and AI automation is where business is clearly headed over the next 3–5 years.
+                Those who move now gain a first-mover advantage; those who wait will be playing
+                catch-up. And right now, the program is at its lowest price — as onboarding spots
+                fill and capacity tightens, prices will rise.
               </p>
             </Qa>
-            <Qa question="加入後如果覺得不適合怎麼辦？">
+            <Qa question="What if I join and it’s not a good fit?">
               <p>
-                所以我們把諮詢放在最前面：報名前先由團隊免費評估你的生意型態、名單來源與導入方向，確認適合才開始。加入後有完整的陪跑機制，任何卡關都有每週答疑和技術支援接住你——我們的目標是你真的用起來，而不是賣完就消失。
+                That’s exactly why the consultation comes first. Before you sign up, our team
+                assesses your business model, lead sources and rollout plan for free — and we only
+                start once we know it’s a fit. After you join, you’re fully supported: weekly Q&A
+                and tech support catch you whenever you get stuck. Our goal is for you to actually
+                use it, not to make a sale and disappear.
               </p>
             </Qa>
-            <Qa question="系統支援 LINE 和台灣的使用習慣嗎？">
+            <Qa question="Does the system support LINE and how business is done in Taiwan?">
               <p>
-                支援，這正是匯成交最大的差異化。我們自研的 LINE 套件是唯一支援 Flex Message
-                的在地化應用，介面全繁體中文，並逐步開放原生支援台灣主流金流。台灣人的生意在 LINE
-                上談，我們的系統就是為這件事而生。
+                Yes — it’s what sets iDealFlow.ai apart. Our in-house LINE suite is the only
+                localized app that supports Flex Message, the interface is fully available in
+                Traditional Chinese, and native support for Taiwan’s leading payment providers is
+                rolling out. In Taiwan, business happens on LINE — and our system was built for
+                exactly that.
               </p>
             </Qa>
           </FaqList>
         </div>
       </section>
-      {/* 尾段 CTA */}
+      {/* Final CTA */}
       <section className="final">
         <div className="wrap">
           <h2 className="reveal">
-            要嘛不做，要做——
+            If you’re going to do it,
             <br />
-            就照
-            <span>未來的方式</span>做
+            {"do it "}
+            <span>the way of the future</span>.
           </h2>
           <p className="reveal d1">
-            14 天後，你的生意可以還是老樣子，也可以自動運轉起來。選擇權在你手上。
+            Fourteen days from now, your business can look exactly the same — or it can be running
+            itself. The choice is yours.
           </p>
           <div className="hero-ctas reveal d2">
-            <Link to="/booking" className="btn btn-primary">
-              {"YES！我要加入 14 天啟動計畫 "}
+            <Link to="/contact" className="btn btn-primary">
+              {"Yes! I’m In — Join the Program "}
               <span className="arr">→</span>
             </Link>
             <Link to="/" className="btn btn-ghost">
-              再回官網看看
+              Back to Home
             </Link>
           </div>
         </div>
       </section>
-      {/* Footer 精簡 */}
-      <SiteFooter variant="minimal" />
-      {/* 底部懸浮 CTA */}
+      {/* Minimal footer */}
+      <SiteFooter locale="en" variant="minimal" />
+      {/* Sticky bottom CTA */}
       <div className={showSticky ? "fp-sticky show" : "fp-sticky"} id="fpSticky">
         <div className="wrap">
           <div className="st-txt">
-            14 天啟動計畫 · US$1,197／年
-            <small>系統＋模組＋課程＋中文支援，總價值 NT$274,000+</small>
+            14-Day Launch Program · US$1,197/year
+            <small>System + modules + training + support, total value NT$274,000+</small>
           </div>
           <a className="btn btn-primary" href="#offer">
-            {"立即加入 "}
+            {"Join Now "}
             <span className="arr">→</span>
           </a>
         </div>

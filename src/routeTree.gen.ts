@@ -13,15 +13,25 @@ import { Route as IndexRouteImport } from './routes/index'
 import { Route as SplatRouteImport } from './routes/$'
 import { Route as AiContentRouteImport } from './routes/ai-content'
 import { Route as AutomationRouteImport } from './routes/automation'
-import { Route as BookingRouteImport } from './routes/booking'
 import { Route as CalendarRouteImport } from './routes/calendar'
+import { Route as ContactRouteImport } from './routes/contact'
 import { Route as CrmRouteImport } from './routes/crm'
 import { Route as EmailRouteImport } from './routes/email'
 import { Route as FunnelRouteImport } from './routes/funnel'
 import { Route as ReputationRouteImport } from './routes/reputation'
 import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
 import { Route as StartRouteImport } from './routes/start'
-import { Route as ThanksRouteImport } from './routes/thanks'
+import { Route as TwIndexRouteImport } from './routes/tw/index'
+import { Route as TwAiContentRouteImport } from './routes/tw/ai-content'
+import { Route as TwAutomationRouteImport } from './routes/tw/automation'
+import { Route as TwBookingRouteImport } from './routes/tw/booking'
+import { Route as TwCalendarRouteImport } from './routes/tw/calendar'
+import { Route as TwCrmRouteImport } from './routes/tw/crm'
+import { Route as TwEmailRouteImport } from './routes/tw/email'
+import { Route as TwFunnelRouteImport } from './routes/tw/funnel'
+import { Route as TwReputationRouteImport } from './routes/tw/reputation'
+import { Route as TwStartRouteImport } from './routes/tw/start'
+import { Route as TwThanksRouteImport } from './routes/tw/thanks'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
@@ -43,14 +53,14 @@ const AutomationRoute = AutomationRouteImport.update({
   path: '/automation',
   getParentRoute: () => rootRouteImport,
 } as any)
-const BookingRoute = BookingRouteImport.update({
-  id: '/booking',
-  path: '/booking',
-  getParentRoute: () => rootRouteImport,
-} as any)
 const CalendarRoute = CalendarRouteImport.update({
   id: '/calendar',
   path: '/calendar',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ContactRoute = ContactRouteImport.update({
+  id: '/contact',
+  path: '/contact',
   getParentRoute: () => rootRouteImport,
 } as any)
 const CrmRoute = CrmRouteImport.update({
@@ -83,9 +93,59 @@ const StartRoute = StartRouteImport.update({
   path: '/start',
   getParentRoute: () => rootRouteImport,
 } as any)
-const ThanksRoute = ThanksRouteImport.update({
-  id: '/thanks',
-  path: '/thanks',
+const TwIndexRoute = TwIndexRouteImport.update({
+  id: '/tw/',
+  path: '/tw/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const TwAiContentRoute = TwAiContentRouteImport.update({
+  id: '/tw/ai-content',
+  path: '/tw/ai-content',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const TwAutomationRoute = TwAutomationRouteImport.update({
+  id: '/tw/automation',
+  path: '/tw/automation',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const TwBookingRoute = TwBookingRouteImport.update({
+  id: '/tw/booking',
+  path: '/tw/booking',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const TwCalendarRoute = TwCalendarRouteImport.update({
+  id: '/tw/calendar',
+  path: '/tw/calendar',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const TwCrmRoute = TwCrmRouteImport.update({
+  id: '/tw/crm',
+  path: '/tw/crm',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const TwEmailRoute = TwEmailRouteImport.update({
+  id: '/tw/email',
+  path: '/tw/email',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const TwFunnelRoute = TwFunnelRouteImport.update({
+  id: '/tw/funnel',
+  path: '/tw/funnel',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const TwReputationRoute = TwReputationRouteImport.update({
+  id: '/tw/reputation',
+  path: '/tw/reputation',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const TwStartRoute = TwStartRouteImport.update({
+  id: '/tw/start',
+  path: '/tw/start',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const TwThanksRoute = TwThanksRouteImport.update({
+  id: '/tw/thanks',
+  path: '/tw/thanks',
   getParentRoute: () => rootRouteImport,
 } as any)
 
@@ -94,30 +154,50 @@ export interface FileRoutesByFullPath {
   '/$': typeof SplatRoute
   '/ai-content': typeof AiContentRoute
   '/automation': typeof AutomationRoute
-  '/booking': typeof BookingRoute
   '/calendar': typeof CalendarRoute
+  '/contact': typeof ContactRoute
   '/crm': typeof CrmRoute
   '/email': typeof EmailRoute
   '/funnel': typeof FunnelRoute
   '/reputation': typeof ReputationRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/start': typeof StartRoute
-  '/thanks': typeof ThanksRoute
+  '/tw/ai-content': typeof TwAiContentRoute
+  '/tw/automation': typeof TwAutomationRoute
+  '/tw/booking': typeof TwBookingRoute
+  '/tw/calendar': typeof TwCalendarRoute
+  '/tw/crm': typeof TwCrmRoute
+  '/tw/email': typeof TwEmailRoute
+  '/tw/funnel': typeof TwFunnelRoute
+  '/tw/reputation': typeof TwReputationRoute
+  '/tw/start': typeof TwStartRoute
+  '/tw/thanks': typeof TwThanksRoute
+  '/tw/': typeof TwIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/$': typeof SplatRoute
   '/ai-content': typeof AiContentRoute
   '/automation': typeof AutomationRoute
-  '/booking': typeof BookingRoute
   '/calendar': typeof CalendarRoute
+  '/contact': typeof ContactRoute
   '/crm': typeof CrmRoute
   '/email': typeof EmailRoute
   '/funnel': typeof FunnelRoute
   '/reputation': typeof ReputationRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/start': typeof StartRoute
-  '/thanks': typeof ThanksRoute
+  '/tw/ai-content': typeof TwAiContentRoute
+  '/tw/automation': typeof TwAutomationRoute
+  '/tw/booking': typeof TwBookingRoute
+  '/tw/calendar': typeof TwCalendarRoute
+  '/tw/crm': typeof TwCrmRoute
+  '/tw/email': typeof TwEmailRoute
+  '/tw/funnel': typeof TwFunnelRoute
+  '/tw/reputation': typeof TwReputationRoute
+  '/tw/start': typeof TwStartRoute
+  '/tw/thanks': typeof TwThanksRoute
+  '/tw': typeof TwIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -125,15 +205,25 @@ export interface FileRoutesById {
   '/$': typeof SplatRoute
   '/ai-content': typeof AiContentRoute
   '/automation': typeof AutomationRoute
-  '/booking': typeof BookingRoute
   '/calendar': typeof CalendarRoute
+  '/contact': typeof ContactRoute
   '/crm': typeof CrmRoute
   '/email': typeof EmailRoute
   '/funnel': typeof FunnelRoute
   '/reputation': typeof ReputationRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/start': typeof StartRoute
-  '/thanks': typeof ThanksRoute
+  '/tw/ai-content': typeof TwAiContentRoute
+  '/tw/automation': typeof TwAutomationRoute
+  '/tw/booking': typeof TwBookingRoute
+  '/tw/calendar': typeof TwCalendarRoute
+  '/tw/crm': typeof TwCrmRoute
+  '/tw/email': typeof TwEmailRoute
+  '/tw/funnel': typeof TwFunnelRoute
+  '/tw/reputation': typeof TwReputationRoute
+  '/tw/start': typeof TwStartRoute
+  '/tw/thanks': typeof TwThanksRoute
+  '/tw/': typeof TwIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -142,45 +232,75 @@ export interface FileRouteTypes {
     | '/$'
     | '/ai-content'
     | '/automation'
-    | '/booking'
     | '/calendar'
+    | '/contact'
     | '/crm'
     | '/email'
     | '/funnel'
     | '/reputation'
     | '/sitemap.xml'
     | '/start'
-    | '/thanks'
+    | '/tw/ai-content'
+    | '/tw/automation'
+    | '/tw/booking'
+    | '/tw/calendar'
+    | '/tw/crm'
+    | '/tw/email'
+    | '/tw/funnel'
+    | '/tw/reputation'
+    | '/tw/start'
+    | '/tw/thanks'
+    | '/tw/'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
     | '/$'
     | '/ai-content'
     | '/automation'
-    | '/booking'
     | '/calendar'
+    | '/contact'
     | '/crm'
     | '/email'
     | '/funnel'
     | '/reputation'
     | '/sitemap.xml'
     | '/start'
-    | '/thanks'
+    | '/tw/ai-content'
+    | '/tw/automation'
+    | '/tw/booking'
+    | '/tw/calendar'
+    | '/tw/crm'
+    | '/tw/email'
+    | '/tw/funnel'
+    | '/tw/reputation'
+    | '/tw/start'
+    | '/tw/thanks'
+    | '/tw'
   id:
     | '__root__'
     | '/'
     | '/$'
     | '/ai-content'
     | '/automation'
-    | '/booking'
     | '/calendar'
+    | '/contact'
     | '/crm'
     | '/email'
     | '/funnel'
     | '/reputation'
     | '/sitemap.xml'
     | '/start'
-    | '/thanks'
+    | '/tw/ai-content'
+    | '/tw/automation'
+    | '/tw/booking'
+    | '/tw/calendar'
+    | '/tw/crm'
+    | '/tw/email'
+    | '/tw/funnel'
+    | '/tw/reputation'
+    | '/tw/start'
+    | '/tw/thanks'
+    | '/tw/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -188,15 +308,25 @@ export interface RootRouteChildren {
   SplatRoute: typeof SplatRoute
   AiContentRoute: typeof AiContentRoute
   AutomationRoute: typeof AutomationRoute
-  BookingRoute: typeof BookingRoute
   CalendarRoute: typeof CalendarRoute
+  ContactRoute: typeof ContactRoute
   CrmRoute: typeof CrmRoute
   EmailRoute: typeof EmailRoute
   FunnelRoute: typeof FunnelRoute
   ReputationRoute: typeof ReputationRoute
   SitemapDotxmlRoute: typeof SitemapDotxmlRoute
   StartRoute: typeof StartRoute
-  ThanksRoute: typeof ThanksRoute
+  TwAiContentRoute: typeof TwAiContentRoute
+  TwAutomationRoute: typeof TwAutomationRoute
+  TwBookingRoute: typeof TwBookingRoute
+  TwCalendarRoute: typeof TwCalendarRoute
+  TwCrmRoute: typeof TwCrmRoute
+  TwEmailRoute: typeof TwEmailRoute
+  TwFunnelRoute: typeof TwFunnelRoute
+  TwReputationRoute: typeof TwReputationRoute
+  TwStartRoute: typeof TwStartRoute
+  TwThanksRoute: typeof TwThanksRoute
+  TwIndexRoute: typeof TwIndexRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -229,18 +359,18 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AutomationRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/booking': {
-      id: '/booking'
-      path: '/booking'
-      fullPath: '/booking'
-      preLoaderRoute: typeof BookingRouteImport
-      parentRoute: typeof rootRouteImport
-    }
     '/calendar': {
       id: '/calendar'
       path: '/calendar'
       fullPath: '/calendar'
       preLoaderRoute: typeof CalendarRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/contact': {
+      id: '/contact'
+      path: '/contact'
+      fullPath: '/contact'
+      preLoaderRoute: typeof ContactRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/crm': {
@@ -285,11 +415,81 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof StartRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/thanks': {
-      id: '/thanks'
-      path: '/thanks'
-      fullPath: '/thanks'
-      preLoaderRoute: typeof ThanksRouteImport
+    '/tw/': {
+      id: '/tw/'
+      path: '/tw'
+      fullPath: '/tw/'
+      preLoaderRoute: typeof TwIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/tw/ai-content': {
+      id: '/tw/ai-content'
+      path: '/tw/ai-content'
+      fullPath: '/tw/ai-content'
+      preLoaderRoute: typeof TwAiContentRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/tw/automation': {
+      id: '/tw/automation'
+      path: '/tw/automation'
+      fullPath: '/tw/automation'
+      preLoaderRoute: typeof TwAutomationRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/tw/booking': {
+      id: '/tw/booking'
+      path: '/tw/booking'
+      fullPath: '/tw/booking'
+      preLoaderRoute: typeof TwBookingRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/tw/calendar': {
+      id: '/tw/calendar'
+      path: '/tw/calendar'
+      fullPath: '/tw/calendar'
+      preLoaderRoute: typeof TwCalendarRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/tw/crm': {
+      id: '/tw/crm'
+      path: '/tw/crm'
+      fullPath: '/tw/crm'
+      preLoaderRoute: typeof TwCrmRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/tw/email': {
+      id: '/tw/email'
+      path: '/tw/email'
+      fullPath: '/tw/email'
+      preLoaderRoute: typeof TwEmailRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/tw/funnel': {
+      id: '/tw/funnel'
+      path: '/tw/funnel'
+      fullPath: '/tw/funnel'
+      preLoaderRoute: typeof TwFunnelRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/tw/reputation': {
+      id: '/tw/reputation'
+      path: '/tw/reputation'
+      fullPath: '/tw/reputation'
+      preLoaderRoute: typeof TwReputationRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/tw/start': {
+      id: '/tw/start'
+      path: '/tw/start'
+      fullPath: '/tw/start'
+      preLoaderRoute: typeof TwStartRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/tw/thanks': {
+      id: '/tw/thanks'
+      path: '/tw/thanks'
+      fullPath: '/tw/thanks'
+      preLoaderRoute: typeof TwThanksRouteImport
       parentRoute: typeof rootRouteImport
     }
   }
@@ -300,15 +500,25 @@ const rootRouteChildren: RootRouteChildren = {
   SplatRoute: SplatRoute,
   AiContentRoute: AiContentRoute,
   AutomationRoute: AutomationRoute,
-  BookingRoute: BookingRoute,
   CalendarRoute: CalendarRoute,
+  ContactRoute: ContactRoute,
   CrmRoute: CrmRoute,
   EmailRoute: EmailRoute,
   FunnelRoute: FunnelRoute,
   ReputationRoute: ReputationRoute,
   SitemapDotxmlRoute: SitemapDotxmlRoute,
   StartRoute: StartRoute,
-  ThanksRoute: ThanksRoute,
+  TwAiContentRoute: TwAiContentRoute,
+  TwAutomationRoute: TwAutomationRoute,
+  TwBookingRoute: TwBookingRoute,
+  TwCalendarRoute: TwCalendarRoute,
+  TwCrmRoute: TwCrmRoute,
+  TwEmailRoute: TwEmailRoute,
+  TwFunnelRoute: TwFunnelRoute,
+  TwReputationRoute: TwReputationRoute,
+  TwStartRoute: TwStartRoute,
+  TwThanksRoute: TwThanksRoute,
+  TwIndexRoute: TwIndexRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

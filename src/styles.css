@@ -100,3 +100,163 @@
     line-height: normal;
   }
 }
+
+/* ===== Apple-style region banner + footer region switcher ===== */
+@layer components {
+  .nav {
+    top: var(--rb-offset, 0px);
+    transition:
+      background 0.35s,
+      box-shadow 0.35s,
+      backdrop-filter 0.35s;
+  }
+  @media (max-width: 1024px) {
+    .nav:not(.scrolled) .nav-links {
+      top: calc(76px + var(--rb-offset, 0px));
+    }
+  }
+  .region-banner {
+    position: relative;
+    z-index: 101;
+    background: #323232;
+    color: #f5f5f7;
+    font-size: 13px;
+  }
+  .region-banner-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+    min-height: 70px;
+    padding-top: 14px;
+    padding-bottom: 14px;
+  }
+  .rb-msg {
+    line-height: 1.5;
+    max-width: 520px;
+  }
+  .rb-actions {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    flex: 0 0 auto;
+  }
+  .rb-select {
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 340px;
+    height: 36px;
+    border-radius: 8px;
+    background: #4a4a4c;
+    cursor: pointer;
+  }
+  .rb-select .rb-check {
+    position: absolute;
+    left: 14px;
+    top: 4px;
+    font-size: 14px;
+    pointer-events: none;
+  }
+  .rb-select select {
+    appearance: none;
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    color: #f5f5f7;
+    border: 0;
+    padding: 0 40px 0 40px;
+    font: inherit;
+    font-size: 17px;
+    cursor: pointer;
+    outline: none;
+  }
+  .rb-select select option {
+    color: #1d1d1f;
+  }
+  .rb-select::after {
+    content: "";
+    position: absolute;
+    right: 16px;
+    top: 50%;
+    width: 8px;
+    height: 8px;
+    border-right: 1.5px solid #f5f5f7;
+    border-bottom: 1.5px solid #f5f5f7;
+    transform: translateY(-70%) rotate(45deg);
+    pointer-events: none;
+  }
+  .rb-continue {
+    height: 36px;
+    padding: 0 18px;
+    border-radius: 8px;
+    background: #fff;
+    color: #1d1d1f;
+    font-size: 15px;
+    font-weight: 500;
+    cursor: pointer;
+    border: 0;
+  }
+  .rb-continue:hover {
+    background: #e8e8ed;
+  }
+  .rb-close {
+    width: 28px;
+    height: 28px;
+    display: grid;
+    place-items: center;
+    background: transparent;
+    border: 0;
+    cursor: pointer;
+  }
+  .rb-close svg {
+    width: 18px;
+    height: 18px;
+    stroke: #d2d2d7;
+    stroke-width: 1.8;
+    fill: none;
+    stroke-linecap: round;
+  }
+  .rb-close:hover svg {
+    stroke: #fff;
+  }
+  @media (max-width: 900px) {
+    .region-banner-inner {
+      flex-direction: column;
+      align-items: stretch;
+      gap: 12px;
+    }
+    .rb-actions {
+      gap: 10px;
+    }
+    .rb-select {
+      flex: 1;
+      width: auto;
+    }
+  }
+  .region-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    color: inherit;
+    opacity: 0.85;
+  }
+  .region-link:hover {
+    color: var(--orange);
+    opacity: 1;
+  }
+  .region-link svg {
+    width: 14px;
+    height: 14px;
+    stroke: currentColor;
+    fill: none;
+    stroke-width: 1.8;
+  }
+}
+
+/* English pages: Latin-first font stack (avoids full-width CJK punctuation like ’). */
+@layer components {
+  html:lang(en) {
+    --font-tc: "Inter", "Noto Sans TC", -apple-system, BlinkMacSystemFont, sans-serif;
+  }
+}

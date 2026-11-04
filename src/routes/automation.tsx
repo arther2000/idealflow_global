@@ -1,6 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { SiteNav } from "@/components/site/SiteNav";
 import { SiteFooter } from "@/components/site/SiteFooter";
+import { RegionBanner } from "@/components/site/RegionBanner";
 import { useReveal } from "@/hooks/use-reveal";
 import { pageHead } from "@/lib/seo";
 
@@ -8,9 +9,9 @@ export const Route = createFileRoute("/automation")({
   head: () =>
     pageHead({
       path: "/automation",
-      title: "自動化工作流程｜匯成交 iDealFlow.ai",
+      title: "Workflow Automation | iDealFlow.ai",
       description:
-        "你睡覺時，系統還在幫你跟進客戶。視覺化工作流、if/else 智能分支、AI 判斷與行動 App，一次取代 Zapier、Make、HubSpot 等自動化工具。",
+        "Follow up with every lead while you sleep. Visual workflows, if/else branching, AI decisions and a mobile app—replacing Zapier, Make and HubSpot in one place.",
     }),
   component: AutomationPage,
 });
@@ -20,74 +21,75 @@ function AutomationPage() {
 
   return (
     <>
-      <SiteNav />
+      <RegionBanner current="en" />
+      <SiteNav locale="en" />
       <section className="subhero">
         <div className="wrap">
           <p className="crumb reveal">
-            <Link to="/">首頁</Link>
-            {" ／ "}
+            <Link to="/">Home</Link>
+            {" / "}
             <Link to="/" hash="features">
-              核心功能
+              Features
             </Link>
-            {" ／ "}
-            <b>自動化工作流程</b>
+            {" / "}
+            <b>Workflow Automation</b>
           </p>
           <h1 className="reveal d1">
-            你睡覺時，系統還在
+            While you sleep,
             <br />
-            <span className="grad">幫你跟進客戶</span>
+            <span className="grad">your follow-up keeps going.</span>
           </h1>
           <p className="sub reveal d2">
-            表單送出、預約完成、付款成功——每一個動作都能觸發下一步。
-            <strong>拖拉式流程編輯器</strong>
-            把重複的工作變成自動的，把你的時間還給你。
+            A form submitted, a booking confirmed, a payment received—every action can trigger the
+            next. Our <strong>drag-and-drop workflow builder</strong> turns repetitive work into
+            automatic work, and gives you your time back.
           </p>
           <div className="hero-ctas reveal d3">
-            <Link to="/booking" className="btn btn-primary">
-              {"免費報名講座 "}
+            <Link to="/contact" className="btn btn-primary">
+              {"Book a Demo "}
               <span className="arr">→</span>
             </Link>
             <Link to="/" hash="cases" className="btn btn-ghost">
-              看看別人怎麼用
+              See it in action
             </Link>
           </div>
         </div>
       </section>
-      {/* 區塊一：工作流 */}
+      {/* Block 1: Workflows */}
       <div className="fblock">
         <div className="wrap fb-grid">
           <div className="fb-txt reveal">
             <div className="eyebrow">WORKFLOW ENGINE</div>
             <h3>
-              視覺化工作流
+              Visual workflows.
               <br />
-              把重複的事
-              <em>全部自動化</em>
+              Repetitive work, <em>fully automated.</em>
             </h3>
             <p>
-              從名單跟進、團隊任務到銷售資料更新，通通可以設成自動。拖拉節點就能組流程，不用寫程式、也不用再付一套
-              Zapier 的月費來把工具黏在一起。
+              Lead follow-up, team tasks, sales data updates—automate all of it. Build flows by
+              dragging nodes into place. No code, and no more paying for Zapier just to glue your
+              tools together.
             </p>
             <div className="replaces">
-              <span className="rlabel">一套取代</span>
+              <span className="rlabel">Replaces</span>
               <span className="rchip">Zapier</span>
               <span className="rchip">Make</span>
               <span className="rchip">ActiveCampaign</span>
               <span className="rchip">HubSpot</span>
             </div>
             <ul className="checklist">
-              <li>自動發送 Email、簡訊、LINE</li>
-              <li>自動變更銷售管道階段</li>
-              <li>內部團隊即時通知</li>
-              <li>進階 if／else 分支邏輯</li>
-              <li>付款後即時開通課程權限</li>
-              <li>自動更新 Google 試算表</li>
-              <li>發送訊息到 Slack</li>
-              <li>Webhook／API 串接外部系統</li>
+              <li>Automated email, SMS and LINE messages</li>
+              <li>Automatic pipeline stage changes</li>
+              <li>Instant internal team notifications</li>
+              <li>Advanced if/else branching logic</li>
+              <li>Instant course access after payment</li>
+              <li>Automatic Google Sheets updates</li>
+              <li>Messages sent straight to Slack</li>
+              <li>Webhook and API integrations</li>
             </ul>
             <div className="fb-cta">
-              <Link to="/booking" className="btn btn-navy">
-                {"建立我的第一條工作流 "}
+              <Link to="/contact" className="btn btn-navy">
+                {"Build my first workflow "}
                 <span className="arr">→</span>
               </Link>
             </div>
@@ -105,32 +107,32 @@ function AutomationPage() {
                   <div className="m-node trigger">
                     <span className="ni">📝</span>
                     <span>
-                      觸發：表單送出
-                      <small>詢價表單</small>
+                      Trigger: Form submitted
+                      <small>Quote request form</small>
                     </span>
                   </div>
                   <div className="m-link"></div>
                   <div className="m-node">
                     <span className="ni">🔀</span>
                     <span>
-                      條件判斷：預算 ≥ 10 萬？
-                      <small>if / else 分支</small>
+                      Condition: Budget ≥ NT$100K?
+                      <small>if / else branch</small>
                     </span>
                   </div>
                   <div className="m-link"></div>
                   <div className="m-node">
                     <span className="ni">👤</span>
                     <span>
-                      是 → 指派資深業務＋LINE 通知
-                      <small>15 分鐘內回電</small>
+                      Yes → Assign senior rep + LINE alert
+                      <small>Call back within 15 min</small>
                     </span>
                   </div>
                   <div className="m-link"></div>
                   <div className="m-node">
                     <span className="ni">✉️</span>
                     <span>
-                      否 → 進入培育信序列
-                      <small>自動加溫再跟進</small>
+                      No → Add to nurture sequence
+                      <small>Warm up, then follow up</small>
                     </span>
                   </div>
                 </div>
@@ -139,38 +141,38 @@ function AutomationPage() {
           </div>
         </div>
       </div>
-      {/* 區塊二：AI 判斷 */}
+      {/* Block 2: AI decisions */}
       <div className="fblock">
         <div className="wrap fb-grid rev">
           <div className="fb-txt reveal">
             <div className="eyebrow">AI DECISION</div>
             <h3>
-              接上 AI 智能判斷
+              Add AI to the mix.
               <br />
-              流程
-              <em>自己會思考</em>
+              Workflows that <em>think for themselves.</em>
             </h3>
             <p>
-              自動化不只是照劇本走。流程中可以串接
-              AI，讓系統讀懂客戶的訊息內容：是詢價？是客訴？還是想預約？判斷完自動分類、自動回覆、自動派給對的人。
+              Automation shouldn’t just follow a script. Plug AI into any workflow and it reads what
+              your customers are actually saying: a quote request, a complaint, a booking? It
+              classifies, replies and routes to the right person—automatically.
             </p>
             <div className="replaces">
-              <span className="rlabel">AI 能力</span>
-              <span className="rchip">意圖分類</span>
-              <span className="rchip">智能回覆</span>
-              <span className="rchip">自動貼標</span>
+              <span className="rlabel">AI powers</span>
+              <span className="rchip">Intent detection</span>
+              <span className="rchip">Smart replies</span>
+              <span className="rchip">Auto-tagging</span>
             </div>
             <ul className="checklist">
-              <li>AI 讀懂訊息意圖自動分流</li>
-              <li>依內容自動貼標籤分群</li>
-              <li>AI 生成個人化回覆草稿</li>
-              <li>複雜問題自動轉真人接手</li>
-              <li>判斷結果寫回 CRM 紀錄</li>
-              <li>搭配 n8n 延伸更多 AI 應用</li>
+              <li>AI reads intent and routes messages</li>
+              <li>Auto-tag and segment by content</li>
+              <li>AI-drafted personalized replies</li>
+              <li>Complex issues handed to a human</li>
+              <li>Decisions logged back to the CRM</li>
+              <li>Extend further with n8n</li>
             </ul>
             <div className="fb-cta">
-              <Link to="/booking" className="btn btn-navy">
-                {"讓 AI 進我的流程 "}
+              <Link to="/contact" className="btn btn-navy">
+                {"Put AI in my workflow "}
                 <span className="arr">→</span>
               </Link>
             </div>
@@ -185,16 +187,18 @@ function AutomationPage() {
               </div>
               <div className="mock-pad">
                 <div className="m-chat">
-                  <div className="m-bub in">你們的課程方案適合我們公司嗎？大概 15 人要上。</div>
-                  <div className="m-bub out">
-                    <span className="ai">AI 判定：企業培訓・高意願</span>
-                    當然可以！我們有專為企業設計的方案，方便幫您安排 30
-                    分鐘線上諮詢，進一步了解需求嗎？
+                  <div className="m-bub in">
+                    Would your course packages work for our company? We have about 15 people.
                   </div>
-                  <div className="m-bub in">好啊，怎麼約？</div>
                   <div className="m-bub out">
-                    <span className="ai">AI 動作：發送預約連結</span>
-                    這是預約連結，挑個方便的時段，我們線上見 👉
+                    <span className="ai">AI intent: Corporate training · High intent</span>
+                    Absolutely! We have plans built for teams. Can I set up a 30-minute video call
+                    to learn more about your needs?
+                  </div>
+                  <div className="m-bub in">Sure, how do I book?</div>
+                  <div className="m-bub out">
+                    <span className="ai">AI action: Booking link sent</span>
+                    Here’s the link—pick a time that works and we’ll see you online 👉
                   </div>
                 </div>
               </div>
@@ -202,36 +206,37 @@ function AutomationPage() {
           </div>
         </div>
       </div>
-      {/* 區塊三：行動 App */}
+      {/* Block 3: Mobile app */}
       <div className="fblock">
         <div className="wrap fb-grid">
           <div className="fb-txt reveal">
             <div className="eyebrow">MOBILE APP</div>
             <h3>
-              行動 App 隨身帶著走
+              Your business, in your pocket.
               <br />
-              不在電腦前，
-              <em>生意照樣跑</em>
+              Away from your desk, <em>still in business.</em>
             </h3>
             <p>
-              在外面跑客戶、在店裡忙、在高鐵上——打開手機就能回訊息、改預約、發合約收款。系統在雲端跑，你在哪裡都是辦公室。
+              Visiting clients, running your shop, riding the train—open your phone to reply,
+              reschedule, send contracts and collect payments. It all runs in the cloud, so your
+              office is wherever you are.
             </p>
             <div className="replaces">
-              <span className="rlabel">支援平台</span>
+              <span className="rlabel">Available on</span>
               <span className="rchip">iOS</span>
               <span className="rchip">Android</span>
             </div>
             <ul className="checklist">
-              <li>Email、簡訊、通話集中管理</li>
-              <li>隨時安排與改動預約</li>
-              <li>手機發送合約與發票</li>
-              <li>任務管理不漏接</li>
-              <li>CRM 名單隨身查</li>
-              <li>即時推播重要通知</li>
+              <li>Email, SMS and calls in one place</li>
+              <li>Schedule and reschedule on the go</li>
+              <li>Send contracts and invoices from your phone</li>
+              <li>Task management that misses nothing</li>
+              <li>Your CRM, always at hand</li>
+              <li>Real-time push notifications</li>
             </ul>
             <div className="fb-cta">
-              <Link to="/booking" className="btn btn-navy">
-                {"把生意裝進口袋 "}
+              <Link to="/contact" className="btn btn-navy">
+                {"Take my business mobile "}
                 <span className="arr">→</span>
               </Link>
             </div>
@@ -245,84 +250,88 @@ function AutomationPage() {
                 <span>iDealFlow App</span>
               </div>
               <div className="mock-pad">
-                <div className="m-title">今日待辦 · 3 件</div>
+                <div className="m-title">Today’s tasks · 3</div>
                 <div className="m-row">
                   <div className="m-av o">📞</div>
                   <div className="mi">
-                    <b>回電：張先生詢價</b>
-                    <span>AI 判定高意願 · 15 分鐘內</span>
+                    <b>Call back: David Chang’s quote</b>
+                    <span>AI: high intent · within 15 min</span>
                   </div>
-                  <span className="m-tag hot">緊急</span>
+                  <span className="m-tag hot">Urgent</span>
                 </div>
                 <div className="m-row">
                   <div className="m-av">📄</div>
                   <div className="mi">
-                    <b>發送合約：林小姐</b>
-                    <span>顧問服務 · 待簽署</span>
+                    <b>Send contract: Sarah Lin</b>
+                    <span>Consulting services · Awaiting signature</span>
                   </div>
-                  <span className="m-tag info">進行中</span>
+                  <span className="m-tag info">In progress</span>
                 </div>
                 <div className="m-row">
                   <div className="m-av">💰</div>
                   <div className="mi">
-                    <b>收款確認：週三工作坊</b>
-                    <span>8 筆已入帳</span>
+                    <b>Confirm payments: Wednesday workshop</b>
+                    <span>8 payments received</span>
                   </div>
-                  <span className="m-tag ok">完成</span>
+                  <span className="m-tag ok">Done</span>
                 </div>
               </div>
             </div>
           </div>
         </div>
       </div>
-      {/* 情境案例 */}
+      {/* Use cases */}
       <section className="usecases">
         <div className="wrap">
           <div className="center reveal">
             <div className="eyebrow" style={{ justifyContent: "center" }}>
               REAL SCENARIOS
             </div>
-            <h2 className="h2">實際上，大家都這樣用</h2>
-            <p className="lead">三個最常見的落地情境，看看自動化怎麼幫你省下每天重複的工。</p>
+            <h2 className="h2">How businesses actually use it</h2>
+            <p className="lead">
+              Three of the most common setups—and how automation takes the daily grind off your
+              plate.
+            </p>
           </div>
           <div className="ugrid">
             <div className="ucard reveal">
-              <span className="utag">名單分流</span>
-              <h4>詢盤進來 15 分鐘內就有人接</h4>
+              <span className="utag">Lead routing</span>
+              <h4>Every inquiry answered within 15 minutes</h4>
               <p>
-                表單送出 → AI 判斷意願 → 高意願自動指派業務＋LINE 通知。
-                <b>速度就是成交率</b>
-                ，慢一天回覆，客戶早就找別人了。
+                Form submitted → AI scores intent → hot leads auto-assigned to a rep with a LINE
+                alert. <b>Speed wins deals.</b> Reply a day late, and they’ve already moved on.
               </p>
             </div>
             <div className="ucard reveal d1">
-              <span className="utag">課程開通</span>
-              <h4>半夜付款，權限秒開通</h4>
+              <span className="utag">Course access</span>
+              <h4>Paid at midnight. Access in seconds.</h4>
               <p>
-                客戶刷卡成功 → 自動開通課程與會員權限 → 寄出歡迎信與上課指南。
-                <b>你在睡覺，onboarding 已經做完了</b>。
+                Card approved → course and membership access unlocked → welcome email and class
+                guide sent. <b>You’re asleep, and onboarding is already done.</b>
               </p>
             </div>
             <div className="ucard reveal d2">
-              <span className="utag">內部協作</span>
-              <h4>成交當下，全公司該知道的都知道</h4>
+              <span className="utag">Team handoffs</span>
+              <h4>The moment a deal closes, everyone knows</h4>
               <p>
-                案子進到「已成交」→ 自動通知財務開發票、通知客服啟動服務、更新 Google 試算表報表。
-                <b>不用開會交接，流程自己跑</b>。
+                Deal moves to “Won” → finance is told to invoice, support kicks off service, and
+                your Google Sheets report updates.{" "}
+                <b>No handoff meetings. The workflow runs itself.</b>
               </p>
             </div>
           </div>
         </div>
       </section>
-      {/* 其他功能 */}
+      {/* Related features */}
       <section className="morefeat">
         <div className="wrap">
           <div className="center reveal">
             <h2 className="h2">
-              流程自動了，
-              <em>還差什麼？</em>
+              Your workflows are on autopilot. <em>What’s next?</em>
             </h2>
-            <p className="lead">自動化是引擎，搭配這些功能，整套成交系統才算完整。</p>
+            <p className="lead">
+              Automation is the engine. Pair it with these features for a complete sales system.
+            </p>
           </div>
           <div className="mf-grid reveal">
             <Link to="/funnel" className="mf-card">
@@ -331,7 +340,7 @@ function AutomationPage() {
                   <path d="M3 4h18l-7 8v6l-4 2v-8L3 4z" />
                 </svg>
               </span>
-              銷售漏斗與網站建置
+              Funnels &amp; Websites
               <span className="arr">→</span>
             </Link>
             <Link to="/email" className="mf-card">
@@ -341,7 +350,7 @@ function AutomationPage() {
                   <path d="m22 7-10 5L2 7" />
                 </svg>
               </span>
-              Email／LINE 行銷自動化
+              Email &amp; LINE Marketing
               <span className="arr">→</span>
             </Link>
             <Link to="/calendar" className="mf-card">
@@ -353,7 +362,7 @@ function AutomationPage() {
                   <path d="M3 10h18" />
                 </svg>
               </span>
-              智能預約系統
+              Smart Booking
               <span className="arr">→</span>
             </Link>
             <Link to="/ai-content" className="mf-card">
@@ -364,7 +373,7 @@ function AutomationPage() {
                   <path d="M5 16c4 3 10 3 14 0" />
                 </svg>
               </span>
-              AI 內容生成與社群排程
+              AI Content &amp; Social Planner
               <span className="arr">→</span>
             </Link>
             <Link to="/reputation" className="mf-card">
@@ -373,7 +382,7 @@ function AutomationPage() {
                   <path d="m12 2 3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
                 </svg>
               </span>
-              評價管理系統
+              Reputation Management
               <span className="arr">→</span>
             </Link>
             <Link to="/crm" className="mf-card">
@@ -384,7 +393,7 @@ function AutomationPage() {
                   <path d="M23 21v-2a4 4 0 0 0-3-3.87" />
                 </svg>
               </span>
-              CRM 客戶管理
+              CRM
               <span className="arr">→</span>
             </Link>
           </div>
@@ -393,24 +402,25 @@ function AutomationPage() {
       <section className="final">
         <div className="wrap">
           <h2 className="reveal">
-            讓客戶流程自動運轉，
+            Let your customer journey run itself,
             <br />
-            讓你
-            <span>專注在成交</span>
+            so you can <span>focus on closing.</span>
           </h2>
-          <p className="reveal d1">重複的工作交給系統，你的時間拿去做只有你能做的事。</p>
+          <p className="reveal d1">
+            Hand the repetitive work to the system. Spend your time on what only you can do.
+          </p>
           <div className="hero-ctas reveal d2">
-            <Link to="/booking" className="btn btn-primary">
-              {"免費報名講座 "}
+            <Link to="/contact" className="btn btn-primary">
+              {"Book a Demo "}
               <span className="arr">→</span>
             </Link>
             <Link to="/" hash="pricing" className="btn btn-ghost">
-              查看方案內容
+              See Pricing
             </Link>
           </div>
         </div>
       </section>
-      <SiteFooter />
+      <SiteFooter locale="en" />
     </>
   );
 }
