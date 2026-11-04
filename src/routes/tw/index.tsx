@@ -22,12 +22,12 @@ const FAQ: FaqItem[] = [
     a: "支援，而且是我們的核心優勢之一。LINE 套件由匯鼎科技團隊自行開發，是唯一支援 Flex Message 在地化應用的方案，完全符合台灣文化使用習慣，同時逐步開放原生支援台灣主流金流系統。",
   },
   {
-    q: "底層引擎 GoHighLevel 可靠嗎？",
-    a: "GoHighLevel 是 2018 年創立於美國德州達拉斯的 AI 驅動商業成長作業系統，目前賦能全球超過百萬家企業，提供 24/7 客服支援，每年舉辦 LevelUp／HighLevel Summit 年度峰會，功能持續更新、全球生態系完整。",
+    q: "系統穩定可靠嗎？",
+    a: "匯成交的底層引擎是全球超過百萬家企業使用的 AI 驅動商業成長作業系統，提供 24/7 客服支援、功能持續更新、全球生態系完整；匯鼎科技在地團隊再提供中文化套件、LINE 套件與導入支持。",
   },
   {
     q: "方案費用包含哪些內容？",
-    a: "年費方案 US$1,197／年，包含以 GoHighLevel 為基底引擎的全功能系統（價值超過 NT$100,000）、教育培訓與線上學習資源、線上教育系統使用權，以及基礎導入與啟動協助。",
+    a: "年費方案 US$1,197／年，包含世界級底層引擎打造的全功能系統（價值超過 NT$100,000）、教育培訓與線上學習資源、線上教育系統使用權，以及基礎導入與啟動協助。",
   },
   {
     q: "什麼樣的人適合使用 iDealFlow.ai？",
@@ -40,7 +40,7 @@ export const Route = createFileRoute("/tw/")({
     pageHead({
       faq: FAQ,
       path: "/tw",
-      title: "匯成交 iDealFlow.ai｜GoHighLevel 中文版・AI 自動化成交系統（CRM＋LINE 行銷）",
+      title: "匯成交 iDealFlow.ai｜AI 自動化成交系統・CRM＋LINE 行銷自動化一站整合",
       description:
         "別再為了做行銷養一堆工具。匯成交 iDealFlow.ai 把 CRM、LINE／Email 行銷、銷售漏斗、AI 客服、預約與課程系統整合成一套，名單一進來，系統就幫你跟到成交。台灣在地中文化與導入支持。",
     }),
@@ -182,19 +182,17 @@ function IndexPage() {
       <div className="engine">
         <div className="wrap engine-inner">
           <div className="engine-txt reveal">
-            <h3>
-              {"以世界級底層平台，打造你的自動化成交系統 "}
-              <span>· powered by GoHighLevel</span>
-            </h3>
+            <h3>以世界級底層平台，打造你的自動化成交系統</h3>
             <p>
-              底層核心引擎採用 AI 驅動的商業成長作業系統 GoHighLevel（2018
-              年創立於美國德州達拉斯），目前正在賦能全球超過百萬家企業，功能完整、持續更新、生態系遍佈全球。
+              底層核心引擎採用全球超過百萬家企業使用的 AI
+              驅動商業成長作業系統，功能完整、持續更新、生態系遍佈全球；再加上匯鼎科技自研的中文化套件、LINE
+              套件與在地導入支持。
             </p>
           </div>
           <div className="engine-badges reveal d1">
             <div className="ebadge">
-              <b>2018</b>
-              <span>創立年份</span>
+              <b>500+</b>
+              <span>工具整合</span>
             </div>
             <div className="ebadge">
               <b>1M+</b>
@@ -712,7 +710,7 @@ function IndexPage() {
                 1,197
                 <small>{" / 年"}</small>
               </div>
-              <p className="psub">取得以 GoHighLevel 為基底引擎的全功能系統</p>
+              <p className="psub">取得世界級底層引擎打造的全功能系統</p>
               <ul className="plist">
                 <li>
                   {"全功能系統（價值超過 "}

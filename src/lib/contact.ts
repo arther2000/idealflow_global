@@ -1,6 +1,6 @@
 // English site "Book a Demo" leads.
 //
-// TODO: create a *separate* GoHighLevel Workflow → Inbound Webhook Trigger for global (English)
+// TODO: create a *separate* CRM (app.idealflow.ai) Workflow → Inbound Webhook Trigger for global (English)
 // leads and paste its URL here. Do NOT reuse the Taiwan seminar webhook (src/lib/booking.ts),
 // or English demo requests would be enrolled in the Taipei seminar workflow.
 // While this is empty, submissions fall back to opening the visitor's email client.

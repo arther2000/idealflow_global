@@ -1,4 +1,4 @@
-// 講座報名：送進 GoHighLevel（Workflow → Inbound Webhook Trigger）。
+// 講座報名：送進 CRM（app.idealflow.ai：Workflow → Inbound Webhook Trigger）。
 // 欄位為扁平結構（GHL 對應巢狀 JSON 不穩），送出後導向感謝頁。
 
 export const FORM_ENDPOINT =

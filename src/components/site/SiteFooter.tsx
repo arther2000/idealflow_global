@@ -47,7 +47,7 @@ export function SiteFooter({ locale, variant = "full" }: SiteFooterProps) {
               <Link to={p.home} style={{ color: "var(--orange)" }}>
                 {t.backHome}
               </Link>{" "}
-              · CEO｜Arthur Wu · powered by GoHighLevel
+              · CEO｜Arthur Wu
             </span>
             <RegionLink locale={locale} />
           </div>
@@ -75,7 +75,6 @@ export function SiteFooter({ locale, variant = "full" }: SiteFooterProps) {
           <div className="foot-col">
             <h6>{t.colAbout}</h6>
             <Link to={p.start}>{t.startLink}</Link>
-            <Link to={p.gohighlevel}>{t.ghlLink}</Link>
             {HOME_ANCHORS[locale].map((a) => (
               <Link
                 key={a.hash}
@@ -94,7 +93,7 @@ export function SiteFooter({ locale, variant = "full" }: SiteFooterProps) {
         </div>
         <div className="foot-bottom">
           <span>{t.copyright}</span>
-          <span>CEO｜Arthur Wu · powered by GoHighLevel</span>
+          <span>CEO｜Arthur Wu</span>
           <RegionLink locale={locale} />
         </div>
       </div>

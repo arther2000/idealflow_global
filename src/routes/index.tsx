@@ -22,12 +22,12 @@ const FAQ: FaqItem[] = [
     a: "Yes — it’s one of our biggest strengths. Our LINE suite is built in-house by the iDealFlow team and is the only localized solution with Flex Message support. It’s designed around how businesses in LINE-first markets communicate, and native support for Taiwan’s leading payment gateways is rolling out now.",
   },
   {
-    q: "Is GoHighLevel a reliable foundation?",
-    a: "GoHighLevel is an AI-powered business growth operating system founded in Dallas, Texas in 2018. It powers more than a million businesses worldwide, offers 24/7 support, hosts its annual LevelUp / HighLevel Summit, and ships updates constantly — backed by a mature global ecosystem.",
+    q: "Is the platform reliable?",
+    a: "iDealFlow.ai runs on an AI-powered business growth operating system trusted by more than a million businesses worldwide, with 24/7 support, constant updates and a complete global ecosystem — backed by our own team for localization, the LINE suite and onboarding.",
   },
   {
     q: "What’s included in the plan?",
-    a: "The annual plan is US$1,197/year and includes the full-featured platform powered by GoHighLevel (worth over NT$100,000), training and online learning resources, access to our online learning platform, and initial setup and launch support.",
+    a: "The annual plan is US$1,197/year and includes the full-featured platform on a world-class engine (worth over NT$100,000), training and online learning resources, access to our online learning platform, and initial setup and launch support.",
   },
   {
     q: "Who is iDealFlow.ai for?",
@@ -40,7 +40,7 @@ export const Route = createFileRoute("/")({
     pageHead({
       faq: FAQ,
       path: "/",
-      title: "iDealFlow.ai | GoHighLevel with LINE & Chinese Localization — AI Sales Automation",
+      title: "iDealFlow.ai | AI Sales Automation with LINE & Chinese Localization",
       description:
         "CRM, LINE & email marketing, funnels, AI chat, booking and courses in one platform. Every lead gets followed up automatically, all the way to a closed deal.",
     }),
@@ -183,20 +183,18 @@ function IndexPage() {
       <div className="engine">
         <div className="wrap engine-inner">
           <div className="engine-txt reveal">
-            <h3>
-              {"Your sales automation, built on a world-class platform "}
-              <span>· powered by GoHighLevel</span>
-            </h3>
+            <h3>Your sales automation, built on a world-class platform</h3>
             <p>
-              At its core is GoHighLevel, the AI-powered business growth operating system founded in
-              Dallas, Texas in 2018. It already powers more than a million businesses worldwide —
-              feature-rich, constantly updated, with a truly global ecosystem.
+              At its core is an AI-powered business growth operating system already trusted by more
+              than a million businesses worldwide — feature-rich, constantly updated, with a truly
+              global ecosystem — plus our own localization suite, LINE suite and hands-on
+              onboarding.
             </p>
           </div>
           <div className="engine-badges reveal d1">
             <div className="ebadge">
-              <b>2018</b>
-              <span>Founded</span>
+              <b>500+</b>
+              <span>Integrations</span>
             </div>
             <div className="ebadge">
               <b>1M+</b>
@@ -755,7 +753,7 @@ function IndexPage() {
                 1,197
                 <small>{" / year"}</small>
               </div>
-              <p className="psub">The full-featured platform, powered by GoHighLevel</p>
+              <p className="psub">The full-featured platform on a world-class engine</p>
               <ul className="plist">
                 <li>
                   {"Full-featured platform (worth over "}

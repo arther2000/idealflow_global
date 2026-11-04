@@ -47,7 +47,7 @@ export const Route = createFileRoute("/start")({
       product: true,
       faq: FAQ,
       path: "/start",
-      title: "GoHighLevel Onboarding: 14-Day Launch Program (US$1,197/yr) | iDealFlow.ai",
+      title: "14-Day Launch Program: Sales Automation Onboarding (US$1,197/yr) | iDealFlow.ai",
       description:
         "Launch an automated sales system in 14 days: the full platform, pre-built modules, hands-on training and live support. No more courses, tool sprawl or pricey tech hires.",
     }),
@@ -229,7 +229,7 @@ function StartPage() {
                 }
                 <b>NT$100K+ in monthly revenue within 20 days and 56%+ seminar attendance</b>
                 {
-                  ". That’s why I founded iDealFlow.ai: built on GoHighLevel, a world-class engine, plus our own "
+                  ". That’s why I founded iDealFlow.ai: built on a world-class engine, plus our own "
                 }
                 <span className="fhl">
                   one-of-a-kind multilingual localization suite, deep LINE integration and hands-on,
@@ -266,7 +266,7 @@ function StartPage() {
           <div className="offer-box reveal">
             <span className="obadge">★ Everything you get</span>
             <div className="offer-row">
-              <span className="oname">iDealFlow.ai full platform (GoHighLevel engine)</span>
+              <span className="oname">iDealFlow.ai full platform (world-class engine)</span>
               <span className="odots"></span>
               <span className="oval">NT$100,000+ value</span>
             </div>

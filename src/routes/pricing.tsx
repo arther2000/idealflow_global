@@ -22,8 +22,8 @@ const FAQ: FaqItem[] = [
     a: "That’s exactly why the consultation comes first. Before you sign up, our team assesses your business model, lead sources and rollout plan for free — and we only start once we know it’s a fit. After you join, you’re fully supported: weekly Q&A and tech support catch you whenever you get stuck. Our goal is for you to actually use it, not to make a sale and disappear.",
   },
   {
-    q: "Is GoHighLevel a reliable foundation?",
-    a: "GoHighLevel is an AI-powered business growth operating system founded in Dallas, Texas in 2018. It powers more than a million businesses worldwide, offers 24/7 support, hosts its annual LevelUp / HighLevel Summit, and ships updates constantly — backed by a mature global ecosystem.",
+    q: "Is the platform reliable?",
+    a: "iDealFlow.ai runs on an AI-powered business growth operating system trusted by more than a million businesses worldwide, with 24/7 support, constant updates and a complete global ecosystem — backed by our own team for localization, the LINE suite and onboarding.",
   },
 ];
 
@@ -31,7 +31,7 @@ export const Route = createFileRoute("/pricing")({
   head: () =>
     pageHead({
       path: "/pricing",
-      title: "Pricing | iDealFlow.ai — All-in-One GoHighLevel Platform for US$1,197/year",
+      title: "Pricing | iDealFlow.ai — All-in-One Sales Automation Platform for US$1,197/year",
       description:
         "iDealFlow.ai costs US$1,197/year: the full platform, Chinese & Japanese localization, LINE suite, training and onboarding. Compare it with 8 separate tools at NT$34,000+ a month.",
       breadcrumb: "Pricing",
@@ -99,7 +99,7 @@ function PricingPage() {
                 1,197
                 <small>{" / year"}</small>
               </div>
-              <p className="psub">The full-featured platform, powered by GoHighLevel</p>
+              <p className="psub">The full-featured platform on a world-class engine</p>
               <ul className="plist">
                 <li>
                   {"Full-featured platform (worth over "}

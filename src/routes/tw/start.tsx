@@ -47,7 +47,7 @@ export const Route = createFileRoute("/tw/start")({
       product: true,
       faq: FAQ,
       path: "/tw/start",
-      title: "GoHighLevel 中文導入方案｜14 天啟動計畫 US$1,197／年｜匯成交 iDealFlow.ai",
+      title: "14 天啟動計畫｜自動化成交系統導入方案 US$1,197／年｜匯成交 iDealFlow.ai",
       description:
         "14 天內打造自動化成交系統：全功能系統＋已配置模組＋實操課程＋中文技術支援。不用再學一堆課程、不用養十套工具、不用高薪請技術團隊。",
     }),
@@ -205,7 +205,7 @@ function StartPage() {
               <p>
                 {"這套方法幫了我，也幫了跟我一起導入的夥伴：一位親子教養導師 Emma 老師導入後 "}
                 <b>20 天月收突破 10 萬、講座出席率 56%+</b>
-                。所以我創立了匯成交 iDealFlow.ai——以世界級引擎 GoHighLevel 為底層，加上我們自研的
+                。所以我創立了匯成交 iDealFlow.ai——以世界級引擎為底層，加上我們自研的
                 <span className="fhl">
                   全球唯一多語中文化套件、LINE 深度整合，和真人陪跑的導入訓練
                 </span>
@@ -238,7 +238,7 @@ function StartPage() {
           <div className="offer-box reveal">
             <span className="obadge">★ 你將獲得的完整內容</span>
             <div className="offer-row">
-              <span className="oname">iDealFlow.ai 全功能系統（GoHighLevel 引擎）</span>
+              <span className="oname">iDealFlow.ai 全功能系統（世界級底層引擎）</span>
               <span className="odots"></span>
               <span className="oval">價值 NT$100,000+</span>
             </div>

@@ -22,8 +22,8 @@ const FAQ: FaqItem[] = [
     a: "所以我們把諮詢放在最前面：報名前先由團隊免費評估你的生意型態、名單來源與導入方向，確認適合才開始。加入後有完整的陪跑機制，任何卡關都有每週答疑和技術支援接住你——我們的目標是你真的用起來，而不是賣完就消失。",
   },
   {
-    q: "底層引擎 GoHighLevel 可靠嗎？",
-    a: "GoHighLevel 是 2018 年創立於美國德州達拉斯的 AI 驅動商業成長作業系統，目前賦能全球超過百萬家企業，提供 24/7 客服支援，每年舉辦 LevelUp／HighLevel Summit 年度峰會，功能持續更新、全球生態系完整。",
+    q: "系統穩定可靠嗎？",
+    a: "匯成交的底層引擎是全球超過百萬家企業使用的 AI 驅動商業成長作業系統，提供 24/7 客服支援、功能持續更新、全球生態系完整；匯鼎科技在地團隊再提供中文化套件、LINE 套件與導入支持。",
   },
 ];
 
@@ -31,7 +31,7 @@ export const Route = createFileRoute("/tw/pricing")({
   head: () =>
     pageHead({
       path: "/tw/pricing",
-      title: "匯成交價格方案｜GoHighLevel 中文版年費 US$1,197，含導入與教育訓練｜iDealFlow.ai",
+      title: "匯成交價格方案｜自動化成交系統年費 US$1,197，含導入與教育訓練｜iDealFlow.ai",
       description:
         "匯成交 iDealFlow.ai 年費 US$1,197（約每天 NT$108），含全功能系統、中文化套件、LINE 套件、教育訓練與導入協助。比較分開訂閱 8 套工具每月 NT$34,000+ 的真實成本。",
       breadcrumb: "價格方案",
@@ -98,7 +98,7 @@ function TwPricingPage() {
                 1,197
                 <small>{" / 年"}</small>
               </div>
-              <p className="psub">取得以 GoHighLevel 為基底引擎的全功能系統</p>
+              <p className="psub">取得世界級底層引擎打造的全功能系統</p>
               <ul className="plist">
                 <li>
                   {"全功能系統（價值超過 "}
