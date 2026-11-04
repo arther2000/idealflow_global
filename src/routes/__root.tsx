@@ -12,7 +12,7 @@ import { useEffect, type ReactNode } from "react";
 
 import appCss from "../styles.css?url";
 import { reportVibeError } from "../lib/vibe-error-reporting";
-import { canonical, DEFAULT_OG_IMAGE, ICON_PATH, SITE_NAME } from "../lib/seo";
+import { canonical, DEFAULT_OG_IMAGE, ICON_PATH, ICON_PNG_PATH, SITE_NAME } from "../lib/seo";
 import { NotFound } from "../components/site/NotFound";
 
 function ErrorComponent({ error, reset }: { error: Error; reset: () => void }) {
@@ -74,7 +74,8 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     ],
     links: [
       { rel: "icon", href: ICON_PATH, type: "image/svg+xml" },
-      { rel: "apple-touch-icon", href: ICON_PATH },
+      { rel: "icon", href: ICON_PNG_PATH, type: "image/png", sizes: "512x512" },
+      { rel: "apple-touch-icon", href: ICON_PNG_PATH },
       { rel: "preconnect", href: "https://fonts.googleapis.com" },
       { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
       {

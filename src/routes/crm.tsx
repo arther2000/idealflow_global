@@ -8,6 +8,7 @@ import { pageHead } from "@/lib/seo";
 export const Route = createFileRoute("/crm")({
   head: () =>
     pageHead({
+      breadcrumb: "CRM",
       path: "/crm",
       title: "CRM | iDealFlow.ai",
       description:

@@ -6,10 +6,46 @@ import { FaqList, Qa } from "@/components/site/Faq";
 import { useReveal } from "@/hooks/use-reveal";
 import { pageHead } from "@/lib/seo";
 import { useStartSticky } from "@/hooks/use-start-sticky";
+import type { FaqItem } from "@/lib/jsonld";
+
+/** Visible FAQ — also emitted as FAQPage JSON-LD, so keep the two in one place. */
+const FAQ: FaqItem[] = [
+  {
+    q: "How much does the program cost, and what’s included?",
+    a: "US$1,197 per year (about NT$108 a day). It includes the full iDealFlow.ai platform (unlimited funnels, websites, CRM, booking, email and LINE marketing, course platform and AI tools); three pre-built modules for booking, payments and reviews; the 5-Day hands-on course; our one-of-a-kind multilingual localization + LINE suite; and weekly live Q&A plus our member community.",
+  },
+  {
+    q: "Is there any room on price?",
+    a: "Look at it this way: subscribing to the same features separately costs at least NT$34,000 a month — before integration and learning time. Hiring a consultant to build a single automated workflow starts in the low six figures (NT$). This program bundles tools, training and a ready-made plan for the price of a daily latte, and the time you save far outweighs the investment. As onboarding spots fill, the price will only go up — joining now locks in the lowest rate.",
+  },
+  {
+    q: "There are so many features. Can I really learn this?",
+    a: "Yes — because you don’t have to assemble anything. Traditional automation means learning five or six tools and stitching them together with Zapier, where one broken link brings the whole chain down. We bring every feature into one system and pre-configure the automation modules for you: pick a template, fill in your details, hit activate. It’s as easy as sending a text. With hands-on videos, weekly Q&A and an AI assistant, if you can use a smartphone, you can do this.",
+  },
+  {
+    q: "I’m a complete beginner. Will this work for me?",
+    a: "Absolutely. Plenty of our members started from zero. All you need is a willingness to learn. We give you the best car (the system), teach you to drive (the training) and hand you the GPS (the plan) — you just have to get behind the wheel. Want to move even faster? Ask during your consultation about having our team handle the basic setup so you can start using it right away.",
+  },
+  {
+    q: "Why join now?",
+    a: "Because the market won’t wait. Traditional sales processes leak customers at every step, and AI automation is where business is clearly headed over the next 3–5 years. Those who move now gain a first-mover advantage; those who wait will be playing catch-up. And right now, the program is at its lowest price — as onboarding spots fill and capacity tightens, prices will rise.",
+  },
+  {
+    q: "What if I join and it’s not a good fit?",
+    a: "That’s exactly why the consultation comes first. Before you sign up, our team assesses your business model, lead sources and rollout plan for free — and we only start once we know it’s a fit. After you join, you’re fully supported: weekly Q&A and tech support catch you whenever you get stuck. Our goal is for you to actually use it, not to make a sale and disappear.",
+  },
+  {
+    q: "Does the system support LINE and how business is done in Taiwan?",
+    a: "Yes — it’s what sets iDealFlow.ai apart. Our in-house LINE suite is the only localized app that supports Flex Message, the interface is fully available in Traditional Chinese, and native support for Taiwan’s leading payment providers is rolling out. In Taiwan, business happens on LINE — and our system was built for exactly that.",
+  },
+];
 
 export const Route = createFileRoute("/start")({
   head: () =>
     pageHead({
+      breadcrumb: "14-Day Launch Program",
+      product: true,
+      faq: FAQ,
       path: "/start",
       title: "14-Day Launch Program | iDealFlow.ai — Put Your Business on Autopilot",
       description:
@@ -778,71 +814,11 @@ function StartPage() {
             <h2 className="h2">Frequently Asked Questions</h2>
           </div>
           <FaqList className="faq-list reveal">
-            <Qa question="How much does the program cost, and what’s included?">
-              <p>
-                US$1,197 per year (about NT$108 a day). It includes the full iDealFlow.ai platform
-                (unlimited funnels, websites, CRM, booking, email and LINE marketing, course
-                platform and AI tools); three pre-built modules for booking, payments and reviews;
-                the 5-Day hands-on course; our one-of-a-kind multilingual localization + LINE suite;
-                and weekly live Q&A plus our member community.
-              </p>
-            </Qa>
-            <Qa question="Is there any room on price?">
-              <p>
-                Look at it this way: subscribing to the same features separately costs at least
-                NT$34,000 a month — before integration and learning time. Hiring a consultant to
-                build a single automated workflow starts in the low six figures (NT$). This program
-                bundles tools, training and a ready-made plan for the price of a daily latte, and
-                the time you save far outweighs the investment. As onboarding spots fill, the price
-                will only go up — joining now locks in the lowest rate.
-              </p>
-            </Qa>
-            <Qa question="There are so many features. Can I really learn this?">
-              <p>
-                Yes — because you don’t have to assemble anything. Traditional automation means
-                learning five or six tools and stitching them together with Zapier, where one broken
-                link brings the whole chain down. We bring every feature into one system and
-                pre-configure the automation modules for you: pick a template, fill in your details,
-                hit activate. It’s as easy as sending a text. With hands-on videos, weekly Q&A and
-                an AI assistant, if you can use a smartphone, you can do this.
-              </p>
-            </Qa>
-            <Qa question="I’m a complete beginner. Will this work for me?">
-              <p>
-                Absolutely. Plenty of our members started from zero. All you need is a willingness
-                to learn. We give you the best car (the system), teach you to drive (the training)
-                and hand you the GPS (the plan) — you just have to get behind the wheel. Want to
-                move even faster? Ask during your consultation about having our team handle the
-                basic setup so you can start using it right away.
-              </p>
-            </Qa>
-            <Qa question="Why join now?">
-              <p>
-                Because the market won’t wait. Traditional sales processes leak customers at every
-                step, and AI automation is where business is clearly headed over the next 3–5 years.
-                Those who move now gain a first-mover advantage; those who wait will be playing
-                catch-up. And right now, the program is at its lowest price — as onboarding spots
-                fill and capacity tightens, prices will rise.
-              </p>
-            </Qa>
-            <Qa question="What if I join and it’s not a good fit?">
-              <p>
-                That’s exactly why the consultation comes first. Before you sign up, our team
-                assesses your business model, lead sources and rollout plan for free — and we only
-                start once we know it’s a fit. After you join, you’re fully supported: weekly Q&A
-                and tech support catch you whenever you get stuck. Our goal is for you to actually
-                use it, not to make a sale and disappear.
-              </p>
-            </Qa>
-            <Qa question="Does the system support LINE and how business is done in Taiwan?">
-              <p>
-                Yes — it’s what sets iDealFlow.ai apart. Our in-house LINE suite is the only
-                localized app that supports Flex Message, the interface is fully available in
-                Traditional Chinese, and native support for Taiwan’s leading payment providers is
-                rolling out. In Taiwan, business happens on LINE — and our system was built for
-                exactly that.
-              </p>
-            </Qa>
+            {FAQ.map((f) => (
+              <Qa key={f.q} question={f.q}>
+                <p>{f.a}</p>
+              </Qa>
+            ))}
           </FaqList>
         </div>
       </section>

@@ -5,10 +5,40 @@ import { FaqList, Qa } from "@/components/site/Faq";
 import { useReveal } from "@/hooks/use-reveal";
 import { RegionBanner } from "@/components/site/RegionBanner";
 import { pageHead } from "@/lib/seo";
+import type { FaqItem } from "@/lib/jsonld";
+
+/** Visible FAQ — also emitted as FAQPage JSON-LD, so keep the two in one place. */
+const FAQ: FaqItem[] = [
+  {
+    q: "匯成交 iDealFlow.ai 和其他 CRM 工具有什麼不同？",
+    a: "一般 CRM 只做客戶管理，iDealFlow.ai 是一套完整的「自動化成交系統」：從名單蒐集、LINE／Email 自動追蹤、銷售漏斗、AI 對話回覆、預約排程到課程變現，全部在同一套系統完成。更重要的是，我們提供全球唯一的多語中文化套件與台灣在地導入支持。",
+  },
+  {
+    q: "我不懂技術，導入會不會很困難？",
+    a: "不會。方案內含完整教育訓練與導入支持：整合線上課程與線下實體教室，涵蓋系統操作、流程教學與導入基礎訓練，由團隊協助你依需求完成基礎導入，直到系統正式啟用。",
+  },
+  {
+    q: "系統支援 LINE 嗎？符合台灣的使用習慣嗎？",
+    a: "支援，而且是我們的核心優勢之一。LINE 套件由匯鼎科技團隊自行開發，是唯一支援 Flex Message 在地化應用的方案，完全符合台灣文化使用習慣，同時逐步開放原生支援台灣主流金流系統。",
+  },
+  {
+    q: "底層引擎 GoHighLevel 可靠嗎？",
+    a: "GoHighLevel 是 2018 年創立於美國德州達拉斯的 AI 驅動商業成長作業系統，目前賦能全球超過百萬家企業，提供 24/7 客服支援，每年舉辦 LevelUp／HighLevel Summit 年度峰會，功能持續更新、全球生態系完整。",
+  },
+  {
+    q: "方案費用包含哪些內容？",
+    a: "年費方案 US$1,197／年，包含以 GoHighLevel 為基底引擎的全功能系統（價值超過 NT$100,000）、教育培訓與線上學習資源、線上教育系統使用權，以及基礎導入與啟動協助。",
+  },
+  {
+    q: "什麼樣的人適合使用 iDealFlow.ai？",
+    a: "特別適合講師、顧問、教練、知識型創作者與中小企業，在地服務業、B2B 與電商品牌也都有現成打法。只要你的生意需要「把名單變成成交」，iDealFlow.ai 都能幫你自動化整個流程。",
+  },
+];
 
 export const Route = createFileRoute("/tw/")({
   head: () =>
     pageHead({
+      faq: FAQ,
       path: "/tw",
       title: "匯成交 iDealFlow.ai｜AI 自動化成交系統 — 讓成交自動發生",
       description:
@@ -757,45 +787,11 @@ function IndexPage() {
             <h2 className="h2">常見問題</h2>
           </div>
           <FaqList className="faq-list reveal">
-            <Qa question="匯成交 iDealFlow.ai 和其他 CRM 工具有什麼不同？">
-              <p>
-                一般 CRM 只做客戶管理，iDealFlow.ai
-                是一套完整的「自動化成交系統」：從名單蒐集、LINE／Email 自動追蹤、銷售漏斗、AI
-                對話回覆、預約排程到課程變現，全部在同一套系統完成。更重要的是，我們提供全球唯一的多語中文化套件與台灣在地導入支持。
-              </p>
-            </Qa>
-            <Qa question="我不懂技術，導入會不會很困難？">
-              <p>
-                不會。方案內含完整教育訓練與導入支持：整合線上課程與線下實體教室，涵蓋系統操作、流程教學與導入基礎訓練，由團隊協助你依需求完成基礎導入，直到系統正式啟用。
-              </p>
-            </Qa>
-            <Qa question="系統支援 LINE 嗎？符合台灣的使用習慣嗎？">
-              <p>
-                支援，而且是我們的核心優勢之一。LINE 套件由匯鼎科技團隊自行開發，是唯一支援 Flex
-                Message
-                在地化應用的方案，完全符合台灣文化使用習慣，同時逐步開放原生支援台灣主流金流系統。
-              </p>
-            </Qa>
-            <Qa question="底層引擎 GoHighLevel 可靠嗎？">
-              <p>
-                GoHighLevel 是 2018 年創立於美國德州達拉斯的 AI
-                驅動商業成長作業系統，目前賦能全球超過百萬家企業，提供 24/7 客服支援，每年舉辦
-                LevelUp／HighLevel Summit 年度峰會，功能持續更新、全球生態系完整。
-              </p>
-            </Qa>
-            <Qa question="方案費用包含哪些內容？">
-              <p>
-                年費方案 US$1,197／年，包含以 GoHighLevel 為基底引擎的全功能系統（價值超過
-                NT$100,000）、教育培訓與線上學習資源、線上教育系統使用權，以及基礎導入與啟動協助。
-              </p>
-            </Qa>
-            <Qa question="什麼樣的人適合使用 iDealFlow.ai？">
-              <p>
-                特別適合講師、顧問、教練、知識型創作者與中小企業，在地服務業、B2B
-                與電商品牌也都有現成打法。只要你的生意需要「把名單變成成交」，iDealFlow.ai
-                都能幫你自動化整個流程。
-              </p>
-            </Qa>
+            {FAQ.map((f) => (
+              <Qa key={f.q} question={f.q}>
+                <p>{f.a}</p>
+              </Qa>
+            ))}
           </FaqList>
         </div>
       </section>

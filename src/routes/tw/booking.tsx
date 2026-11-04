@@ -7,6 +7,7 @@ import { pageHead } from "@/lib/seo";
 export const Route = createFileRoute("/tw/booking")({
   head: () =>
     pageHead({
+      breadcrumb: "預約諮詢",
       path: "/tw/booking",
       title: "免費實體講座報名｜匯成交 iDealFlow.ai",
       description:

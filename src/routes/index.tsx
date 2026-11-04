@@ -5,10 +5,40 @@ import { RegionBanner } from "@/components/site/RegionBanner";
 import { FaqList, Qa } from "@/components/site/Faq";
 import { useReveal } from "@/hooks/use-reveal";
 import { pageHead } from "@/lib/seo";
+import type { FaqItem } from "@/lib/jsonld";
+
+/** Visible FAQ — also emitted as FAQPage JSON-LD, so keep the two in one place. */
+const FAQ: FaqItem[] = [
+  {
+    q: "How is iDealFlow.ai different from other CRMs?",
+    a: "A typical CRM just manages contacts. iDealFlow.ai is a complete sales automation system: lead capture, LINE & email follow-up, sales funnels, AI chat, booking and course sales — all in one platform. On top of that, you get the only multilingual localization suite of its kind, plus hands-on onboarding support for Asia-Pacific markets.",
+  },
+  {
+    q: "I’m not technical. Will it be hard to get started?",
+    a: "Not at all. Every plan includes full training and onboarding — online courses plus in-person classroom sessions covering platform basics, workflows and setup. Our team helps you complete your initial setup based on your needs, right through to go-live.",
+  },
+  {
+    q: "Does it support LINE?",
+    a: "Yes — it’s one of our biggest strengths. Our LINE suite is built in-house by the iDealFlow team and is the only localized solution with Flex Message support. It’s designed around how businesses in LINE-first markets communicate, and native support for Taiwan’s leading payment gateways is rolling out now.",
+  },
+  {
+    q: "Is GoHighLevel a reliable foundation?",
+    a: "GoHighLevel is an AI-powered business growth operating system founded in Dallas, Texas in 2018. It powers more than a million businesses worldwide, offers 24/7 support, hosts its annual LevelUp / HighLevel Summit, and ships updates constantly — backed by a mature global ecosystem.",
+  },
+  {
+    q: "What’s included in the plan?",
+    a: "The annual plan is US$1,197/year and includes the full-featured platform powered by GoHighLevel (worth over NT$100,000), training and online learning resources, access to our online learning platform, and initial setup and launch support.",
+  },
+  {
+    q: "Who is iDealFlow.ai for?",
+    a: '{ "It’s especially well suited to coaches, consultants, trainers, knowledge creators and small businesses — with ready-made playbooks for local services, B2B and e-commerce, too. If your business depends on turning leads into sales, iDealFlow.ai can automate the entire journey." }',
+  },
+];
 
 export const Route = createFileRoute("/")({
   head: () =>
     pageHead({
+      faq: FAQ,
       path: "/",
       title: "iDealFlow.ai | AI Sales Automation Platform — Let Deals Close Themselves",
       description:
@@ -800,52 +830,11 @@ function IndexPage() {
             <h2 className="h2">Frequently asked questions</h2>
           </div>
           <FaqList className="faq-list reveal">
-            <Qa question="How is iDealFlow.ai different from other CRMs?">
-              <p>
-                A typical CRM just manages contacts. iDealFlow.ai is a complete sales automation
-                system: lead capture, LINE & email follow-up, sales funnels, AI chat, booking and
-                course sales — all in one platform. On top of that, you get the only multilingual
-                localization suite of its kind, plus hands-on onboarding support for Asia-Pacific
-                markets.
-              </p>
-            </Qa>
-            <Qa question="I’m not technical. Will it be hard to get started?">
-              <p>
-                Not at all. Every plan includes full training and onboarding — online courses plus
-                in-person classroom sessions covering platform basics, workflows and setup. Our team
-                helps you complete your initial setup based on your needs, right through to go-live.
-              </p>
-            </Qa>
-            <Qa question="Does it support LINE?">
-              <p>
-                Yes — it’s one of our biggest strengths. Our LINE suite is built in-house by the
-                iDealFlow team and is the only localized solution with Flex Message support. It’s
-                designed around how businesses in LINE-first markets communicate, and native support
-                for Taiwan’s leading payment gateways is rolling out now.
-              </p>
-            </Qa>
-            <Qa question="Is GoHighLevel a reliable foundation?">
-              <p>
-                GoHighLevel is an AI-powered business growth operating system founded in Dallas,
-                Texas in 2018. It powers more than a million businesses worldwide, offers 24/7
-                support, hosts its annual LevelUp / HighLevel Summit, and ships updates constantly —
-                backed by a mature global ecosystem.
-              </p>
-            </Qa>
-            <Qa question="What’s included in the plan?">
-              <p>
-                The annual plan is US$1,197/year and includes the full-featured platform powered by
-                GoHighLevel (worth over NT$100,000), training and online learning resources, access
-                to our online learning platform, and initial setup and launch support.
-              </p>
-            </Qa>
-            <Qa question="Who is iDealFlow.ai for?">
-              <p>
-                {
-                  "It’s especially well suited to coaches, consultants, trainers, knowledge creators and small businesses — with ready-made playbooks for local services, B2B and e-commerce, too. If your business depends on turning leads into sales, iDealFlow.ai can automate the entire journey."
-                }
-              </p>
-            </Qa>
+            {FAQ.map((f) => (
+              <Qa key={f.q} question={f.q}>
+                <p>{f.a}</p>
+              </Qa>
+            ))}
           </FaqList>
         </div>
       </section>

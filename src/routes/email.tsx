@@ -8,6 +8,7 @@ import { pageHead } from "@/lib/seo";
 export const Route = createFileRoute("/email")({
   head: () =>
     pageHead({
+      breadcrumb: "Email & LINE Marketing",
       path: "/email",
       title: "Email & LINE Marketing | iDealFlow.ai",
       description:

@@ -8,6 +8,7 @@ import { pageHead } from "@/lib/seo";
 export const Route = createFileRoute("/tw/funnel")({
   head: () =>
     pageHead({
+      breadcrumb: "銷售漏斗與網站建置",
       path: "/tw/funnel",
       title: "銷售漏斗與網站建置｜匯成交 iDealFlow.ai",
       description:

@@ -45,9 +45,26 @@ function isH3SwallowedErrorBody(body: string): boolean {
   }
 }
 
+/** Static files and framework internals keep their exact paths. */
+const PASSTHROUGH = /^\/(?:assets|og|_build|_serverFn|@|__)|\.[a-z0-9]+$/i;
+
+function canonicalizePath(pathname: string): string {
+  if (pathname === "/" || PASSTHROUGH.test(pathname)) return pathname;
+  let p = pathname.replace(/\/+$/, "") || "/";
+  if (/[A-Z]/.test(p)) p = p.toLowerCase();
+  return p;
+}
+
 export default {
   async fetch(request: Request, env: unknown, ctx: unknown) {
     const url = new URL(request.url);
+    // Canonical URL policy: lowercase, no trailing slash. Permanent (301) redirects so
+    // search engines consolidate signals (the router alone would answer with a 307).
+    const canonicalPath = canonicalizePath(url.pathname);
+    if (canonicalPath !== url.pathname) {
+      return Response.redirect(new URL(canonicalPath + url.search, url.origin).toString(), 301);
+    }
+
     if (url.pathname === "/favicon.ico") {
       return Response.redirect(new URL(ICON_PATH, url.origin).toString(), 301);
     }
