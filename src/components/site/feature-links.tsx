@@ -175,4 +175,4 @@ export const UI = {
 
 export const CONTACT_EMAIL = "arther.learn@gmail.com";
 export const APP_LOGIN_URL = "https://app.idealflow.ai";
-export const LOGO_SRC = "/assets/logo-full.png";
+export const LOGO_SRC = "/assets/logo-color.svg";
