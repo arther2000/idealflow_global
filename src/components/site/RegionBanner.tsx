@@ -38,7 +38,9 @@ function detectLocale(): Locale {
     if (langs.some((l) => /^zh(-(TW|HK|MO|Hant))/i.test(l))) return "zh";
     const tz = Intl.DateTimeFormat().resolvedOptions().timeZone;
     if (tz === "Asia/Taipei") return "zh";
-  } catch {}
+  } catch {
+    // storage/Intl unavailable — fall back to default
+  }
   return "en";
 }
 
@@ -53,7 +55,9 @@ function readDismissed(): boolean {
 function writeDismissed() {
   try {
     sessionStorage.setItem(DISMISS_KEY, "1");
-  } catch {}
+  } catch {
+    // storage/Intl unavailable — fall back to default
+  }
 }
 
 /**

@@ -36,8 +36,7 @@ function IndexPage() {
           <h1 className="reveal d1">
             Let deals
             <span className="grad"> close themselves.</span>
-            <br />
-            Meet your hardest-working digital employee.
+            <span className="h1-sub">Meet your hardest-working digital employee.</span>
           </h1>
           <p className="hero-sub reveal d2">
             {"Stop paying for a stack of tools just to do marketing. iDealFlow.ai brings "}

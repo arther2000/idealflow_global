@@ -47,7 +47,9 @@ export async function submitContact(d: ContactInput): Promise<"sent" | "mailto">
         body: JSON.stringify(buildContactPayload(d)),
       });
       if (res.ok) return "sent";
-    } catch {}
+    } catch {
+      // network error — fall through to the mailto fallback
+    }
   }
   const body = [
     "Name: " + d.name,
