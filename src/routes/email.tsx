@@ -2,15 +2,17 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { SiteNav } from "@/components/site/SiteNav";
 import { SiteFooter } from "@/components/site/SiteFooter";
 import { useReveal } from "@/hooks/use-reveal";
+import { RegionBanner } from "@/components/site/RegionBanner";
 import { pageHead } from "@/lib/seo";
 
 export const Route = createFileRoute("/email")({
   head: () =>
     pageHead({
+      breadcrumb: "Email & LINE Marketing",
       path: "/email",
-      title: "Email／LINE 行銷自動化｜匯成交 iDealFlow.ai",
+      title: "LINE & Email Marketing Automation Software | iDealFlow.ai",
       description:
-        "寫一次，系統幫你寄到成交為止。拖拉式 Email 編輯器、精美範本、AI 自動化旅程與 LINE 雙軌推進，一次取代 Mailchimp、ActiveCampaign 等工具。",
+        "Write it once and let it work until the deal closes. Drag-and-drop email builder, beautiful templates, AI-powered journeys and LINE messaging in one platform.",
     }),
   component: EmailPage,
 });
@@ -20,72 +22,73 @@ function EmailPage() {
 
   return (
     <>
-      <SiteNav />
+      <RegionBanner current="en" />
+      <SiteNav locale="en" />
       <section className="subhero">
         <div className="wrap">
           <p className="crumb reveal">
-            <Link to="/">首頁</Link>
-            {" ／ "}
+            <Link to="/">Home</Link>
+            {" / "}
             <Link to="/" hash="features">
-              核心功能
+              Features
             </Link>
-            {" ／ "}
-            <b>Email／LINE 行銷自動化</b>
+            {" / "}
+            <b>Email & LINE Marketing</b>
           </p>
           <h1 className="reveal d1">
-            寫一次，系統幫你
+            Write it once.
             <br />
-            <span className="grad">寄到成交為止</span>
+            <span className="grad">It follows up until you close.</span>
           </h1>
           <p className="sub reveal d2">
-            拖拉式編輯器做出漂亮的信，AI 自動化決定
-            <strong>什麼時候寄、寄給誰、寄什麼</strong>
-            。再搭配 LINE 訊息雙軌推進——台灣客戶在哪裡，訊息就跟到哪裡。
+            Design beautiful emails with a drag-and-drop builder, and let AI automation decide{" "}
+            <strong>when to send, who gets it and what they see</strong>. Pair it with LINE
+            messaging, and your message reaches customers wherever they are.
           </p>
           <div className="hero-ctas reveal d3">
-            <Link to="/booking" className="btn btn-primary">
-              {"免費報名講座 "}
+            <Link to="/contact" className="btn btn-primary">
+              {"Book a Demo "}
               <span className="arr">→</span>
             </Link>
             <Link to="/" hash="cases" className="btn btn-ghost">
-              看看別人怎麼用
+              See it in action
             </Link>
           </div>
         </div>
       </section>
-      {/* 區塊一：編輯器 */}
+      {/* Block 1: builder */}
       <div className="fblock">
         <div className="wrap fb-grid">
           <div className="fb-txt reveal">
             <div className="eyebrow">EMAIL BUILDER</div>
             <h3>
-              拖拉式 Email 編輯器
+              Drag-and-drop email builder.
               <br />
-              好看的信
-              <em>自己就能做</em>
+              Beautiful emails,
+              <em> no designer required.</em>
             </h3>
             <p>
-              不用求設計師，也不用跟 HTML
-              搏鬥。想放圖片、影片還是購物車按鈕，拖進去就完成，而且每一封都自動適配手機閱讀。
+              No waiting on a designer. No wrestling with HTML. Images, video, a buy button — just
+              drag them in. And every email looks great on mobile, automatically.
             </p>
             <div className="replaces">
-              <span className="rlabel">一套取代</span>
+              <span className="rlabel">Replaces</span>
               <span className="rchip">Mailchimp</span>
               <span className="rchip">ActiveCampaign</span>
               <span className="rchip">Aweber</span>
               <span className="rchip">Constant Contact</span>
             </div>
             <ul className="checklist">
-              <li>無限量建立與發送</li>
-              <li>圖片、影片自由插入</li>
-              <li>購物車與按鈕元件</li>
-              <li>手機閱讀自動適配</li>
-              <li>寄件網域自訂</li>
-              <li>開信與點擊追蹤</li>
+              <li>Unlimited emails, created and sent</li>
+              <li>Drop in images and video anywhere</li>
+              <li>Cart and button components</li>
+              <li>Mobile-ready, automatically</li>
+              <li>Custom sending domain</li>
+              <li>Open and click tracking</li>
             </ul>
             <div className="fb-cta">
-              <Link to="/booking" className="btn btn-navy">
-                {"做出我的第一封信 "}
+              <Link to="/contact" className="btn btn-navy">
+                {"Build my first email "}
                 <span className="arr">→</span>
               </Link>
             </div>
@@ -99,59 +102,60 @@ function EmailPage() {
                 <span>idealflow.ai / email-builder</span>
               </div>
               <div className="mock-pad">
-                <div className="m-title">新春感謝季 EDM · 編輯中</div>
+                <div className="m-title">New Year Thank-You Campaign · Editing</div>
                 <div className="m-line hi w60"></div>
                 <div className="m-line"></div>
                 <div className="m-line w80"></div>
                 <div className="m-row">
                   <div className="m-av o">▶</div>
                   <div className="mi">
-                    <b>影片區塊</b>
-                    <span>拖曳中…放開即插入</span>
+                    <b>Video block</b>
+                    <span>Dragging… release to insert</span>
                   </div>
-                  <span className="m-tag hot">拖放</span>
+                  <span className="m-tag hot">Drag & drop</span>
                 </div>
                 <div className="m-line w60"></div>
                 <div style={{ marginTop: "10px" }}>
-                  <span className="m-btn">領取專屬優惠 →</span>
+                  <span className="m-btn">Claim your offer →</span>
                 </div>
               </div>
             </div>
           </div>
         </div>
       </div>
-      {/* 區塊二：範本 */}
+      {/* Block 2: templates */}
       <div className="fblock">
         <div className="wrap fb-grid rev">
           <div className="fb-txt reveal">
             <div className="eyebrow">TEMPLATES</div>
             <h3>
-              各行各業的
-              <em>精美信件範本</em>
+              <em>Beautiful templates</em> for
               <br />
-              不用再從空白開始
+              every industry. Never start from blank.
             </h3>
             <p>
-              每一封信都從零設計太燒時間。挑一個符合你產業的範本，改改文字就能寄出——把時間留給真正重要的事：想清楚要對客戶說什麼。
+              Designing every email from scratch eats up your day. Pick a template made for your
+              industry, tweak the copy and hit send — and spend your time on what really matters:
+              what you want to say to your customers.
             </p>
             <div className="replaces">
-              <span className="rlabel">範本涵蓋</span>
-              <span className="rchip">教練與商業指導</span>
-              <span className="rchip">顧問諮詢</span>
-              <span className="rchip">健康保健</span>
-              <span className="rchip">行銷代理</span>
+              <span className="rlabel">Templates for</span>
+              <span className="rchip">Coaching</span>
+              <span className="rchip">Consulting</span>
+              <span className="rchip">Health & Wellness</span>
+              <span className="rchip">Marketing Agencies</span>
             </div>
             <ul className="checklist">
-              <li>歡迎信與自我介紹序列</li>
-              <li>講座與活動邀請信</li>
-              <li>節慶檔期促銷信</li>
-              <li>電子報 Newsletter 版型</li>
-              <li>回訪與喚醒信</li>
-              <li>持續新增中</li>
+              <li>Welcome and introduction sequences</li>
+              <li>Webinar and event invitations</li>
+              <li>Holiday and seasonal promotions</li>
+              <li>Newsletter layouts</li>
+              <li>Win-back and re-engagement emails</li>
+              <li>New templates added regularly</li>
             </ul>
             <div className="fb-cta">
-              <Link to="/booking" className="btn btn-navy">
-                {"瀏覽範本庫 "}
+              <Link to="/contact" className="btn btn-navy">
+                {"Browse templates "}
                 <span className="arr">→</span>
               </Link>
             </div>
@@ -165,28 +169,28 @@ function EmailPage() {
                 <span>idealflow.ai / email-templates</span>
               </div>
               <div className="mock-pad">
-                <div className="m-title">範本庫</div>
+                <div className="m-title">Template Library</div>
                 <div className="m-grid2">
                   <div className="m-col">
                     <h6>
-                      {"講座邀請 "}
-                      <b>熱門</b>
+                      {"Webinar Invite "}
+                      <b>Popular</b>
                     </h6>
                     <div className="m-line hi w80"></div>
                     <div className="m-line w60"></div>
                   </div>
                   <div className="m-col">
-                    <h6>歡迎序列</h6>
+                    <h6>Welcome Series</h6>
                     <div className="m-line w80"></div>
                     <div className="m-line w40"></div>
                   </div>
                   <div className="m-col">
-                    <h6>檔期促銷</h6>
+                    <h6>Seasonal Promo</h6>
                     <div className="m-line w60"></div>
                     <div className="m-line w80"></div>
                   </div>
                   <div className="m-col">
-                    <h6>電子報</h6>
+                    <h6>Newsletter</h6>
                     <div className="m-line w80"></div>
                     <div className="m-line w60"></div>
                   </div>
@@ -196,37 +200,39 @@ function EmailPage() {
           </div>
         </div>
       </div>
-      {/* 區塊三：AI 自動化 */}
+      {/* Block 3: AI automation */}
       <div className="fblock">
         <div className="wrap fb-grid">
           <div className="fb-txt reveal">
             <div className="eyebrow">AI AUTOMATION</div>
             <h3>
-              AI 自動化旅程
+              AI-powered journeys.
               <br />
-              每個客戶都走
-              <em>自己的劇本</em>
+              Every customer gets
+              <em> their own story.</em>
             </h3>
             <p>
-              排程寄信只是入門。真正的威力在於：依照客戶的標籤、點擊、觀看行為自動觸發下一步——有人點了連結就加溫跟進，沒開信的換個標題再寄一次。每個人收到的，都是為他準備的。
+              Scheduled emails are just the start. The real power is triggering the next step from
+              each customer’s tags, clicks and views. Clicked a link? Warm them up. Didn’t open?
+              Resend with a new subject line. Everyone gets a message made for them.
             </p>
             <div className="replaces">
-              <span className="rlabel">進階能力</span>
-              <span className="rchip">行為觸發</span>
-              <span className="rchip">if/else 邏輯分支</span>
-              <span className="rchip">A/B 測試</span>
+              <span className="rlabel">Advanced</span>
+              <span className="rchip">Behavior triggers</span>
+              <span className="rchip">If/else branching</span>
+              <span className="rchip">A/B testing</span>
             </div>
             <ul className="checklist">
-              <li>依標籤、點擊、觀看自動觸發</li>
-              <li>數百種動作的邏輯分支</li>
-              <li>所有回信集中在對話中心管理</li>
-              <li>智慧排程，挑最好的時間寄</li>
-              <li>Email 標題 A/B 測試</li>
-              <li>搭配 LINE 訊息雙軌推進</li>
+              <li>Triggers based on tags, clicks and views</li>
+              <li>Branching logic across hundreds of actions</li>
+              <li>Every reply, managed in one inbox</li>
+              <li>Smart scheduling for the best send time</li>
+              <li>Subject-line A/B testing</li>
+              <li>Email and LINE, working in tandem</li>
             </ul>
             <div className="fb-cta">
-              <Link to="/booking" className="btn btn-navy">
-                {"建立我的自動化旅程 "}
+              <Link to="/contact" className="btn btn-navy">
+                {"Build my journey "}
                 <span className="arr">→</span>
               </Link>
             </div>
@@ -244,32 +250,32 @@ function EmailPage() {
                   <div className="m-node trigger">
                     <span className="ni">⚡</span>
                     <span>
-                      觸發：報名講座表單
-                      <small>新名單進入旅程</small>
+                      Trigger: Webinar sign-up form
+                      <small>New lead enters the journey</small>
                     </span>
                   </div>
                   <div className="m-link"></div>
                   <div className="m-node">
                     <span className="ni">✉️</span>
                     <span>
-                      寄出歡迎信＋LINE 提醒
-                      <small>立即發送</small>
+                      Send welcome email + LINE reminder
+                      <small>Sends immediately</small>
                     </span>
                   </div>
                   <div className="m-link"></div>
                   <div className="m-node">
                     <span className="ni">🔀</span>
                     <span>
-                      有開信嗎？
-                      <small>if / else 分支判斷</small>
+                      Opened the email?
+                      <small>If / else branch</small>
                     </span>
                   </div>
                   <div className="m-link"></div>
                   <div className="m-node">
                     <span className="ni">🎯</span>
                     <span>
-                      開了 → 邀約諮詢｜沒開 → 換標題再寄
-                      <small>自動分流</small>
+                      Yes → Invite to consult | No → Resend with new subject
+                      <small>Auto-routed</small>
                     </span>
                   </div>
                 </div>
@@ -278,58 +284,66 @@ function EmailPage() {
           </div>
         </div>
       </div>
-      {/* 情境案例 */}
+      {/* Use cases */}
       <section className="usecases">
         <div className="wrap">
           <div className="center reveal">
             <div className="eyebrow" style={{ justifyContent: "center" }}>
               REAL SCENARIOS
             </div>
-            <h2 className="h2">實際上，大家都這樣用</h2>
-            <p className="lead">三個最常見的落地情境，看看自動化訊息怎麼幫你養出成交。</p>
+            <h2 className="h2">How teams actually use it</h2>
+            <p className="lead">
+              Three of the most common scenarios — and how automated messaging nurtures leads into
+              sales.
+            </p>
           </div>
           <div className="ugrid">
             <div className="ucard reveal">
-              <span className="utag">講座提醒</span>
-              <h4>報名後自動提醒，出席率有感提升</h4>
+              <span className="utag">Event Reminders</span>
+              <h4>Automatic reminders that noticeably lift attendance</h4>
               <p>
                 {
-                  "報名當下寄確認信、前三天 LINE 提醒、當天早上再推一次。亞瑟教練靠這套組合把講座出席率做到 "
+                  "A confirmation email at sign-up, a LINE reminder three days out, one more nudge the morning of. With this combo, Coach Arthur Wu reached "
                 }
                 <b>45%</b>
-                {"，親子教養導師 Emma 老師更達到 "}
-                <b>56%+</b>。
+                {" seminar attendance — and parenting coach Emma hit "}
+                <b>56%+</b>.
               </p>
             </div>
             <div className="ucard reveal d1">
-              <span className="utag">名單加溫</span>
-              <h4>五封歡迎序列，把陌生名單變熟客</h4>
+              <span className="utag">Lead Nurturing</span>
+              <h4>A five-email welcome series that turns strangers into regulars</h4>
               <p>
-                新名單進來自動走五封信的旅程：自我介紹 → 價值內容 → 案例見證 → 常見疑問 → 邀約。
-                <b>等你想起來要跟進時，系統早就跟完了</b>。
+                New leads automatically get a five-email journey: introduction → valuable content →
+                success stories → FAQs → invitation.
+                <b> By the time you remember to follow up, it’s already done</b>.
               </p>
             </div>
             <div className="ucard reveal d2">
-              <span className="utag">喚醒回購</span>
-              <h4>90 天沒動靜？自動發喚醒優惠</h4>
+              <span className="utag">Win-Back</span>
+              <h4>Quiet for 90 days? Send a win-back offer automatically</h4>
               <p>
-                系統自動偵測久未互動的客戶，發送專屬回購優惠。
-                <b>沉睡名單不用人工翻</b>
-                ，每一分獲客成本都用到最後一滴。
+                The system spots customers who’ve gone quiet and sends them an exclusive comeback
+                offer.
+                <b> No more digging through dormant lists by hand</b> — every dollar you spent
+                acquiring them keeps working.
               </p>
             </div>
           </div>
         </div>
       </section>
-      {/* 其他功能 */}
+      {/* More features */}
       <section className="morefeat">
         <div className="wrap">
           <div className="center reveal">
             <h2 className="h2">
-              訊息會跟進了，
-              <em>還能更自動</em>
+              Your follow-ups run themselves.
+              <em> Now automate even more.</em>
             </h2>
-            <p className="lead">把預約、頁面、CRM 一起串起來，整條成交流程都不用自己盯。</p>
+            <p className="lead">
+              Connect booking, pages and CRM, and your entire sales process runs without
+              babysitting.
+            </p>
           </div>
           <div className="mf-grid reveal">
             <Link to="/funnel" className="mf-card">
@@ -338,7 +352,7 @@ function EmailPage() {
                   <path d="M3 4h18l-7 8v6l-4 2v-8L3 4z" />
                 </svg>
               </span>
-              銷售漏斗與網站建置
+              Funnels & Websites
               <span className="arr">→</span>
             </Link>
             <Link to="/calendar" className="mf-card">
@@ -350,7 +364,7 @@ function EmailPage() {
                   <path d="M3 10h18" />
                 </svg>
               </span>
-              智能預約系統
+              Smart Booking
               <span className="arr">→</span>
             </Link>
             <Link to="/automation" className="mf-card">
@@ -359,7 +373,7 @@ function EmailPage() {
                   <path d="M13 2 3 14h9l-1 8 10-12h-9l1-8z" />
                 </svg>
               </span>
-              自動化工作流程
+              Workflow Automation
               <span className="arr">→</span>
             </Link>
             <Link to="/ai-content" className="mf-card">
@@ -370,7 +384,7 @@ function EmailPage() {
                   <path d="M5 16c4 3 10 3 14 0" />
                 </svg>
               </span>
-              AI 內容生成與社群排程
+              AI Content & Social Planner
               <span className="arr">→</span>
             </Link>
             <Link to="/reputation" className="mf-card">
@@ -379,7 +393,7 @@ function EmailPage() {
                   <path d="m12 2 3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
                 </svg>
               </span>
-              評價管理系統
+              Reputation Management
               <span className="arr">→</span>
             </Link>
             <Link to="/crm" className="mf-card">
@@ -390,7 +404,7 @@ function EmailPage() {
                   <path d="M23 21v-2a4 4 0 0 0-3-3.87" />
                 </svg>
               </span>
-              CRM 客戶管理
+              CRM
               <span className="arr">→</span>
             </Link>
           </div>
@@ -399,24 +413,25 @@ function EmailPage() {
       <section className="final">
         <div className="wrap">
           <h2 className="reveal">
-            讓每一次溝通，
-            <br />都<span>更接近成交</span>
+            Every conversation,
+            <br />
+            <span>one step closer to yes.</span>
           </h2>
           <p className="reveal d1">
-            從今天起，跟進客戶這件事交給系統，你只要負責出現在成交那一刻。
+            Starting today, let the system handle the follow-up. You just show up for the close.
           </p>
           <div className="hero-ctas reveal d2">
-            <Link to="/booking" className="btn btn-primary">
-              {"免費報名講座 "}
+            <Link to="/contact" className="btn btn-primary">
+              {"Book a Demo "}
               <span className="arr">→</span>
             </Link>
-            <Link to="/" hash="pricing" className="btn btn-ghost">
-              查看方案內容
+            <Link to="/pricing" className="btn btn-ghost">
+              See Pricing
             </Link>
           </div>
         </div>
       </section>
-      <SiteFooter />
+      <SiteFooter locale="en" />
     </>
   );
 }

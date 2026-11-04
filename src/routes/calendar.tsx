@@ -2,15 +2,17 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { SiteNav } from "@/components/site/SiteNav";
 import { SiteFooter } from "@/components/site/SiteFooter";
 import { useReveal } from "@/hooks/use-reveal";
+import { RegionBanner } from "@/components/site/RegionBanner";
 import { pageHead } from "@/lib/seo";
 
 export const Route = createFileRoute("/calendar")({
   head: () =>
     pageHead({
+      breadcrumb: "Smart Booking",
       path: "/calendar",
-      title: "智能預約系統｜匯成交 iDealFlow.ai",
+      title: "Online Booking System with Automated Reminders | iDealFlow.ai",
       description:
-        "讓客戶自己約、系統自己提醒。無限量行事曆、團隊輪流分配、課程預約與自動提醒跟進，一次取代 Calendly、Acuity 等預約工具。",
+        "Let customers book themselves and let reminders run on autopilot. Unlimited calendars, round-robin routing, class bookings and automated no-show follow-ups.",
     }),
   component: CalendarPage,
 });
@@ -20,71 +22,75 @@ function CalendarPage() {
 
   return (
     <>
-      <SiteNav />
+      <RegionBanner current="en" />
+      <SiteNav locale="en" />
       <section className="subhero">
         <div className="wrap">
           <p className="crumb reveal">
-            <Link to="/">首頁</Link>
-            {" ／ "}
+            <Link to="/">Home</Link>
+            {" / "}
             <Link to="/" hash="features">
-              核心功能
+              Features
             </Link>
-            {" ／ "}
-            <b>智能預約系統</b>
+            {" / "}
+            <b>Smart Booking</b>
           </p>
           <h1 className="reveal d1">
-            讓客戶自己約
+            Customers book themselves.
             <br />
-            讓系統
-            <span className="grad">自己提醒</span>
+            Reminders
+            <span className="grad"> send themselves.</span>
           </h1>
           <p className="sub reveal d2">
-            別再用 LINE 來回敲時間了。客戶點連結挑時段，系統自動確認、自動提醒、自動跟進——
-            <strong>你只要人準時出現就好</strong>。
+            No more back-and-forth messages to find a time. Customers pick a slot from your link,
+            and the system confirms, reminds and follows up automatically —{" "}
+            <strong>all you have to do is show up</strong>.
           </p>
           <div className="hero-ctas reveal d3">
-            <Link to="/booking" className="btn btn-primary">
-              {"免費報名講座 "}
+            <Link to="/contact" className="btn btn-primary">
+              {"Book a Demo "}
               <span className="arr">→</span>
             </Link>
             <Link to="/" hash="cases" className="btn btn-ghost">
-              看看別人怎麼用
+              See it in action
             </Link>
           </div>
         </div>
       </section>
-      {/* 區塊一：無限量行事曆 */}
+      {/* Block 1: unlimited calendars */}
       <div className="fblock">
         <div className="wrap fb-grid">
           <div className="fb-txt reveal">
             <div className="eyebrow">UNLIMITED CALENDARS</div>
             <h3>
-              <em>無限量</em>
-              行事曆
+              <em>Unlimited</em>
+              {" calendars."}
               <br />
-              一個人到一個團隊都適用
+              For a team of one, or a team of many.
             </h3>
             <p>
-              一對一諮詢、多人課程、團隊輪流接單、共同會議——不管你的預約長什麼樣子，都有對應的行事曆類型，而且數量不設限，不用再額外訂閱第三方預約工具。
+              One-on-one consults, group classes, round-robin sales calls, team meetings — whatever
+              your bookings look like, there’s a calendar type built for it. Create as many as you
+              need, with no third-party scheduling tool to pay for.
             </p>
             <div className="replaces">
-              <span className="rlabel">一套取代</span>
+              <span className="rlabel">Replaces</span>
               <span className="rchip">Calendly</span>
               <span className="rchip">Acuity</span>
               <span className="rchip">OnceHub</span>
               <span className="rchip">Schedule Once</span>
             </div>
             <ul className="checklist">
-              <li>無限量個人與團隊行事曆</li>
-              <li>Round Robin 輪流分配給團隊成員</li>
-              <li>多人課程與工作坊報名</li>
-              <li>重複活動自動開放時段</li>
-              <li>共同會議多位成員同時參與</li>
-              <li>Google／Outlook 行事曆即時同步</li>
+              <li>Unlimited personal and team calendars</li>
+              <li>Round-robin routing across your team</li>
+              <li>Group class and workshop registration</li>
+              <li>Recurring events that open slots automatically</li>
+              <li>Collective meetings with multiple hosts</li>
+              <li>Real-time Google and Outlook sync</li>
             </ul>
             <div className="fb-cta">
-              <Link to="/booking" className="btn btn-navy">
-                {"建立我的預約頁 "}
+              <Link to="/contact" className="btn btn-navy">
+                {"Create my booking page "}
                 <span className="arr">→</span>
               </Link>
             </div>
@@ -98,15 +104,15 @@ function CalendarPage() {
                 <span>idealflow.ai / booking / arthur</span>
               </div>
               <div className="mock-pad">
-                <div className="m-title">選擇方便的時段 · 一對一諮詢（30 分鐘）</div>
+                <div className="m-title">Pick a time · 1:1 Consultation (30 min)</div>
                 <div className="m-cal">
-                  <div className="mc-h">一</div>
-                  <div className="mc-h">二</div>
-                  <div className="mc-h">三</div>
-                  <div className="mc-h">四</div>
-                  <div className="mc-h">五</div>
-                  <div className="mc-h">六</div>
-                  <div className="mc-h">日</div>
+                  <div className="mc-h">M</div>
+                  <div className="mc-h">T</div>
+                  <div className="mc-h">W</div>
+                  <div className="mc-h">T</div>
+                  <div className="mc-h">F</div>
+                  <div className="mc-h">S</div>
+                  <div className="mc-h">S</div>
                   <div className="mc">8</div>
                   <div className="mc soft">9</div>
                   <div className="mc">10</div>
@@ -123,46 +129,46 @@ function CalendarPage() {
                   <div className="mc">21</div>
                 </div>
                 <div style={{ marginTop: "14px" }}>
-                  <span className="m-btn">確認預約 11/17（二）14:00 →</span>
+                  <span className="m-btn">Confirm Tue, Nov 17 · 2:00 PM →</span>
                 </div>
               </div>
             </div>
           </div>
         </div>
       </div>
-      {/* 區塊二：預約更順 */}
+      {/* Block 2: seamless scheduling */}
       <div className="fblock">
         <div className="wrap fb-grid rev">
           <div className="fb-txt reveal">
             <div className="eyebrow">SEAMLESS SCHEDULING</div>
             <h3>
-              從網站到 CRM
+              From your website to your CRM.
               <br />
-              預約入口
-              <em>無所不在</em>
+              Booking,
+              <em> everywhere.</em>
             </h3>
             <p>
-              客戶可以直接從你的網站、銷售頁或 LINE
-              連結預約；你也能在後台聊天聊到一半，直接從聯絡人卡片幫客戶敲定時間。預約完成，名單同步進
-              CRM，不用再抄來抄去。
+              Customers can book straight from your website, sales page or a LINE link. Mid-chat,
+              you can lock in a time right from the contact card. Once it’s booked, the contact
+              syncs to your CRM — no copying and pasting required.
             </p>
             <div className="replaces">
-              <span className="rlabel">整合亮點</span>
-              <span className="rchip">網站／漏斗嵌入</span>
-              <span className="rchip">CRM 直接排程</span>
-              <span className="rchip">LINE 連結分享</span>
+              <span className="rlabel">Integrations</span>
+              <span className="rchip">Website & funnel embeds</span>
+              <span className="rchip">Schedule from CRM</span>
+              <span className="rchip">Shareable LINE links</span>
             </div>
             <ul className="checklist">
-              <li>從聯絡人卡片一鍵安排</li>
-              <li>從銷售管道直接排程</li>
-              <li>屏蔽私人時段，保護休息時間</li>
-              <li>緩衝時間自動保留</li>
-              <li>預約表單自動蒐集需求</li>
-              <li>取消與改期自助完成</li>
+              <li>Schedule in one click from a contact card</li>
+              <li>Book directly from your pipeline</li>
+              <li>Block personal time and protect your downtime</li>
+              <li>Automatic buffer time between meetings</li>
+              <li>Booking forms that capture needs up front</li>
+              <li>Self-serve cancellations and rescheduling</li>
             </ul>
             <div className="fb-cta">
-              <Link to="/booking" className="btn btn-navy">
-                {"把預約串進我的流程 "}
+              <Link to="/contact" className="btn btn-navy">
+                {"Connect booking to my workflow "}
                 <span className="arr">→</span>
               </Link>
             </div>
@@ -176,65 +182,67 @@ function CalendarPage() {
                 <span>idealflow.ai / contacts</span>
               </div>
               <div className="mock-pad">
-                <div className="m-title">今日預約</div>
+                <div className="m-title">Today’s Bookings</div>
                 <div className="m-row">
-                  <div className="m-av">王</div>
+                  <div className="m-av">M</div>
                   <div className="mi">
-                    <b>王小明 · 一對一諮詢</b>
-                    <span>10:00–10:30 · 已確認</span>
+                    <b>Michael Wang · 1:1 Consultation</b>
+                    <span>10:00–10:30 AM · Confirmed</span>
                   </div>
-                  <span className="m-tag ok">已提醒</span>
+                  <span className="m-tag ok">Reminded</span>
                 </div>
                 <div className="m-row">
-                  <div className="m-av o">陳</div>
+                  <div className="m-av o">G</div>
                   <div className="mi">
-                    <b>陳雅婷 · 企業導入會議</b>
-                    <span>14:00–15:00 · 團隊輪流分配</span>
+                    <b>Grace Chen · Enterprise Onboarding</b>
+                    <span>2:00–3:00 PM · Round-robin</span>
                   </div>
-                  <span className="m-tag info">Amy 接單</span>
+                  <span className="m-tag info">Assigned to Amy</span>
                 </div>
                 <div className="m-row">
-                  <div className="m-av">李</div>
+                  <div className="m-av">Y</div>
                   <div className="mi">
-                    <b>週三瑜伽團體課</b>
-                    <span>19:00–20:30 · 8／12 人報名</span>
+                    <b>Wednesday Group Yoga</b>
+                    <span>7:00–8:30 PM · 8/12 registered</span>
                   </div>
-                  <span className="m-tag hot">熱門</span>
+                  <span className="m-tag hot">Popular</span>
                 </div>
               </div>
             </div>
           </div>
         </div>
       </div>
-      {/* 區塊三：自動提醒 */}
+      {/* Block 3: automated reminders */}
       <div className="fblock">
         <div className="wrap fb-grid">
           <div className="fb-txt reveal">
             <div className="eyebrow">NO-SHOW KILLER</div>
             <h3>
-              自動提醒＋自動跟進
-              <br />跟<em>放鳥</em>
-              說再見
+              Automatic reminders and follow-ups.
+              <br />
+              Say goodbye to <em>no-shows.</em>
             </h3>
             <p>
-              預約完成不是結束，是自動化的開始。LINE、Email、簡訊多管齊下提醒，沒出席的自動進跟進流程再約一次。出席率提升，就是營收提升。
+              A booking isn’t the finish line — it’s where automation begins. Reminders go out
+              across LINE, email and SMS, and anyone who misses their slot is automatically invited
+              to rebook. Higher attendance means higher revenue.
             </p>
             <div className="replaces">
-              <span className="rlabel">實測成效</span>
-              <span className="rchip">亞瑟教練出席率 45%</span>
-              <span className="rchip">Emma 老師出席率 56%+</span>
+              <span className="rlabel">Proven results</span>
+              <span className="rchip">Coach Arthur Wu: 45% attendance</span>
+              <span className="rchip">Coach Emma: 56%+ attendance</span>
             </div>
             <ul className="checklist">
-              <li>預約確認即時通知</li>
-              <li>前一天＋當天自動提醒</li>
-              <li>LINE／Email／簡訊多通路</li>
-              <li>未出席自動再邀約</li>
-              <li>出席後自動發後續資料</li>
-              <li>出席數據完整追蹤</li>
+              <li>Instant booking confirmations</li>
+              <li>Automatic reminders the day before and day of</li>
+              <li>LINE, email and SMS</li>
+              <li>Automatic rebooking for no-shows</li>
+              <li>Follow-up materials sent after each session</li>
+              <li>Complete attendance tracking</li>
             </ul>
             <div className="fb-cta">
-              <Link to="/booking" className="btn btn-navy">
-                {"提升我的出席率 "}
+              <Link to="/contact" className="btn btn-navy">
+                {"Boost my attendance "}
                 <span className="arr">→</span>
               </Link>
             </div>
@@ -252,32 +260,32 @@ function CalendarPage() {
                   <div className="m-node trigger">
                     <span className="ni">📅</span>
                     <span>
-                      客戶完成預約
-                      <small>觸發提醒流程</small>
+                      Customer books a time
+                      <small>Starts the reminder flow</small>
                     </span>
                   </div>
                   <div className="m-link"></div>
                   <div className="m-node">
                     <span className="ni">💬</span>
                     <span>
-                      LINE＋Email 確認通知
-                      <small>立即發送</small>
+                      LINE + email confirmation
+                      <small>Sends immediately</small>
                     </span>
                   </div>
                   <div className="m-link"></div>
                   <div className="m-node">
                     <span className="ni">⏰</span>
                     <span>
-                      前一天 20:00 再提醒
-                      <small>自動排程</small>
+                      Reminder at 8:00 PM the night before
+                      <small>Scheduled automatically</small>
                     </span>
                   </div>
                   <div className="m-link"></div>
                   <div className="m-node">
                     <span className="ni">🔁</span>
                     <span>
-                      沒出席 → 自動邀請改期
-                      <small>名單不流失</small>
+                      No-show → Automatic reschedule invite
+                      <small>No lead left behind</small>
                     </span>
                   </div>
                 </div>
@@ -286,55 +294,62 @@ function CalendarPage() {
           </div>
         </div>
       </div>
-      {/* 情境案例 */}
+      {/* Use cases */}
       <section className="usecases">
         <div className="wrap">
           <div className="center reveal">
             <div className="eyebrow" style={{ justifyContent: "center" }}>
               REAL SCENARIOS
             </div>
-            <h2 className="h2">實際上，大家都這樣用</h2>
-            <p className="lead">三個最常見的落地情境，看看預約系統怎麼幫你把時間變成營收。</p>
+            <h2 className="h2">How teams actually use it</h2>
+            <p className="lead">
+              Three of the most common scenarios — and how smart booking turns your time into
+              revenue.
+            </p>
           </div>
           <div className="ugrid">
             <div className="ucard reveal">
-              <span className="utag">顧問・教練</span>
-              <h4>諮詢連結放進 LINE，聊完直接約</h4>
+              <span className="utag">Consultants & Coaches</span>
+              <h4>Drop a booking link in chat and lock in the meeting</h4>
               <p>
-                客戶聊到有興趣，丟出預約連結馬上敲定時間，
-                <b>趁熱成交不冷場</b>
-                。前一天自動提醒，幾乎不再被放鳥。
+                The moment a customer shows interest, send your link and set a time on the spot —
+                <b> close while the interest is hot</b>. With a reminder the day before, no-shows
+                all but disappear.
               </p>
             </div>
             <div className="ucard reveal d1">
-              <span className="utag">課程・工作坊</span>
-              <h4>團體課報名、點名、追蹤一條龍</h4>
+              <span className="utag">Classes & Workshops</span>
+              <h4>Registration, check-in and follow-up, all in one flow</h4>
               <p>
-                多人課程行事曆開放報名，滿班自動關閉；上完課自動發回饋表單與下期優惠，
-                <b>一班接一班自動滾動</b>。
+                Open a group calendar for sign-ups and it closes automatically when the class is
+                full. After each session, a feedback form and next-class offer go out on their own —
+                <b> one class rolls right into the next</b>.
               </p>
             </div>
             <div className="ucard reveal d2">
-              <span className="utag">業務團隊</span>
-              <h4>輪流分配，每個業務雨露均霑</h4>
+              <span className="utag">Sales Teams</span>
+              <h4>Round-robin routing that’s fair to every rep</h4>
               <p>
-                詢盤預約用 Round Robin 自動輪流分給團隊成員，
-                <b>不搶單、不漏單</b>
-                ，主管在報表裡看每個人的成交進度。
+                Inbound booking requests rotate automatically across your team.
+                <b> No fighting over leads, no leads falling through</b> — and managers can track
+                every rep’s progress in the reports.
               </p>
             </div>
           </div>
         </div>
       </section>
-      {/* 其他功能 */}
+      {/* More features */}
       <section className="morefeat">
         <div className="wrap">
           <div className="center reveal">
             <h2 className="h2">
-              預約順了，
-              <em>成交更快</em>
+              Smoother booking.
+              <em> Faster closing.</em>
             </h2>
-            <p className="lead">搭配其他功能，把預約前的引流和預約後的跟進全部自動化。</p>
+            <p className="lead">
+              Pair it with other tools to automate everything — from attracting leads before they
+              book to following up after.
+            </p>
           </div>
           <div className="mf-grid reveal">
             <Link to="/funnel" className="mf-card">
@@ -343,7 +358,7 @@ function CalendarPage() {
                   <path d="M3 4h18l-7 8v6l-4 2v-8L3 4z" />
                 </svg>
               </span>
-              銷售漏斗與網站建置
+              Funnels & Websites
               <span className="arr">→</span>
             </Link>
             <Link to="/email" className="mf-card">
@@ -353,7 +368,7 @@ function CalendarPage() {
                   <path d="m22 7-10 5L2 7" />
                 </svg>
               </span>
-              Email／LINE 行銷自動化
+              Email & LINE Marketing
               <span className="arr">→</span>
             </Link>
             <Link to="/automation" className="mf-card">
@@ -362,7 +377,7 @@ function CalendarPage() {
                   <path d="M13 2 3 14h9l-1 8 10-12h-9l1-8z" />
                 </svg>
               </span>
-              自動化工作流程
+              Workflow Automation
               <span className="arr">→</span>
             </Link>
             <Link to="/ai-content" className="mf-card">
@@ -373,7 +388,7 @@ function CalendarPage() {
                   <path d="M5 16c4 3 10 3 14 0" />
                 </svg>
               </span>
-              AI 內容生成與社群排程
+              AI Content & Social Planner
               <span className="arr">→</span>
             </Link>
             <Link to="/reputation" className="mf-card">
@@ -382,7 +397,7 @@ function CalendarPage() {
                   <path d="m12 2 3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
                 </svg>
               </span>
-              評價管理系統
+              Reputation Management
               <span className="arr">→</span>
             </Link>
             <Link to="/crm" className="mf-card">
@@ -393,7 +408,7 @@ function CalendarPage() {
                   <path d="M23 21v-2a4 4 0 0 0-3-3.87" />
                 </svg>
               </span>
-              CRM 客戶管理
+              CRM
               <span className="arr">→</span>
             </Link>
           </div>
@@ -402,24 +417,26 @@ function CalendarPage() {
       <section className="final">
         <div className="wrap">
           <h2 className="reveal">
-            讓預約更簡單，
+            Simpler booking.
             <br />
-            讓成交
-            <span>更順暢</span>
+            <span>Smoother selling.</span>
           </h2>
-          <p className="reveal d1">從今天起，敲時間這件事交給系統，你的行事曆自己會排滿。</p>
+          <p className="reveal d1">
+            Starting today, let the system handle the scheduling — and watch your calendar fill
+            itself.
+          </p>
           <div className="hero-ctas reveal d2">
-            <Link to="/booking" className="btn btn-primary">
-              {"免費報名講座 "}
+            <Link to="/contact" className="btn btn-primary">
+              {"Book a Demo "}
               <span className="arr">→</span>
             </Link>
-            <Link to="/" hash="pricing" className="btn btn-ghost">
-              查看方案內容
+            <Link to="/pricing" className="btn btn-ghost">
+              See Pricing
             </Link>
           </div>
         </div>
       </section>
-      <SiteFooter />
+      <SiteFooter locale="en" />
     </>
   );
 }

@@ -1,19 +1,19 @@
 import { createFileRoute, notFound, redirect } from "@tanstack/react-router";
 import { NotFound } from "@/components/site/NotFound";
 
-// 舊版靜態站的 *.html 網址 → 新路由（301），保留既有連結與 SEO。
+// 舊版靜態站（中文）的 *.html 網址 → /tw 新路由（301），保留既有連結與 SEO。
 const LEGACY_PAGES: Record<string, string> = {
-  "index.html": "/",
-  "crm.html": "/crm",
-  "email.html": "/email",
-  "funnel.html": "/funnel",
-  "calendar.html": "/calendar",
-  "automation.html": "/automation",
-  "ai-content.html": "/ai-content",
-  "reputation.html": "/reputation",
-  "start.html": "/start",
-  "booking.html": "/booking",
-  "thanks.html": "/thanks",
+  "index.html": "/tw",
+  "crm.html": "/tw/crm",
+  "email.html": "/tw/email",
+  "funnel.html": "/tw/funnel",
+  "calendar.html": "/tw/calendar",
+  "automation.html": "/tw/automation",
+  "ai-content.html": "/tw/ai-content",
+  "reputation.html": "/tw/reputation",
+  "start.html": "/tw/start",
+  "booking.html": "/tw/booking",
+  "thanks.html": "/tw/thanks",
 };
 
 // Catch-all route. Legacy .html URLs redirect; anything else throws notFound()
@@ -30,7 +30,7 @@ export const Route = createFileRoute("/$")({
     throw notFound();
   },
   head: () => ({
-    meta: [{ title: "找不到頁面｜匯成交 iDealFlow.ai" }, { name: "robots", content: "noindex" }],
+    meta: [{ title: "Page Not Found | iDealFlow.ai" }, { name: "robots", content: "noindex" }],
   }),
   component: NotFound,
 });

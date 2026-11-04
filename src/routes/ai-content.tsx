@@ -1,16 +1,18 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { SiteNav } from "@/components/site/SiteNav";
 import { SiteFooter } from "@/components/site/SiteFooter";
+import { RegionBanner } from "@/components/site/RegionBanner";
 import { useReveal } from "@/hooks/use-reveal";
 import { pageHead } from "@/lib/seo";
 
 export const Route = createFileRoute("/ai-content")({
   head: () =>
     pageHead({
+      breadcrumb: "AI Content & Social Planner",
       path: "/ai-content",
-      title: "AI 內容生成與社群排程｜匯成交 iDealFlow.ai",
+      title: "AI Content Generator & Social Media Planner | iDealFlow.ai",
       description:
-        "一次生成、多平台同步發佈。AI 幫你寫貼文與文案，排程系統讓 Facebook、Instagram、TikTok、LinkedIn、YouTube 天天有內容，一次取代 Hootsuite、Buffer 等工具。",
+        "Create once, publish everywhere. AI writes posts; the planner keeps Facebook, Instagram, TikTok, LinkedIn and YouTube fresh—replacing Hootsuite and Buffer.",
     }),
   component: AiContentPage,
 });
@@ -20,71 +22,73 @@ function AiContentPage() {
 
   return (
     <>
-      <SiteNav />
+      <RegionBanner current="en" />
+      <SiteNav locale="en" />
       <section className="subhero">
         <div className="wrap">
           <p className="crumb reveal">
-            <Link to="/">首頁</Link>
-            {" ／ "}
+            <Link to="/">Home</Link>
+            {" / "}
             <Link to="/" hash="features">
-              核心功能
+              Features
             </Link>
-            {" ／ "}
-            <b>AI 內容生成與社群排程</b>
+            {" / "}
+            <b>AI Content &amp; Social Planner</b>
           </p>
           <h1 className="reveal d1">
-            一次生成
+            Create once.
             <br />
-            <span className="grad">七個平台同步發佈</span>
+            <span className="grad">Publish to seven platforms.</span>
           </h1>
           <p className="sub reveal d2">
-            經營社群最累的不是沒靈感，是
-            <strong>每天都要發、每個平台都要顧</strong>
-            。讓 AI 幫你寫、排程系統幫你發，品牌曝光不斷線，你專心做生意。
+            The hardest part of social isn’t running out of ideas. It’s{" "}
+            <strong>posting every day, on every platform</strong>. Let AI write and the planner
+            publish—so your brand stays visible while you run your business.
           </p>
           <div className="hero-ctas reveal d3">
-            <Link to="/booking" className="btn btn-primary">
-              {"免費報名講座 "}
+            <Link to="/contact" className="btn btn-primary">
+              {"Book a Demo "}
               <span className="arr">→</span>
             </Link>
             <Link to="/" hash="cases" className="btn btn-ghost">
-              看看別人怎麼用
+              See it in action
             </Link>
           </div>
         </div>
       </section>
-      {/* 區塊一：多平台發佈 */}
+      {/* Block 1: Multi-platform publishing */}
       <div className="fblock">
         <div className="wrap fb-grid">
           <div className="fb-txt reveal">
             <div className="eyebrow">SOCIAL PLANNER</div>
             <h3>
-              AI 社群策劃師
+              AI Social Planner.
               <br />
-              寫一篇，
-              <em>發遍全平台</em>
+              Write once, <em>post everywhere.</em>
             </h3>
             <p>
-              同一篇內容，不用再複製貼上七次。在一個後台編輯好，勾選要發佈的平台，一鍵送出或排入時程——每個平台的格式，系統自動幫你調整好。
+              Stop copying and pasting the same post seven times. Write it once, pick your
+              platforms, then publish now or schedule for later—each platform’s format is adjusted
+              for you automatically.
             </p>
             <div className="replaces">
-              <span className="rlabel">一套取代</span>
+              <span className="rlabel">Replaces</span>
               <span className="rchip">Hootsuite</span>
               <span className="rchip">Buffer</span>
               <span className="rchip">CoSchedule</span>
               <span className="rchip">Sprout Social</span>
             </div>
             <ul className="checklist">
-              <li>Facebook／Instagram 同步發佈</li>
-              <li>TikTok／X（Twitter）支援</li>
-              <li>LinkedIn／Pinterest 支援</li>
-              <li>YouTube 與 Shorts 上架</li>
-              <li>無限貼文、無限排程</li>
-              <li>定期貼文自動循環發佈</li>
+              <li>Publish to Facebook and Instagram at once</li>
+              <li>TikTok and X (Twitter) support</li>
+              <li>LinkedIn and Pinterest support</li>
+              <li>YouTube and Shorts uploads</li>
+              <li>Unlimited posts, unlimited scheduling</li>
+              <li>Evergreen posts on automatic rotation</li>
             </ul>
             <div className="fb-cta">
-              <Link to="/booking" className="btn btn-navy">
-                {"安排我的第一週貼文 "}
+              <Link to="/contact" className="btn btn-navy">
+                {"Plan my first week of posts "}
                 <span className="arr">→</span>
               </Link>
             </div>
@@ -98,69 +102,69 @@ function AiContentPage() {
                 <span>idealflow.ai / social-planner</span>
               </div>
               <div className="mock-pad">
-                <div className="m-title">本週排程 · 5 則待發佈</div>
+                <div className="m-title">This week · 5 posts scheduled</div>
                 <div className="m-row">
                   <div className="m-av o">FB</div>
                   <div className="mi">
-                    <b>新品上市優惠開跑</b>
-                    <span>週一 10:00 · FB＋IG</span>
+                    <b>New product launch offer</b>
+                    <span>Mon 10:00 · FB + IG</span>
                   </div>
-                  <span className="m-tag ok">已排程</span>
+                  <span className="m-tag ok">Scheduled</span>
                 </div>
                 <div className="m-row">
                   <div className="m-av">YT</div>
                   <div className="mi">
-                    <b>客戶見證分享（Shorts）</b>
-                    <span>週三 12:00 · YouTube＋TikTok</span>
+                    <b>Customer testimonial (Shorts)</b>
+                    <span>Wed 12:00 · YouTube + TikTok</span>
                   </div>
-                  <span className="m-tag ok">已排程</span>
+                  <span className="m-tag ok">Scheduled</span>
                 </div>
                 <div className="m-row">
                   <div className="m-av o">IN</div>
                   <div className="mi">
-                    <b>產業洞察長文</b>
-                    <span>週五 09:00 · LinkedIn</span>
+                    <b>Industry insights article</b>
+                    <span>Fri 09:00 · LinkedIn</span>
                   </div>
-                  <span className="m-tag info">AI 草稿</span>
+                  <span className="m-tag info">AI draft</span>
                 </div>
               </div>
             </div>
           </div>
         </div>
       </div>
-      {/* 區塊二：AI 文案 */}
+      {/* Block 2: AI copywriting */}
       <div className="fblock">
         <div className="wrap fb-grid rev">
           <div className="fb-txt reveal">
             <div className="eyebrow">AI WRITER</div>
             <h3>
-              沒靈感的時候
+              Stuck for ideas?
               <br />
-              {"讓 "}
-              <em>AI 先寫初稿</em>
+              {"Let "}
+              <em>AI write the first draft.</em>
             </h3>
             <p>
-              給 AI 一個主題，它幫你生出貼文、Email
-              標題、頁面文案的初稿。你只要順一順語氣、加上自己的觀點，產內容的速度直接翻好幾倍。
+              Give AI a topic and it drafts your posts, email subject lines and page copy. Just
+              polish the tone, add your point of view, and create content several times faster.
             </p>
             <div className="replaces">
-              <span className="rlabel">生成範圍</span>
-              <span className="rchip">社群貼文</span>
-              <span className="rchip">Email 文案</span>
-              <span className="rchip">頁面標題</span>
-              <span className="rchip">部落格大綱</span>
+              <span className="rlabel">Writes</span>
+              <span className="rchip">Social posts</span>
+              <span className="rchip">Email copy</span>
+              <span className="rchip">Page headlines</span>
+              <span className="rchip">Blog outlines</span>
             </div>
             <ul className="checklist">
-              <li>依主題生成貼文草稿</li>
-              <li>多種語氣風格可選</li>
-              <li>一鍵改寫與延伸</li>
-              <li>Email 主旨建議</li>
-              <li>銷售頁文案起手式</li>
-              <li>搭配排程直接發佈</li>
+              <li>Post drafts from any topic</li>
+              <li>Choose from multiple tones of voice</li>
+              <li>One-click rewrites and expansions</li>
+              <li>Email subject line suggestions</li>
+              <li>Sales page copy starters</li>
+              <li>Publish straight to the planner</li>
             </ul>
             <div className="fb-cta">
-              <Link to="/booking" className="btn btn-navy">
-                {"讓 AI 幫我寫寫看 "}
+              <Link to="/contact" className="btn btn-navy">
+                {"Let AI write for me "}
                 <span className="arr">→</span>
               </Link>
             </div>
@@ -175,16 +179,18 @@ function AiContentPage() {
               </div>
               <div className="mock-pad">
                 <div className="m-chat">
-                  <div className="m-bub out">主題：週年慶優惠，語氣：親切、有急迫感</div>
+                  <div className="m-bub out">Topic: anniversary sale. Tone: warm, with urgency</div>
                   <div className="m-bub in">
-                    <span className="ai">AI 草稿</span>
-                    老顧客們注意！週年慶只有這 7 天，全館課程 8 折起，名額有限，先搶先贏 🎉（附三個
-                    hashtag 建議）
+                    <span className="ai">AI draft</span>
+                    Calling all our regulars! Our anniversary sale runs just 7 days—20% off every
+                    course, limited spots, first come, first served 🎉 (plus 3 hashtag ideas)
                   </div>
-                  <div className="m-bub out">很好，幫我改成 IG 版本＋排程週一早上</div>
+                  <div className="m-bub out">
+                    Love it. Make an IG version and schedule it for Monday morning
+                  </div>
                   <div className="m-bub in">
-                    <span className="ai">AI 動作</span>
-                    已生成 IG 版本並排入週一 09:00 發佈 ✓
+                    <span className="ai">AI action</span>
+                    IG version created and scheduled for Mon 09:00 ✓
                   </div>
                 </div>
               </div>
@@ -192,37 +198,37 @@ function AiContentPage() {
           </div>
         </div>
       </div>
-      {/* 區塊三：內容行事曆 */}
+      {/* Block 3: Content calendar */}
       <div className="fblock">
         <div className="wrap fb-grid">
           <div className="fb-txt reveal">
             <div className="eyebrow">CONTENT CALENDAR</div>
             <h3>
-              內容行事曆總覽
+              Content calendar.
               <br />
-              整個月的曝光
-              <em>一眼掌握</em>
+              Your whole month, <em>at a glance.</em>
             </h3>
             <p>
-              哪天發什麼、發到哪個平台、成效如何，全部攤在同一張行事曆上。空窗的日子一眼就看到，再也不會「啊，這週忘記發文了」。
+              What goes out, where, and how it performed—all on one calendar. Gaps jump out
+              immediately, so there’s no more “Oops, we forgot to post this week.”
             </p>
             <div className="replaces">
-              <span className="rlabel">管理亮點</span>
-              <span className="rchip">月曆視圖</span>
-              <span className="rchip">成效追蹤</span>
-              <span className="rchip">團隊協作</span>
+              <span className="rlabel">Highlights</span>
+              <span className="rchip">Month view</span>
+              <span className="rchip">Performance tracking</span>
+              <span className="rchip">Team collaboration</span>
             </div>
             <ul className="checklist">
-              <li>月曆視圖總覽所有排程</li>
-              <li>拖拉調整發佈日期</li>
-              <li>貼文成效數據回收</li>
-              <li>團隊成員分工審核</li>
-              <li>熱門時段建議</li>
-              <li>與行銷活動檔期對齊</li>
+              <li>Every scheduled post in month view</li>
+              <li>Drag and drop to reschedule</li>
+              <li>Post performance analytics</li>
+              <li>Team roles and approvals</li>
+              <li>Best-time-to-post suggestions</li>
+              <li>Aligned with your campaign calendar</li>
             </ul>
             <div className="fb-cta">
-              <Link to="/booking" className="btn btn-navy">
-                {"規劃我的內容行事曆 "}
+              <Link to="/contact" className="btn btn-navy">
+                {"Plan my content calendar "}
                 <span className="arr">→</span>
               </Link>
             </div>
@@ -236,15 +242,15 @@ function AiContentPage() {
                 <span>idealflow.ai / content-calendar</span>
               </div>
               <div className="mock-pad">
-                <div className="m-title">11 月內容行事曆</div>
+                <div className="m-title">November content calendar</div>
                 <div className="m-cal">
-                  <div className="mc-h">一</div>
-                  <div className="mc-h">二</div>
-                  <div className="mc-h">三</div>
-                  <div className="mc-h">四</div>
-                  <div className="mc-h">五</div>
-                  <div className="mc-h">六</div>
-                  <div className="mc-h">日</div>
+                  <div className="mc-h">M</div>
+                  <div className="mc-h">T</div>
+                  <div className="mc-h">W</div>
+                  <div className="mc-h">T</div>
+                  <div className="mc-h">F</div>
+                  <div className="mc-h">S</div>
+                  <div className="mc-h">S</div>
                   <div className="mc busy">FB</div>
                   <div className="mc">·</div>
                   <div className="mc soft">YT</div>
@@ -266,55 +272,58 @@ function AiContentPage() {
           </div>
         </div>
       </div>
-      {/* 情境案例 */}
+      {/* Use cases */}
       <section className="usecases">
         <div className="wrap">
           <div className="center reveal">
             <div className="eyebrow" style={{ justifyContent: "center" }}>
               REAL SCENARIOS
             </div>
-            <h2 className="h2">實際上，大家都這樣用</h2>
-            <p className="lead">三個最常見的落地情境，看看內容系統怎麼幫你把曝光變名單。</p>
+            <h2 className="h2">How businesses actually use it</h2>
+            <p className="lead">
+              Three of the most common setups—and how a content system turns visibility into leads.
+            </p>
           </div>
           <div className="ugrid">
             <div className="ucard reveal">
-              <span className="utag">一人公司</span>
-              <h4>週日排好一整週，平日專心接案</h4>
+              <span className="utag">Solopreneurs</span>
+              <h4>Plan the week on Sunday. Focus on clients all week.</h4>
               <p>
-                每週日花一小時，AI 生成＋排程七天份的貼文。
-                <b>社群天天有動靜</b>
-                ，客戶來詢問時你才發現：原來貼文一直在幫你賣。
+                Spend one hour every Sunday letting AI draft and schedule seven days of posts.{" "}
+                <b>Your feed stays active every day</b>—and when inquiries roll in, you realize your
+                posts have been selling for you all along.
               </p>
             </div>
             <div className="ucard reveal d1">
-              <span className="utag">講師品牌</span>
-              <h4>講座金句變成一個月的內容</h4>
+              <span className="utag">Speakers &amp; coaches</span>
+              <h4>One talk becomes a month of content</h4>
               <p>
-                一場講座的精華，拆成貼文、Shorts、LinkedIn 長文多平台發佈，
-                <b>一份內容吃一個月</b>
-                ，每篇都掛上報名連結導流。
+                Turn the highlights of a single talk into posts, Shorts and LinkedIn articles across
+                every platform. <b>One piece of content, a full month of posts</b>—each one linking
+                to your next registration page.
               </p>
             </div>
             <div className="ucard reveal d2">
-              <span className="utag">在地店家</span>
-              <h4>每篇貼文，都是進店的入口</h4>
+              <span className="utag">Local businesses</span>
+              <h4>Every post is a door to your store</h4>
               <p>
-                貼文附上預約連結與優惠券表單，社群流量直接變成 CRM 名單，
-                <b>按讚的人變成上門的客人</b>。
+                Add a booking link and coupon form to every post, and social traffic flows straight
+                into your CRM. <b>Likes turn into walk-ins.</b>
               </p>
             </div>
           </div>
         </div>
       </section>
-      {/* 其他功能 */}
+      {/* Related features */}
       <section className="morefeat">
         <div className="wrap">
           <div className="center reveal">
             <h2 className="h2">
-              流量進來了，
-              <em>然後呢？</em>
+              The traffic is coming in. <em>Now what?</em>
             </h2>
-            <p className="lead">內容負責吸引人，這些功能負責把人變成客戶。</p>
+            <p className="lead">
+              Content attracts the audience. These features turn that audience into customers.
+            </p>
           </div>
           <div className="mf-grid reveal">
             <Link to="/funnel" className="mf-card">
@@ -323,7 +332,7 @@ function AiContentPage() {
                   <path d="M3 4h18l-7 8v6l-4 2v-8L3 4z" />
                 </svg>
               </span>
-              銷售漏斗與網站建置
+              Funnels &amp; Websites
               <span className="arr">→</span>
             </Link>
             <Link to="/email" className="mf-card">
@@ -333,7 +342,7 @@ function AiContentPage() {
                   <path d="m22 7-10 5L2 7" />
                 </svg>
               </span>
-              Email／LINE 行銷自動化
+              Email &amp; LINE Marketing
               <span className="arr">→</span>
             </Link>
             <Link to="/calendar" className="mf-card">
@@ -345,7 +354,7 @@ function AiContentPage() {
                   <path d="M3 10h18" />
                 </svg>
               </span>
-              智能預約系統
+              Smart Booking
               <span className="arr">→</span>
             </Link>
             <Link to="/automation" className="mf-card">
@@ -354,7 +363,7 @@ function AiContentPage() {
                   <path d="M13 2 3 14h9l-1 8 10-12h-9l1-8z" />
                 </svg>
               </span>
-              自動化工作流程
+              Workflow Automation
               <span className="arr">→</span>
             </Link>
             <Link to="/reputation" className="mf-card">
@@ -363,7 +372,7 @@ function AiContentPage() {
                   <path d="m12 2 3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
                 </svg>
               </span>
-              評價管理系統
+              Reputation Management
               <span className="arr">→</span>
             </Link>
             <Link to="/crm" className="mf-card">
@@ -374,7 +383,7 @@ function AiContentPage() {
                   <path d="M23 21v-2a4 4 0 0 0-3-3.87" />
                 </svg>
               </span>
-              CRM 客戶管理
+              CRM
               <span className="arr">→</span>
             </Link>
           </div>
@@ -383,24 +392,26 @@ function AiContentPage() {
       <section className="final">
         <div className="wrap">
           <h2 className="reveal">
-            讓品牌曝光不斷線，
+            Keep your brand always on,
             <br />
-            讓內容
-            <span>自己去獲客</span>
+            and let your content <span>bring in customers.</span>
           </h2>
-          <p className="reveal d1">AI 寫、系統發、名單自己進來——這才是聰明的內容經營。</p>
+          <p className="reveal d1">
+            AI writes, the system publishes, and leads come to you. That’s content marketing, done
+            smart.
+          </p>
           <div className="hero-ctas reveal d2">
-            <Link to="/booking" className="btn btn-primary">
-              {"免費報名講座 "}
+            <Link to="/contact" className="btn btn-primary">
+              {"Book a Demo "}
               <span className="arr">→</span>
             </Link>
-            <Link to="/" hash="pricing" className="btn btn-ghost">
-              查看方案內容
+            <Link to="/pricing" className="btn btn-ghost">
+              See Pricing
             </Link>
           </div>
         </div>
       </section>
-      <SiteFooter />
+      <SiteFooter locale="en" />
     </>
   );
 }

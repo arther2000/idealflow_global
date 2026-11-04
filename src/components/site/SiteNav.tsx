@@ -1,15 +1,26 @@
 import { Link } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
-import { APP_LOGIN_URL, FEATURE_LINKS, HOME_ANCHORS, LOGO_SRC } from "./feature-links";
+import {
+  APP_LOGIN_URL,
+  HOME_ANCHORS,
+  LOGO_SRC,
+  PATHS,
+  UI,
+  featureLinks,
+  type Locale,
+} from "./feature-links";
 
 type SiteNavProps = {
+  locale: Locale;
   /** "main" = 官網完整導覽；"start" = 14 天啟動計畫頁的精簡導覽 */
   variant?: "main" | "start";
 };
 
-export function SiteNav({ variant = "main" }: SiteNavProps) {
+export function SiteNav({ locale, variant = "main" }: SiteNavProps) {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
+  const t = UI[locale];
+  const p = PATHS[locale];
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 40);
@@ -26,27 +37,27 @@ export function SiteNav({ variant = "main" }: SiteNavProps) {
   return (
     <header className={navClass} id="nav">
       <div className="wrap nav-inner">
-        <Link className="brand" to="/" aria-label="匯成交 iDealFlow.ai">
+        <Link className="brand" to={p.home} aria-label="iDealFlow.ai">
           <img className="logo-img" src={LOGO_SRC} alt="iDealFlow.ai" />
-          <span className="zh">匯成交</span>
+          {t.brandZh && <span className="zh">{t.brandZh}</span>}
         </Link>
 
         {variant === "start" ? (
           <nav className="nav-links" style={{ gap: "20px" }}>
-            <Link to="/">回官網</Link>
+            <Link to={p.home}>{t.backHome}</Link>
             <a className="btn btn-primary nav-cta" href="#offer">
-              立即加入計畫
+              {t.startCta}
             </a>
           </nav>
         ) : (
           <>
             <nav className={open ? "nav-links open" : "nav-links"} id="navLinks">
               <div className="dd">
-                <Link className="dd-trigger" to="/" hash="features" onClick={close}>
-                  核心功能 <span className="caret">▼</span>
+                <Link className="dd-trigger" to={p.home} hash="features" onClick={close}>
+                  {t.features} <span className="caret">▼</span>
                 </Link>
                 <div className="dd-menu">
-                  {FEATURE_LINKS.map((f) => (
+                  {featureLinks(locale).map((f) => (
                     <Link key={f.to} to={f.to} onClick={close}>
                       <span className="di">
                         <svg viewBox="0 0 24 24">{f.icon}</svg>
@@ -54,30 +65,37 @@ export function SiteNav({ variant = "main" }: SiteNavProps) {
                       {f.label}
                     </Link>
                   ))}
-                  <Link className="dd-all" to="/" hash="features" onClick={close}>
-                    查看全部八大功能 →
+                  <Link className="dd-all" to={p.home} hash="features" onClick={close}>
+                    {t.allFeatures}
                   </Link>
                 </div>
               </div>
-              {HOME_ANCHORS.map((a) => (
-                <Link key={a.hash} to="/" hash={a.hash} onClick={close}>
+              {HOME_ANCHORS[locale].map((a) => (
+                <Link
+                  key={a.hash}
+                  to={a.page ? p[a.page] : p.home}
+                  {...(a.page ? {} : { hash: a.hash })}
+                  onClick={close}
+                >
                   {a.nav}
                 </Link>
               ))}
-              <Link className="nav-hot" to="/booking" onClick={close}>
-                🔥 免費講座報名
-              </Link>
+              {t.hot && (
+                <Link className="nav-hot" to={p.cta} onClick={close}>
+                  {t.hot}
+                </Link>
+              )}
               <a className="nav-login" href={APP_LOGIN_URL} target="_blank" rel="noopener">
-                登入
+                {t.login}
               </a>
-              <Link className="btn btn-primary nav-cta" to="/booking" onClick={close}>
-                免費報名講座
+              <Link className="btn btn-primary nav-cta" to={p.cta} onClick={close}>
+                {t.cta}
               </Link>
             </nav>
             <button
               className="nav-toggle"
               id="navToggle"
-              aria-label="選單"
+              aria-label={t.menu}
               aria-expanded={open}
               onClick={() => setOpen((v) => !v)}
             >

@@ -21,7 +21,7 @@ export function BookingForm() {
     setData((d) => ({ ...d, [k]: e.target.value }));
 
   const goThanks = () =>
-    navigate({ to: "/thanks", search: { s: SESSION_LABEL, n: data.name.trim() } });
+    navigate({ to: "/tw/thanks", search: { s: SESSION_LABEL, n: data.name.trim() } });
 
   const onSubmit = async (e: FormEvent) => {
     e.preventDefault();
